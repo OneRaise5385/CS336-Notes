@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2407.08351%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2407.08351&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/n9avarBOlBv/mJ2M/Rd/qEaMJXE</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2407.08351v2</id>
+    <updated>2025-02-28T08:14:49Z</updated>
+    <published>2024-07-11T10:03:47Z</published>
+    <title>AutoBencher: Towards Declarative Benchmark Construction</title>
+    <summary>  We present AutoBencher, a declarative framework for automatic benchmark
+construction, and use it to scalably discover novel insights and
+vulnerabilities of existing language models. Concretely, given a few desiderata
+of benchmarks (e.g., question difficulty, topic salience), we operationalize
+each desideratum and cast benchmark creation as an optimization problem.
+Specifically, we experiment with two settings with different optimization
+objectives: (i) for capability evaluation, we declare the goal of finding a
+salient, difficult dataset that induces novel performance patterns; (ii) for
+safety evaluation, we declare the goal of finding a dataset of unsafe prompts
+that existing LMs fail to decline. To tackle this optimization problem, we use
+a language model to iteratively propose and refine dataset descriptions, which
+are then used to generate topic-specific questions and answers. These
+descriptions are optimized to improve the declared desiderata. We use
+AutoBencher (powered by GPT-4) to create datasets for math, multilinguality,
+knowledge, and safety. The scalability of AutoBencher allows it to test
+fine-grained categories and tail knowledge, creating datasets that elicit 22%
+more model errors (i.e., difficulty) than existing benchmarks. On the novelty
+ends, AutoBencher also helps identify specific gaps not captured by existing
+benchmarks: e.g., Gemini-Pro has knowledge gaps on Permian Extinction and
+Fordism while GPT-4o fails to decline harmful requests about cryptocurrency
+scams.
+</summary>
+    <author>
+      <name>Xiang Lisa Li</name>
+    </author>
+    <author>
+      <name>Farzaan Kaiyom</name>
+    </author>
+    <author>
+      <name>Evan Zheran Liu</name>
+    </author>
+    <author>
+      <name>Yifan Mai</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <author>
+      <name>Tatsunori Hashimoto</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted for publication at ICLR 2025</arxiv:comment>
+    <link href="http://arxiv.org/abs/2407.08351v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2407.08351v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

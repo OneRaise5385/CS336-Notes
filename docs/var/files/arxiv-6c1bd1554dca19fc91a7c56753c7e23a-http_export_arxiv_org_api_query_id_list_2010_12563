@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2010.12563%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2010.12563&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/W+erVpX0ldt9JSu0swtFEBxGB8g</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2010.12563v2</id>
+    <updated>2021-04-12T09:10:06Z</updated>
+    <published>2020-10-23T17:47:06Z</published>
+    <title>Concealed Data Poisoning Attacks on NLP Models</title>
+    <summary>  Adversarial attacks alter NLP model predictions by perturbing test-time
+inputs. However, it is much less understood whether, and how, predictions can
+be manipulated with small, concealed changes to the training data. In this
+work, we develop a new data poisoning attack that allows an adversary to
+control model predictions whenever a desired trigger phrase is present in the
+input. For instance, we insert 50 poison examples into a sentiment model's
+training set that causes the model to frequently predict Positive whenever the
+input contains "James Bond". Crucially, we craft these poison examples using a
+gradient-based procedure so that they do not mention the trigger phrase. We
+also apply our poison attack to language modeling ("Apple iPhone" triggers
+negative generations) and machine translation ("iced coffee" mistranslated as
+"hot coffee"). We conclude by proposing three defenses that can mitigate our
+attack at some cost in prediction accuracy or extra human annotation.
+</summary>
+    <author>
+      <name>Eric Wallace</name>
+    </author>
+    <author>
+      <name>Tony Z. Zhao</name>
+    </author>
+    <author>
+      <name>Shi Feng</name>
+    </author>
+    <author>
+      <name>Sameer Singh</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">NAACL 2021</arxiv:comment>
+    <link href="http://arxiv.org/abs/2010.12563v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2010.12563v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

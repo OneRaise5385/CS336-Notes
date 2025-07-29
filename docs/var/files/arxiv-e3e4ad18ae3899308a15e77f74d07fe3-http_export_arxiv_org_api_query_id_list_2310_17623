@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2310.17623%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2310.17623&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/SMQYBJiFODve6PFimy3eiN4eZIg</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2310.17623v2</id>
+    <updated>2023-11-24T01:45:16Z</updated>
+    <published>2023-10-26T17:43:13Z</published>
+    <title>Proving Test Set Contamination in Black Box Language Models</title>
+    <summary>  Large language models are trained on vast amounts of internet data, prompting
+concerns and speculation that they have memorized public benchmarks. Going from
+speculation to proof of contamination is challenging, as the pretraining data
+used by proprietary models are often not publicly accessible. We show that it
+is possible to provide provable guarantees of test set contamination in
+language models without access to pretraining data or model weights. Our
+approach leverages the fact that when there is no data contamination, all
+orderings of an exchangeable benchmark should be equally likely. In contrast,
+the tendency for language models to memorize example order means that a
+contaminated language model will find certain canonical orderings to be much
+more likely than others. Our test flags potential contamination whenever the
+likelihood of a canonically ordered benchmark dataset is significantly higher
+than the likelihood after shuffling the examples. We demonstrate that our
+procedure is sensitive enough to reliably prove test set contamination in
+challenging situations, including models as small as 1.4 billion parameters, on
+small test sets of only 1000 examples, and datasets that appear only a few
+times in the pretraining corpus. Using our test, we audit five popular publicly
+accessible language models for test set contamination and find little evidence
+for pervasive contamination.
+</summary>
+    <author>
+      <name>Yonatan Oren</name>
+    </author>
+    <author>
+      <name>Nicole Meister</name>
+    </author>
+    <author>
+      <name>Niladri Chatterji</name>
+    </author>
+    <author>
+      <name>Faisal Ladhak</name>
+    </author>
+    <author>
+      <name>Tatsunori B. Hashimoto</name>
+    </author>
+    <link href="http://arxiv.org/abs/2310.17623v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2310.17623v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

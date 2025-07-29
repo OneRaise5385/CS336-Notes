@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1910.07467%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1910.07467&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/KxeOEl4tvH896p85nI8SpcmNzOU</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1910.07467v1</id>
+    <updated>2019-10-16T16:44:22Z</updated>
+    <published>2019-10-16T16:44:22Z</published>
+    <title>Root Mean Square Layer Normalization</title>
+    <summary>  Layer normalization (LayerNorm) has been successfully applied to various deep
+neural networks to help stabilize training and boost model convergence because
+of its capability in handling re-centering and re-scaling of both inputs and
+weight matrix. However, the computational overhead introduced by LayerNorm
+makes these improvements expensive and significantly slows the underlying
+network, e.g. RNN in particular. In this paper, we hypothesize that
+re-centering invariance in LayerNorm is dispensable and propose root mean
+square layer normalization, or RMSNorm. RMSNorm regularizes the summed inputs
+to a neuron in one layer according to root mean square (RMS), giving the model
+re-scaling invariance property and implicit learning rate adaptation ability.
+RMSNorm is computationally simpler and thus more efficient than LayerNorm. We
+also present partial RMSNorm, or pRMSNorm where the RMS is estimated from p% of
+the summed inputs without breaking the above properties. Extensive experiments
+on several tasks using diverse network architectures show that RMSNorm achieves
+comparable performance against LayerNorm but reduces the running time by 7%~64%
+on different models. Source code is available at
+https://github.com/bzhangGo/rmsnorm.
+</summary>
+    <author>
+      <name>Biao Zhang</name>
+    </author>
+    <author>
+      <name>Rico Sennrich</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">NeurIPS 2019</arxiv:comment>
+    <link href="http://arxiv.org/abs/1910.07467v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1910.07467v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2110.14168%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2110.14168&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/REDNpUqz6aqp4xi5G9YZc9H2IOI</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2110.14168v2</id>
+    <updated>2021-11-18T00:23:45Z</updated>
+    <published>2021-10-27T04:49:45Z</published>
+    <title>Training Verifiers to Solve Math Word Problems</title>
+    <summary>  State-of-the-art language models can match human performance on many tasks,
+but they still struggle to robustly perform multi-step mathematical reasoning.
+To diagnose the failures of current models and support research, we introduce
+GSM8K, a dataset of 8.5K high quality linguistically diverse grade school math
+word problems. We find that even the largest transformer models fail to achieve
+high test performance, despite the conceptual simplicity of this problem
+distribution. To increase performance, we propose training verifiers to judge
+the correctness of model completions. At test time, we generate many candidate
+solutions and select the one ranked highest by the verifier. We demonstrate
+that verification significantly improves performance on GSM8K, and we provide
+strong empirical evidence that verification scales more effectively with
+increased data than a finetuning baseline.
+</summary>
+    <author>
+      <name>Karl Cobbe</name>
+    </author>
+    <author>
+      <name>Vineet Kosaraju</name>
+    </author>
+    <author>
+      <name>Mohammad Bavarian</name>
+    </author>
+    <author>
+      <name>Mark Chen</name>
+    </author>
+    <author>
+      <name>Heewoo Jun</name>
+    </author>
+    <author>
+      <name>Lukasz Kaiser</name>
+    </author>
+    <author>
+      <name>Matthias Plappert</name>
+    </author>
+    <author>
+      <name>Jerry Tworek</name>
+    </author>
+    <author>
+      <name>Jacob Hilton</name>
+    </author>
+    <author>
+      <name>Reiichiro Nakano</name>
+    </author>
+    <author>
+      <name>Christopher Hesse</name>
+    </author>
+    <author>
+      <name>John Schulman</name>
+    </author>
+    <link href="http://arxiv.org/abs/2110.14168v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2110.14168v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

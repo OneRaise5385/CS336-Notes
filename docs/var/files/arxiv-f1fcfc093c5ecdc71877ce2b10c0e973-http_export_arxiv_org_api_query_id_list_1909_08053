@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1909.08053%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1909.08053&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/KL22b1Ebh0ZMRb002Xw2aZBUkks</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1909.08053v4</id>
+    <updated>2020-03-13T23:45:18Z</updated>
+    <published>2019-09-17T19:42:54Z</published>
+    <title>Megatron-LM: Training Multi-Billion Parameter Language Models Using
+  Model Parallelism</title>
+    <summary>  Recent work in language modeling demonstrates that training large transformer
+models advances the state of the art in Natural Language Processing
+applications. However, very large models can be quite difficult to train due to
+memory constraints. In this work, we present our techniques for training very
+large transformer models and implement a simple, efficient intra-layer model
+parallel approach that enables training transformer models with billions of
+parameters. Our approach does not require a new compiler or library changes, is
+orthogonal and complimentary to pipeline model parallelism, and can be fully
+implemented with the insertion of a few communication operations in native
+PyTorch. We illustrate this approach by converging transformer based models up
+to 8.3 billion parameters using 512 GPUs. We sustain 15.1 PetaFLOPs across the
+entire application with 76% scaling efficiency when compared to a strong single
+GPU baseline that sustains 39 TeraFLOPs, which is 30% of peak FLOPs. To
+demonstrate that large language models can further advance the state of the art
+(SOTA), we train an 8.3 billion parameter transformer language model similar to
+GPT-2 and a 3.9 billion parameter model similar to BERT. We show that careful
+attention to the placement of layer normalization in BERT-like models is
+critical to achieving increased performance as the model size grows. Using the
+GPT-2 model we achieve SOTA results on the WikiText103 (10.8 compared to SOTA
+perplexity of 15.8) and LAMBADA (66.5% compared to SOTA accuracy of 63.2%)
+datasets. Our BERT model achieves SOTA results on the RACE dataset (90.9%
+compared to SOTA accuracy of 89.4%).
+</summary>
+    <author>
+      <name>Mohammad Shoeybi</name>
+    </author>
+    <author>
+      <name>Mostofa Patwary</name>
+    </author>
+    <author>
+      <name>Raul Puri</name>
+    </author>
+    <author>
+      <name>Patrick LeGresley</name>
+    </author>
+    <author>
+      <name>Jared Casper</name>
+    </author>
+    <author>
+      <name>Bryan Catanzaro</name>
+    </author>
+    <link href="http://arxiv.org/abs/1909.08053v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1909.08053v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

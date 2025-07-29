@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2412.02595%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2412.02595&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/aUwLDm+h3aUPva/alJuQQmnUeSU</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2412.02595v1</id>
+    <updated>2024-12-03T17:28:50Z</updated>
+    <published>2024-12-03T17:28:50Z</published>
+    <title>Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon
+  Pretraining Dataset</title>
+    <summary>  Recent English Common Crawl datasets like FineWeb-Edu and DCLM achieved
+significant benchmark gains via aggressive model-based filtering, but at the
+cost of removing 90% of data. This limits their suitability for long token
+horizon training, such as 15T tokens for Llama 3.1. In this paper, we show how
+to achieve better trade-offs between accuracy and data quantity by a
+combination of classifier ensembling, synthetic data rephrasing, and reduced
+reliance on heuristic filters. When training 8B parameter models for 1T tokens,
+using a high-quality subset of our data improves MMLU by 5.6 over DCLM,
+demonstrating the efficacy of our methods for boosting accuracies over a
+relatively short token horizon. Furthermore, our full 6.3T token dataset
+matches DCLM on MMLU, but contains four times more unique real tokens than
+DCLM. This unlocks state-of-the-art training over a long token horizon: an 8B
+parameter model trained for 15T tokens, of which 7.2T came from our dataset, is
+better than the Llama 3.1 8B model: +5 on MMLU, +3.1 on ARC-Challenge, and +0.5
+on average across ten diverse tasks. The dataset is available at
+https://data.commoncrawl.org/contrib/Nemotron/Nemotron-CC/index.html
+</summary>
+    <author>
+      <name>Dan Su</name>
+    </author>
+    <author>
+      <name>Kezhi Kong</name>
+    </author>
+    <author>
+      <name>Ying Lin</name>
+    </author>
+    <author>
+      <name>Joseph Jennings</name>
+    </author>
+    <author>
+      <name>Brandon Norick</name>
+    </author>
+    <author>
+      <name>Markus Kliegl</name>
+    </author>
+    <author>
+      <name>Mostofa Patwary</name>
+    </author>
+    <author>
+      <name>Mohammad Shoeybi</name>
+    </author>
+    <author>
+      <name>Bryan Catanzaro</name>
+    </author>
+    <link href="http://arxiv.org/abs/2412.02595v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2412.02595v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

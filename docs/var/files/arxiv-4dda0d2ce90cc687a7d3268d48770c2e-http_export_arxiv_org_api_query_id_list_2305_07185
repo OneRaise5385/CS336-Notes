@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2305.07185%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2305.07185&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/lzoiD8sAf/mKoCdfrt1m1VC6XoY</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2305.07185v2</id>
+    <updated>2023-05-19T21:09:11Z</updated>
+    <published>2023-05-12T00:55:41Z</published>
+    <title>MEGABYTE: Predicting Million-byte Sequences with Multiscale Transformers</title>
+    <summary>  Autoregressive transformers are spectacular models for short sequences but
+scale poorly to long sequences such as high-resolution images, podcasts, code,
+or books. We proposed Megabyte, a multi-scale decoder architecture that enables
+end-to-end differentiable modeling of sequences of over one million bytes.
+Megabyte segments sequences into patches and uses a local submodel within
+patches and a global model between patches. This enables sub-quadratic
+self-attention, much larger feedforward layers for the same compute, and
+improved parallelism during decoding -- unlocking better performance at reduced
+cost for both training and generation. Extensive experiments show that Megabyte
+allows byte-level models to perform competitively with subword models on long
+context language modeling, achieve state-of-the-art density estimation on
+ImageNet, and model audio from raw files. Together, these results establish the
+viability of tokenization-free autoregressive sequence modeling at scale.
+</summary>
+    <author>
+      <name>Lili Yu</name>
+    </author>
+    <author>
+      <name>Dániel Simig</name>
+    </author>
+    <author>
+      <name>Colin Flaherty</name>
+    </author>
+    <author>
+      <name>Armen Aghajanyan</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Mike Lewis</name>
+    </author>
+    <link href="http://arxiv.org/abs/2305.07185v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2305.07185v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

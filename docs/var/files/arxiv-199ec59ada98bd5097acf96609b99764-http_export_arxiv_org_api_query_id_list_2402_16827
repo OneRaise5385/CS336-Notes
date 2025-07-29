@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2402.16827%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2402.16827&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/+//x7I40hai+ll2aY1oTD94pI14</id>
+  <updated>2025-05-15T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2402.16827v3</id>
+    <updated>2024-08-02T17:59:31Z</updated>
+    <published>2024-02-26T18:54:35Z</published>
+    <title>A Survey on Data Selection for Language Models</title>
+    <summary>  A major factor in the recent success of large language models is the use of
+enormous and ever-growing text datasets for unsupervised pre-training. However,
+naively training a model on all available data may not be optimal (or
+feasible), as the quality of available text data can vary. Filtering out data
+can also decrease the carbon footprint and financial costs of training models
+by reducing the amount of training required. Data selection methods aim to
+determine which candidate data points to include in the training dataset and
+how to appropriately sample from the selected data points. The promise of
+improved data selection methods has caused the volume of research in the area
+to rapidly expand. However, because deep learning is mostly driven by empirical
+evidence and experimentation on large-scale data is expensive, few
+organizations have the resources for extensive data selection research.
+Consequently, knowledge of effective data selection practices has become
+concentrated within a few organizations, many of which do not openly share
+their findings and methodologies. To narrow this gap in knowledge, we present a
+comprehensive review of existing literature on data selection methods and
+related research areas, providing a taxonomy of existing approaches. By
+describing the current landscape of research, this work aims to accelerate
+progress in data selection by establishing an entry point for new and
+established researchers. Additionally, throughout this review we draw attention
+to noticeable holes in the literature and conclude the paper by proposing
+promising avenues for future research.
+</summary>
+    <author>
+      <name>Alon Albalak</name>
+    </author>
+    <author>
+      <name>Yanai Elazar</name>
+    </author>
+    <author>
+      <name>Sang Michael Xie</name>
+    </author>
+    <author>
+      <name>Shayne Longpre</name>
+    </author>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Xinyi Wang</name>
+    </author>
+    <author>
+      <name>Niklas Muennighoff</name>
+    </author>
+    <author>
+      <name>Bairu Hou</name>
+    </author>
+    <author>
+      <name>Liangming Pan</name>
+    </author>
+    <author>
+      <name>Haewon Jeong</name>
+    </author>
+    <author>
+      <name>Colin Raffel</name>
+    </author>
+    <author>
+      <name>Shiyu Chang</name>
+    </author>
+    <author>
+      <name>Tatsunori Hashimoto</name>
+    </author>
+    <author>
+      <name>William Yang Wang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Paper list available at
+  https://github.com/alon-albalak/data-selection-survey</arxiv:comment>
+    <link href="http://arxiv.org/abs/2402.16827v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2402.16827v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

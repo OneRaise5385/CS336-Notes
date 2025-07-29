@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2407.17436%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2407.17436&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/CKELr3MT/eC7Pl0BsDJ0iT3RlhI</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2407.17436v2</id>
+    <updated>2024-08-05T18:12:27Z</updated>
+    <published>2024-07-11T21:16:48Z</published>
+    <title>AIR-Bench 2024: A Safety Benchmark Based on Risk Categories from
+  Regulations and Policies</title>
+    <summary>  Foundation models (FMs) provide societal benefits but also amplify risks.
+Governments, companies, and researchers have proposed regulatory frameworks,
+acceptable use policies, and safety benchmarks in response. However, existing
+public benchmarks often define safety categories based on previous literature,
+intuitions, or common sense, leading to disjointed sets of categories for risks
+specified in recent regulations and policies, which makes it challenging to
+evaluate and compare FMs across these benchmarks. To bridge this gap, we
+introduce AIR-Bench 2024, the first AI safety benchmark aligned with emerging
+government regulations and company policies, following the regulation-based
+safety categories grounded in our AI risks study, AIR 2024. AIR 2024 decomposes
+8 government regulations and 16 company policies into a four-tiered safety
+taxonomy with 314 granular risk categories in the lowest tier. AIR-Bench 2024
+contains 5,694 diverse prompts spanning these categories, with manual curation
+and human auditing to ensure quality. We evaluate leading language models on
+AIR-Bench 2024, uncovering insights into their alignment with specified safety
+concerns. By bridging the gap between public benchmarks and practical AI risks,
+AIR-Bench 2024 provides a foundation for assessing model safety across
+jurisdictions, fostering the development of safer and more responsible AI
+systems.
+</summary>
+    <author>
+      <name>Yi Zeng</name>
+    </author>
+    <author>
+      <name>Yu Yang</name>
+    </author>
+    <author>
+      <name>Andy Zhou</name>
+    </author>
+    <author>
+      <name>Jeffrey Ziwei Tan</name>
+    </author>
+    <author>
+      <name>Yuheng Tu</name>
+    </author>
+    <author>
+      <name>Yifan Mai</name>
+    </author>
+    <author>
+      <name>Kevin Klyman</name>
+    </author>
+    <author>
+      <name>Minzhou Pan</name>
+    </author>
+    <author>
+      <name>Ruoxi Jia</name>
+    </author>
+    <author>
+      <name>Dawn Song</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <author>
+      <name>Bo Li</name>
+    </author>
+    <link href="http://arxiv.org/abs/2407.17436v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2407.17436v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

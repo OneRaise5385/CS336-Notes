@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2105.13626%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2105.13626&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/8J5cOfoAQrrFdvS+MxbuFJByWIE</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2105.13626v3</id>
+    <updated>2022-03-08T02:18:51Z</updated>
+    <published>2021-05-28T07:03:22Z</published>
+    <title>ByT5: Towards a token-free future with pre-trained byte-to-byte models</title>
+    <summary>  Most widely-used pre-trained language models operate on sequences of tokens
+corresponding to word or subword units. By comparison, token-free models that
+operate directly on raw text (bytes or characters) have many benefits: they can
+process text in any language out of the box, they are more robust to noise, and
+they minimize technical debt by removing complex and error-prone text
+preprocessing pipelines. Since byte or character sequences are longer than
+token sequences, past work on token-free models has often introduced new model
+architectures designed to amortize the cost of operating directly on raw text.
+In this paper, we show that a standard Transformer architecture can be used
+with minimal modifications to process byte sequences. We characterize the
+trade-offs in terms of parameter count, training FLOPs, and inference speed,
+and show that byte-level models are competitive with their token-level
+counterparts. We also demonstrate that byte-level models are significantly more
+robust to noise and perform better on tasks that are sensitive to spelling and
+pronunciation. As part of our contribution, we release a new set of pre-trained
+byte-level Transformer models based on the T5 architecture, as well as all code
+and data used in our experiments.
+</summary>
+    <author>
+      <name>Linting Xue</name>
+    </author>
+    <author>
+      <name>Aditya Barua</name>
+    </author>
+    <author>
+      <name>Noah Constant</name>
+    </author>
+    <author>
+      <name>Rami Al-Rfou</name>
+    </author>
+    <author>
+      <name>Sharan Narang</name>
+    </author>
+    <author>
+      <name>Mihir Kale</name>
+    </author>
+    <author>
+      <name>Adam Roberts</name>
+    </author>
+    <author>
+      <name>Colin Raffel</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">To be published in TACL 2022</arxiv:comment>
+    <link href="http://arxiv.org/abs/2105.13626v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2105.13626v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

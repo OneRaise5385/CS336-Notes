@@ -1,0 +1,147 @@
+{
+  "files": {
+    "sample.py": "from execute_util import text\n\ndef compute(a: int):  # @inspect a\n    return a + 1\n\ndef main():\n    # what\n    x = 4  # @inspect x\n    y = 5  # @inspect y\n    z = compute(x)  # @inspect z\n    text(\"Hello $x^2$\")\n\nif __name__ == \"__main__\":\n    main()\n"
+  },
+  "steps": [
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 6,
+          "function_name": "main",
+          "code": "def main():"
+        }
+      ],
+      "env": {},
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 8,
+          "function_name": "main",
+          "code": "x = 4  # @inspect x"
+        }
+      ],
+      "env": {
+        "x": 4
+      },
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 9,
+          "function_name": "main",
+          "code": "y = 5  # @inspect y"
+        }
+      ],
+      "env": {
+        "y": 5
+      },
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 10,
+          "function_name": "main",
+          "code": "z = compute(x)  # @inspect z"
+        }
+      ],
+      "env": {},
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 10,
+          "function_name": "main",
+          "code": "z = compute(x)  # @inspect z"
+        },
+        {
+          "path": "sample.py",
+          "line_number": 3,
+          "function_name": "compute",
+          "code": "def compute(a: int):  # @inspect a"
+        }
+      ],
+      "env": {
+        "a": 4
+      },
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 10,
+          "function_name": "main",
+          "code": "z = compute(x)  # @inspect z"
+        },
+        {
+          "path": "sample.py",
+          "line_number": 4,
+          "function_name": "compute",
+          "code": "return a + 1"
+        }
+      ],
+      "env": {},
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 10,
+          "function_name": "main",
+          "code": "z = compute(x)  # @inspect z"
+        }
+      ],
+      "env": {
+        "z": 5
+      },
+      "renderings": [],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stack": [
+        {
+          "path": "sample.py",
+          "line_number": 11,
+          "function_name": "main",
+          "code": "text(\"Hello $x^2$\")"
+        }
+      ],
+      "env": {},
+      "renderings": [
+        {
+          "type": "markdown",
+          "data": "Hello $x^2$",
+          "style": {},
+          "external_link": null,
+          "internal_link": null
+        }
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

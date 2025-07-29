@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2402.03300%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2402.03300&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/8Td787aYGdSfwqYjxRQQkcocvPI</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2402.03300v3</id>
+    <updated>2024-04-27T15:25:53Z</updated>
+    <published>2024-02-05T18:55:32Z</published>
+    <title>DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open
+  Language Models</title>
+    <summary>  Mathematical reasoning poses a significant challenge for language models due
+to its complex and structured nature. In this paper, we introduce DeepSeekMath
+7B, which continues pre-training DeepSeek-Coder-Base-v1.5 7B with 120B
+math-related tokens sourced from Common Crawl, together with natural language
+and code data. DeepSeekMath 7B has achieved an impressive score of 51.7% on the
+competition-level MATH benchmark without relying on external toolkits and
+voting techniques, approaching the performance level of Gemini-Ultra and GPT-4.
+Self-consistency over 64 samples from DeepSeekMath 7B achieves 60.9% on MATH.
+The mathematical reasoning capability of DeepSeekMath is attributed to two key
+factors: First, we harness the significant potential of publicly available web
+data through a meticulously engineered data selection pipeline. Second, we
+introduce Group Relative Policy Optimization (GRPO), a variant of Proximal
+Policy Optimization (PPO), that enhances mathematical reasoning abilities while
+concurrently optimizing the memory usage of PPO.
+</summary>
+    <author>
+      <name>Zhihong Shao</name>
+    </author>
+    <author>
+      <name>Peiyi Wang</name>
+    </author>
+    <author>
+      <name>Qihao Zhu</name>
+    </author>
+    <author>
+      <name>Runxin Xu</name>
+    </author>
+    <author>
+      <name>Junxiao Song</name>
+    </author>
+    <author>
+      <name>Xiao Bi</name>
+    </author>
+    <author>
+      <name>Haowei Zhang</name>
+    </author>
+    <author>
+      <name>Mingchuan Zhang</name>
+    </author>
+    <author>
+      <name>Y. K. Li</name>
+    </author>
+    <author>
+      <name>Y. Wu</name>
+    </author>
+    <author>
+      <name>Daya Guo</name>
+    </author>
+    <link href="http://arxiv.org/abs/2402.03300v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2402.03300v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

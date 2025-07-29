@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2304.12244%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2304.12244&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/McEvssARspmJXQ8+MB1e2PGKl3Y</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2304.12244v2</id>
+    <updated>2023-06-10T13:18:25Z</updated>
+    <published>2023-04-24T16:31:06Z</published>
+    <title>WizardLM: Empowering Large Language Models to Follow Complex
+  Instructions</title>
+    <summary>  Training large language models (LLMs) with open-domain instruction following
+data brings colossal success. However, manually creating such instruction data
+is very time-consuming and labor-intensive. Moreover, humans may struggle to
+produce high-complexity instructions. In this paper, we show an avenue for
+creating large amounts of instruction data with varying levels of complexity
+using LLM instead of humans. Starting with an initial set of instructions, we
+use our proposed Evol-Instruct to rewrite them step by step into more complex
+instructions. Then, we mix all generated instruction data to fine-tune LLaMA.
+We call the resulting model WizardLM. Human evaluations on a
+complexity-balanced test bed and Vicuna's testset show that instructions from
+Evol-Instruct are superior to human-created ones. By analyzing the human
+evaluation results of the high complexity part, we demonstrate that outputs
+from our WizardLM are preferred to outputs from OpenAI ChatGPT. In GPT-4
+automatic evaluation, WizardLM achieves more than 90\% capacity of ChatGPT on
+17 out of 29 skills. Even though WizardLM still lags behind ChatGPT in some
+aspects, our findings suggest that fine-tuning with AI-evolved instructions is
+a promising direction for enhancing LLMs. Our code and data are public at
+https://github.com/nlpxucan/WizardLM
+</summary>
+    <author>
+      <name>Can Xu</name>
+    </author>
+    <author>
+      <name>Qingfeng Sun</name>
+    </author>
+    <author>
+      <name>Kai Zheng</name>
+    </author>
+    <author>
+      <name>Xiubo Geng</name>
+    </author>
+    <author>
+      <name>Pu Zhao</name>
+    </author>
+    <author>
+      <name>Jiazhan Feng</name>
+    </author>
+    <author>
+      <name>Chongyang Tao</name>
+    </author>
+    <author>
+      <name>Daxin Jiang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">large language model, instruction fine-tune</arxiv:comment>
+    <link href="http://arxiv.org/abs/2304.12244v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2304.12244v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

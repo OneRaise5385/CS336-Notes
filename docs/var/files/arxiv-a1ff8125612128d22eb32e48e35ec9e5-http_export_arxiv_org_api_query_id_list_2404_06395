@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2404.06395%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2404.06395&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/1zmIe5RzIc/CC3El9foNdu368pc</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2404.06395v3</id>
+    <updated>2024-06-03T08:54:38Z</updated>
+    <published>2024-04-09T15:36:50Z</published>
+    <title>MiniCPM: Unveiling the Potential of Small Language Models with Scalable
+  Training Strategies</title>
+    <summary>  The burgeoning interest in developing Large Language Models (LLMs) with up to
+trillion parameters has been met with concerns regarding resource efficiency
+and practical expense, particularly given the immense cost of experimentation.
+This scenario underscores the importance of exploring the potential of Small
+Language Models (SLMs) as a resource-efficient alternative. In this context, we
+introduce MiniCPM, specifically the 1.2B and 2.4B non-embedding parameter
+variants, not only excel in their respective categories but also demonstrate
+capabilities on par with 7B-13B LLMs. While focusing on SLMs, our approach
+exhibits scalability in both model and data dimensions for future LLM research.
+Regarding model scaling, we employ extensive model wind tunnel experiments for
+stable and optimal scaling. For data scaling, we introduce a
+Warmup-Stable-Decay (WSD) learning rate scheduler (LRS), conducive to
+continuous training and domain adaptation. We present an in-depth analysis of
+the intriguing training dynamics that occurred in the WSD LRS. With WSD LRS, we
+are now able to efficiently study data-model scaling law without extensive
+retraining experiments on both axes of model and data, from which we derive the
+much higher compute optimal data-model ratio than Chinchilla Optimal.
+Additionally, we introduce MiniCPM family, including MiniCPM-DPO, MiniCPM-MoE
+and MiniCPM-128K, whose excellent performance further cementing MiniCPM's
+foundation in diverse SLM applications. MiniCPM models are available publicly
+at https://github.com/OpenBMB/MiniCPM .
+</summary>
+    <author>
+      <name>Shengding Hu</name>
+    </author>
+    <author>
+      <name>Yuge Tu</name>
+    </author>
+    <author>
+      <name>Xu Han</name>
+    </author>
+    <author>
+      <name>Chaoqun He</name>
+    </author>
+    <author>
+      <name>Ganqu Cui</name>
+    </author>
+    <author>
+      <name>Xiang Long</name>
+    </author>
+    <author>
+      <name>Zhi Zheng</name>
+    </author>
+    <author>
+      <name>Yewei Fang</name>
+    </author>
+    <author>
+      <name>Yuxiang Huang</name>
+    </author>
+    <author>
+      <name>Weilin Zhao</name>
+    </author>
+    <author>
+      <name>Xinrong Zhang</name>
+    </author>
+    <author>
+      <name>Zheng Leng Thai</name>
+    </author>
+    <author>
+      <name>Kaihuo Zhang</name>
+    </author>
+    <author>
+      <name>Chongyi Wang</name>
+    </author>
+    <author>
+      <name>Yuan Yao</name>
+    </author>
+    <author>
+      <name>Chenyang Zhao</name>
+    </author>
+    <author>
+      <name>Jie Zhou</name>
+    </author>
+    <author>
+      <name>Jie Cai</name>
+    </author>
+    <author>
+      <name>Zhongwu Zhai</name>
+    </author>
+    <author>
+      <name>Ning Ding</name>
+    </author>
+    <author>
+      <name>Chao Jia</name>
+    </author>
+    <author>
+      <name>Guoyang Zeng</name>
+    </author>
+    <author>
+      <name>Dahai Li</name>
+    </author>
+    <author>
+      <name>Zhiyuan Liu</name>
+    </author>
+    <author>
+      <name>Maosong Sun</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">revise according to peer review</arxiv:comment>
+    <link href="http://arxiv.org/abs/2404.06395v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2404.06395v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

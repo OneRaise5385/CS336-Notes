@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2403.08540%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2403.08540&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/PHa6RHDe1jB3W+umVw3GZwz1y2g</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2403.08540v2</id>
+    <updated>2024-06-14T20:21:05Z</updated>
+    <published>2024-03-13T13:54:00Z</published>
+    <title>Language models scale reliably with over-training and on downstream
+  tasks</title>
+    <summary>  Scaling laws are useful guides for derisking expensive training runs, as they
+predict performance of large models using cheaper, small-scale experiments.
+However, there remain gaps between current scaling studies and how language
+models are ultimately trained and evaluated. For instance, scaling is usually
+studied in the compute-optimal training regime (i.e., "Chinchilla optimal"
+regime). In contrast, models are often over-trained to reduce inference costs.
+Moreover, scaling laws mostly predict loss on next-token prediction, but models
+are usually compared on downstream task performance. To address both
+shortcomings, we create a testbed of 104 models with 0.011B to 6.9B parameters
+trained with various numbers of tokens on three data distributions. First, we
+fit scaling laws that extrapolate in both the amount of over-training and the
+number of model parameters. This enables us to predict the validation loss of a
+1.4B parameter, 900B token run (i.e., 32$\times$ over-trained) and a 6.9B
+parameter, 138B token run (i.e., a compute-optimal run)$\unicode{x2014}$each
+from experiments that take 300$\times$ less compute. Second, we relate the
+perplexity of a language model to its downstream task performance by proposing
+a power law. We use this law to predict top-1 error averaged over downstream
+tasks for the two aforementioned models, using experiments that take 20$\times$
+less compute. Our experiments are available at
+https://github.com/mlfoundations/scaling.
+</summary>
+    <author>
+      <name>Samir Yitzhak Gadre</name>
+    </author>
+    <author>
+      <name>Georgios Smyrnis</name>
+    </author>
+    <author>
+      <name>Vaishaal Shankar</name>
+    </author>
+    <author>
+      <name>Suchin Gururangan</name>
+    </author>
+    <author>
+      <name>Mitchell Wortsman</name>
+    </author>
+    <author>
+      <name>Rulin Shao</name>
+    </author>
+    <author>
+      <name>Jean Mercat</name>
+    </author>
+    <author>
+      <name>Alex Fang</name>
+    </author>
+    <author>
+      <name>Jeffrey Li</name>
+    </author>
+    <author>
+      <name>Sedrick Keh</name>
+    </author>
+    <author>
+      <name>Rui Xin</name>
+    </author>
+    <author>
+      <name>Marianna Nezhurina</name>
+    </author>
+    <author>
+      <name>Igor Vasiljevic</name>
+    </author>
+    <author>
+      <name>Jenia Jitsev</name>
+    </author>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Alexandros G. Dimakis</name>
+    </author>
+    <author>
+      <name>Gabriel Ilharco</name>
+    </author>
+    <author>
+      <name>Pang Wei Koh</name>
+    </author>
+    <author>
+      <name>Shuran Song</name>
+    </author>
+    <author>
+      <name>Thomas Kollar</name>
+    </author>
+    <author>
+      <name>Yair Carmon</name>
+    </author>
+    <author>
+      <name>Achal Dave</name>
+    </author>
+    <author>
+      <name>Reinhard Heckel</name>
+    </author>
+    <author>
+      <name>Niklas Muennighoff</name>
+    </author>
+    <author>
+      <name>Ludwig Schmidt</name>
+    </author>
+    <link href="http://arxiv.org/abs/2403.08540v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2403.08540v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

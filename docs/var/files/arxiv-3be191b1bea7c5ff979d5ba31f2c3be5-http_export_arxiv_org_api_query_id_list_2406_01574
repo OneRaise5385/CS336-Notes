@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2406.01574%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2406.01574&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/SpMwsICdJERnnZlIbbactsFJL5g</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2406.01574v6</id>
+    <updated>2024-11-06T02:54:00Z</updated>
+    <published>2024-06-03T17:53:00Z</published>
+    <title>MMLU-Pro: A More Robust and Challenging Multi-Task Language
+  Understanding Benchmark</title>
+    <summary>  In the age of large-scale language models, benchmarks like the Massive
+Multitask Language Understanding (MMLU) have been pivotal in pushing the
+boundaries of what AI can achieve in language comprehension and reasoning
+across diverse domains. However, as models continue to improve, their
+performance on these benchmarks has begun to plateau, making it increasingly
+difficult to discern differences in model capabilities. This paper introduces
+MMLU-Pro, an enhanced dataset designed to extend the mostly knowledge-driven
+MMLU benchmark by integrating more challenging, reasoning-focused questions and
+expanding the choice set from four to ten options. Additionally, MMLU-Pro
+eliminates the trivial and noisy questions in MMLU. Our experimental results
+show that MMLU-Pro not only raises the challenge, causing a significant drop in
+accuracy by 16% to 33% compared to MMLU but also demonstrates greater stability
+under varying prompts. With 24 different prompt styles tested, the sensitivity
+of model scores to prompt variations decreased from 4-5% in MMLU to just 2% in
+MMLU-Pro. Additionally, we found that models utilizing Chain of Thought (CoT)
+reasoning achieved better performance on MMLU-Pro compared to direct answering,
+which is in stark contrast to the findings on the original MMLU, indicating
+that MMLU-Pro includes more complex reasoning questions. Our assessments
+confirm that MMLU-Pro is a more discriminative benchmark to better track
+progress in the field.
+</summary>
+    <author>
+      <name>Yubo Wang</name>
+    </author>
+    <author>
+      <name>Xueguang Ma</name>
+    </author>
+    <author>
+      <name>Ge Zhang</name>
+    </author>
+    <author>
+      <name>Yuansheng Ni</name>
+    </author>
+    <author>
+      <name>Abhranil Chandra</name>
+    </author>
+    <author>
+      <name>Shiguang Guo</name>
+    </author>
+    <author>
+      <name>Weiming Ren</name>
+    </author>
+    <author>
+      <name>Aaran Arulraj</name>
+    </author>
+    <author>
+      <name>Xuan He</name>
+    </author>
+    <author>
+      <name>Ziyan Jiang</name>
+    </author>
+    <author>
+      <name>Tianle Li</name>
+    </author>
+    <author>
+      <name>Max Ku</name>
+    </author>
+    <author>
+      <name>Kai Wang</name>
+    </author>
+    <author>
+      <name>Alex Zhuang</name>
+    </author>
+    <author>
+      <name>Rongqi Fan</name>
+    </author>
+    <author>
+      <name>Xiang Yue</name>
+    </author>
+    <author>
+      <name>Wenhu Chen</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">This version has been accepted and published at NeurIPS 2024 Track
+  Datasets and Benchmarks (Spotlight)</arxiv:comment>
+    <link href="http://arxiv.org/abs/2406.01574v6" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2406.01574v6" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

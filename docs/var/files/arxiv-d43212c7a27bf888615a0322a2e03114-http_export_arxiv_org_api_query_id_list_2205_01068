@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2205.01068%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2205.01068&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/o6pcqJmiekPJbTWP0ZwYf2kh+jE</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2205.01068v4</id>
+    <updated>2022-06-21T17:04:40Z</updated>
+    <published>2022-05-02T17:49:50Z</published>
+    <title>OPT: Open Pre-trained Transformer Language Models</title>
+    <summary>  Large language models, which are often trained for hundreds of thousands of
+compute days, have shown remarkable capabilities for zero- and few-shot
+learning. Given their computational cost, these models are difficult to
+replicate without significant capital. For the few that are available through
+APIs, no access is granted to the full model weights, making them difficult to
+study. We present Open Pre-trained Transformers (OPT), a suite of decoder-only
+pre-trained transformers ranging from 125M to 175B parameters, which we aim to
+fully and responsibly share with interested researchers. We show that OPT-175B
+is comparable to GPT-3, while requiring only 1/7th the carbon footprint to
+develop. We are also releasing our logbook detailing the infrastructure
+challenges we faced, along with code for experimenting with all of the released
+models.
+</summary>
+    <author>
+      <name>Susan Zhang</name>
+    </author>
+    <author>
+      <name>Stephen Roller</name>
+    </author>
+    <author>
+      <name>Naman Goyal</name>
+    </author>
+    <author>
+      <name>Mikel Artetxe</name>
+    </author>
+    <author>
+      <name>Moya Chen</name>
+    </author>
+    <author>
+      <name>Shuohui Chen</name>
+    </author>
+    <author>
+      <name>Christopher Dewan</name>
+    </author>
+    <author>
+      <name>Mona Diab</name>
+    </author>
+    <author>
+      <name>Xian Li</name>
+    </author>
+    <author>
+      <name>Xi Victoria Lin</name>
+    </author>
+    <author>
+      <name>Todor Mihaylov</name>
+    </author>
+    <author>
+      <name>Myle Ott</name>
+    </author>
+    <author>
+      <name>Sam Shleifer</name>
+    </author>
+    <author>
+      <name>Kurt Shuster</name>
+    </author>
+    <author>
+      <name>Daniel Simig</name>
+    </author>
+    <author>
+      <name>Punit Singh Koura</name>
+    </author>
+    <author>
+      <name>Anjali Sridhar</name>
+    </author>
+    <author>
+      <name>Tianlu Wang</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <link href="http://arxiv.org/abs/2205.01068v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2205.01068v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2402.00159%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2402.00159&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/rGvC2gB8P+Ee7g4qho0Gq5RfPr0</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2402.00159v2</id>
+    <updated>2024-06-06T18:46:40Z</updated>
+    <published>2024-01-31T20:29:50Z</published>
+    <title>Dolma: an Open Corpus of Three Trillion Tokens for Language Model
+  Pretraining Research</title>
+    <summary>  Information about pretraining corpora used to train the current
+best-performing language models is seldom discussed: commercial models rarely
+detail their data, and even open models are often released without accompanying
+training data or recipes to reproduce them. As a result, it is challenging to
+conduct and advance scientific research on language modeling, such as
+understanding how training data impacts model capabilities and limitations. To
+facilitate scientific research on language model pretraining, we curate and
+release Dolma, a three-trillion-token English corpus, built from a diverse
+mixture of web content, scientific papers, code, public-domain books, social
+media, and encyclopedic materials. We extensively document Dolma, including its
+design principles, details about its construction, and a summary of its
+contents. We present analyses and experimental results on intermediate states
+of Dolma to share what we have learned about important data curation practices.
+Finally, we open-source our data curation toolkit to enable reproduction of our
+work as well as support further research in large-scale data curation.
+</summary>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Rodney Kinney</name>
+    </author>
+    <author>
+      <name>Akshita Bhagia</name>
+    </author>
+    <author>
+      <name>Dustin Schwenk</name>
+    </author>
+    <author>
+      <name>David Atkinson</name>
+    </author>
+    <author>
+      <name>Russell Authur</name>
+    </author>
+    <author>
+      <name>Ben Bogin</name>
+    </author>
+    <author>
+      <name>Khyathi Chandu</name>
+    </author>
+    <author>
+      <name>Jennifer Dumas</name>
+    </author>
+    <author>
+      <name>Yanai Elazar</name>
+    </author>
+    <author>
+      <name>Valentin Hofmann</name>
+    </author>
+    <author>
+      <name>Ananya Harsh Jha</name>
+    </author>
+    <author>
+      <name>Sachin Kumar</name>
+    </author>
+    <author>
+      <name>Li Lucy</name>
+    </author>
+    <author>
+      <name>Xinxi Lyu</name>
+    </author>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Ian Magnusson</name>
+    </author>
+    <author>
+      <name>Jacob Morrison</name>
+    </author>
+    <author>
+      <name>Niklas Muennighoff</name>
+    </author>
+    <author>
+      <name>Aakanksha Naik</name>
+    </author>
+    <author>
+      <name>Crystal Nam</name>
+    </author>
+    <author>
+      <name>Matthew E. Peters</name>
+    </author>
+    <author>
+      <name>Abhilasha Ravichander</name>
+    </author>
+    <author>
+      <name>Kyle Richardson</name>
+    </author>
+    <author>
+      <name>Zejiang Shen</name>
+    </author>
+    <author>
+      <name>Emma Strubell</name>
+    </author>
+    <author>
+      <name>Nishant Subramani</name>
+    </author>
+    <author>
+      <name>Oyvind Tafjord</name>
+    </author>
+    <author>
+      <name>Pete Walsh</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+    <author>
+      <name>Iz Beltagy</name>
+    </author>
+    <author>
+      <name>Dirk Groeneveld</name>
+    </author>
+    <author>
+      <name>Jesse Dodge</name>
+    </author>
+    <author>
+      <name>Kyle Lo</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted at ACL 2024; Dataset: https://hf.co/datasets/allenai/dolma;
+  Code: https://github.com/allenai/dolma</arxiv:comment>
+    <link href="http://arxiv.org/abs/2402.00159v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2402.00159v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

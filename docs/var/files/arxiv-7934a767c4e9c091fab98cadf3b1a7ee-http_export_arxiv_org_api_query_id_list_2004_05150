@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2004.05150%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2004.05150&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/Hiv5Hg2PrelDyvC+dypf/LVlWXM</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2004.05150v2</id>
+    <updated>2020-12-02T17:52:35Z</updated>
+    <published>2020-04-10T17:54:09Z</published>
+    <title>Longformer: The Long-Document Transformer</title>
+    <summary>  Transformer-based models are unable to process long sequences due to their
+self-attention operation, which scales quadratically with the sequence length.
+To address this limitation, we introduce the Longformer with an attention
+mechanism that scales linearly with sequence length, making it easy to process
+documents of thousands of tokens or longer. Longformer's attention mechanism is
+a drop-in replacement for the standard self-attention and combines a local
+windowed attention with a task motivated global attention. Following prior work
+on long-sequence transformers, we evaluate Longformer on character-level
+language modeling and achieve state-of-the-art results on text8 and enwik8. In
+contrast to most prior work, we also pretrain Longformer and finetune it on a
+variety of downstream tasks. Our pretrained Longformer consistently outperforms
+RoBERTa on long document tasks and sets new state-of-the-art results on WikiHop
+and TriviaQA. We finally introduce the Longformer-Encoder-Decoder (LED), a
+Longformer variant for supporting long document generative sequence-to-sequence
+tasks, and demonstrate its effectiveness on the arXiv summarization dataset.
+</summary>
+    <author>
+      <name>Iz Beltagy</name>
+    </author>
+    <author>
+      <name>Matthew E. Peters</name>
+    </author>
+    <author>
+      <name>Arman Cohan</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Version 2 introduces the Longformer-Encoder-Decoder (LED) model</arxiv:comment>
+    <link href="http://arxiv.org/abs/2004.05150v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2004.05150v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

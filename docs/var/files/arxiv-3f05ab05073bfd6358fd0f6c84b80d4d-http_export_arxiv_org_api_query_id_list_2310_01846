@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2310.01846%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2310.01846&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/tssRy16ApT1bUfYgrMyXOE8tshc</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2310.01846v1</id>
+    <updated>2023-10-03T07:23:22Z</updated>
+    <published>2023-10-03T07:23:22Z</published>
+    <title>Benchmarking and Improving Generator-Validator Consistency of Language
+  Models</title>
+    <summary>  As of September 2023, ChatGPT correctly answers "what is 7+8" with 15, but
+when asked "7+8=15, True or False" it responds with "False". This inconsistency
+between generating and validating an answer is prevalent in language models
+(LMs) and erodes trust. In this paper, we propose a framework for measuring the
+consistency between generation and validation (which we call
+generator-validator consistency, or GV-consistency), finding that even GPT-4, a
+state-of-the-art LM, is GV-consistent only 76% of the time. To improve the
+consistency of LMs, we propose to finetune on the filtered generator and
+validator responses that are GV-consistent, and call this approach consistency
+fine-tuning. We find that this approach improves GV-consistency of Alpaca-30B
+from 60% to 93%, and the improvement extrapolates to unseen tasks and domains
+(e.g., GV-consistency for positive style transfers extrapolates to unseen
+styles like humor). In addition to improving consistency, consistency
+fine-tuning improves both generator quality and validator accuracy without
+using any labeled data. Evaluated across 6 tasks, including math questions,
+knowledge-intensive QA, and instruction following, our method improves the
+generator quality by 16% and the validator accuracy by 6.3% across all tasks.
+</summary>
+    <author>
+      <name>Xiang Lisa Li</name>
+    </author>
+    <author>
+      <name>Vaishnavi Shrivastava</name>
+    </author>
+    <author>
+      <name>Siyan Li</name>
+    </author>
+    <author>
+      <name>Tatsunori Hashimoto</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">preprint</arxiv:comment>
+    <link href="http://arxiv.org/abs/2310.01846v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2310.01846v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

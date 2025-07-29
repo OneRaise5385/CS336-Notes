@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2401.10774%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2401.10774&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/7fZFnPKgJoYmJvvkfBSnvfACqlQ</id>
+  <updated>2025-04-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2401.10774v3</id>
+    <updated>2024-06-14T23:32:32Z</updated>
+    <published>2024-01-19T15:48:40Z</published>
+    <title>Medusa: Simple LLM Inference Acceleration Framework with Multiple
+  Decoding Heads</title>
+    <summary>  Large Language Models (LLMs) employ auto-regressive decoding that requires
+sequential computation, with each step reliant on the previous one's output.
+This creates a bottleneck as each step necessitates moving the full model
+parameters from High-Bandwidth Memory (HBM) to the accelerator's cache. While
+methods such as speculative decoding have been suggested to address this issue,
+their implementation is impeded by the challenges associated with acquiring and
+maintaining a separate draft model. In this paper, we present Medusa, an
+efficient method that augments LLM inference by adding extra decoding heads to
+predict multiple subsequent tokens in parallel. Using a tree-based attention
+mechanism, Medusa constructs multiple candidate continuations and verifies them
+simultaneously in each decoding step. By leveraging parallel processing, Medusa
+substantially reduces the number of decoding steps required. We present two
+levels of fine-tuning procedures for Medusa to meet the needs of different use
+cases: Medusa-1: Medusa is directly fine-tuned on top of a frozen backbone LLM,
+enabling lossless inference acceleration. Medusa-2: Medusa is fine-tuned
+together with the backbone LLM, enabling better prediction accuracy of Medusa
+heads and higher speedup but needing a special training recipe that preserves
+the backbone model's capabilities.
+  Moreover, we propose several extensions that improve or expand the utility of
+Medusa, including a self-distillation to handle situations where no training
+data is available and a typical acceptance scheme to boost the acceptance rate
+while maintaining generation quality. We evaluate Medusa on models of various
+sizes and training procedures. Our experiments demonstrate that Medusa-1 can
+achieve over 2.2x speedup without compromising generation quality, while
+Medusa-2 further improves the speedup to 2.3-3.6x.
+</summary>
+    <author>
+      <name>Tianle Cai</name>
+    </author>
+    <author>
+      <name>Yuhong Li</name>
+    </author>
+    <author>
+      <name>Zhengyang Geng</name>
+    </author>
+    <author>
+      <name>Hongwu Peng</name>
+    </author>
+    <author>
+      <name>Jason D. Lee</name>
+    </author>
+    <author>
+      <name>Deming Chen</name>
+    </author>
+    <author>
+      <name>Tri Dao</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">The code for this implementation is available at
+  https://github.com/FasterDecoding/Medusa</arxiv:comment>
+    <link href="http://arxiv.org/abs/2401.10774v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2401.10774v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2009.03300%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2009.03300&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/SUU497rq5mUDbh0X4yuaBtIMygs</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2009.03300v3</id>
+    <updated>2021-01-12T18:57:11Z</updated>
+    <published>2020-09-07T17:59:25Z</published>
+    <title>Measuring Massive Multitask Language Understanding</title>
+    <summary>  We propose a new test to measure a text model's multitask accuracy. The test
+covers 57 tasks including elementary mathematics, US history, computer science,
+law, and more. To attain high accuracy on this test, models must possess
+extensive world knowledge and problem solving ability. We find that while most
+recent models have near random-chance accuracy, the very largest GPT-3 model
+improves over random chance by almost 20 percentage points on average. However,
+on every one of the 57 tasks, the best models still need substantial
+improvements before they can reach expert-level accuracy. Models also have
+lopsided performance and frequently do not know when they are wrong. Worse,
+they still have near-random accuracy on some socially important subjects such
+as morality and law. By comprehensively evaluating the breadth and depth of a
+model's academic and professional understanding, our test can be used to
+analyze models across many tasks and to identify important shortcomings.
+</summary>
+    <author>
+      <name>Dan Hendrycks</name>
+    </author>
+    <author>
+      <name>Collin Burns</name>
+    </author>
+    <author>
+      <name>Steven Basart</name>
+    </author>
+    <author>
+      <name>Andy Zou</name>
+    </author>
+    <author>
+      <name>Mantas Mazeika</name>
+    </author>
+    <author>
+      <name>Dawn Song</name>
+    </author>
+    <author>
+      <name>Jacob Steinhardt</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">ICLR 2021; the test and code is available at
+  https://github.com/hendrycks/test</arxiv:comment>
+    <link href="http://arxiv.org/abs/2009.03300v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2009.03300v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

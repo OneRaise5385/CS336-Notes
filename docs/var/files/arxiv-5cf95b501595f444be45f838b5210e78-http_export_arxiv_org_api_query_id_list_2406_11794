@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2406.11794%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2406.11794&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/82yidxTWNtD38A7Nq0jK3A0/CY0</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2406.11794v4</id>
+    <updated>2025-04-21T17:48:15Z</updated>
+    <published>2024-06-17T17:42:57Z</published>
+    <title>DataComp-LM: In search of the next generation of training sets for
+  language models</title>
+    <summary>  We introduce DataComp for Language Models (DCLM), a testbed for controlled
+dataset experiments with the goal of improving language models. As part of
+DCLM, we provide a standardized corpus of 240T tokens extracted from Common
+Crawl, effective pretraining recipes based on the OpenLM framework, and a broad
+suite of 53 downstream evaluations. Participants in the DCLM benchmark can
+experiment with data curation strategies such as deduplication, filtering, and
+data mixing at model scales ranging from 412M to 7B parameters. As a baseline
+for DCLM, we conduct extensive experiments and find that model-based filtering
+is key to assembling a high-quality training set. The resulting dataset,
+DCLM-Baseline enables training a 7B parameter language model from scratch to
+64% 5-shot accuracy on MMLU with 2.6T training tokens. Compared to MAP-Neo, the
+previous state-of-the-art in open-data language models, DCLM-Baseline
+represents a 6.6 percentage point improvement on MMLU while being trained with
+40% less compute. Our baseline model is also comparable to Mistral-7B-v0.3 and
+Llama 3 8B on MMLU (63% &amp; 66%), and performs similarly on an average of 53
+natural language understanding tasks while being trained with 6.6x less compute
+than Llama 3 8B. Our results highlight the importance of dataset design for
+training language models and offer a starting point for further research on
+data curation.
+</summary>
+    <author>
+      <name>Jeffrey Li</name>
+    </author>
+    <author>
+      <name>Alex Fang</name>
+    </author>
+    <author>
+      <name>Georgios Smyrnis</name>
+    </author>
+    <author>
+      <name>Maor Ivgi</name>
+    </author>
+    <author>
+      <name>Matt Jordan</name>
+    </author>
+    <author>
+      <name>Samir Gadre</name>
+    </author>
+    <author>
+      <name>Hritik Bansal</name>
+    </author>
+    <author>
+      <name>Etash Guha</name>
+    </author>
+    <author>
+      <name>Sedrick Keh</name>
+    </author>
+    <author>
+      <name>Kushal Arora</name>
+    </author>
+    <author>
+      <name>Saurabh Garg</name>
+    </author>
+    <author>
+      <name>Rui Xin</name>
+    </author>
+    <author>
+      <name>Niklas Muennighoff</name>
+    </author>
+    <author>
+      <name>Reinhard Heckel</name>
+    </author>
+    <author>
+      <name>Jean Mercat</name>
+    </author>
+    <author>
+      <name>Mayee Chen</name>
+    </author>
+    <author>
+      <name>Suchin Gururangan</name>
+    </author>
+    <author>
+      <name>Mitchell Wortsman</name>
+    </author>
+    <author>
+      <name>Alon Albalak</name>
+    </author>
+    <author>
+      <name>Yonatan Bitton</name>
+    </author>
+    <author>
+      <name>Marianna Nezhurina</name>
+    </author>
+    <author>
+      <name>Amro Abbas</name>
+    </author>
+    <author>
+      <name>Cheng-Yu Hsieh</name>
+    </author>
+    <author>
+      <name>Dhruba Ghosh</name>
+    </author>
+    <author>
+      <name>Josh Gardner</name>
+    </author>
+    <author>
+      <name>Maciej Kilian</name>
+    </author>
+    <author>
+      <name>Hanlin Zhang</name>
+    </author>
+    <author>
+      <name>Rulin Shao</name>
+    </author>
+    <author>
+      <name>Sarah Pratt</name>
+    </author>
+    <author>
+      <name>Sunny Sanyal</name>
+    </author>
+    <author>
+      <name>Gabriel Ilharco</name>
+    </author>
+    <author>
+      <name>Giannis Daras</name>
+    </author>
+    <author>
+      <name>Kalyani Marathe</name>
+    </author>
+    <author>
+      <name>Aaron Gokaslan</name>
+    </author>
+    <author>
+      <name>Jieyu Zhang</name>
+    </author>
+    <author>
+      <name>Khyathi Chandu</name>
+    </author>
+    <author>
+      <name>Thao Nguyen</name>
+    </author>
+    <author>
+      <name>Igor Vasiljevic</name>
+    </author>
+    <author>
+      <name>Sham Kakade</name>
+    </author>
+    <author>
+      <name>Shuran Song</name>
+    </author>
+    <author>
+      <name>Sujay Sanghavi</name>
+    </author>
+    <author>
+      <name>Fartash Faghri</name>
+    </author>
+    <author>
+      <name>Sewoong Oh</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Kyle Lo</name>
+    </author>
+    <author>
+      <name>Alaaeldin El-Nouby</name>
+    </author>
+    <author>
+      <name>Hadi Pouransari</name>
+    </author>
+    <author>
+      <name>Alexander Toshev</name>
+    </author>
+    <author>
+      <name>Stephanie Wang</name>
+    </author>
+    <author>
+      <name>Dirk Groeneveld</name>
+    </author>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Pang Wei Koh</name>
+    </author>
+    <author>
+      <name>Jenia Jitsev</name>
+    </author>
+    <author>
+      <name>Thomas Kollar</name>
+    </author>
+    <author>
+      <name>Alexandros G. Dimakis</name>
+    </author>
+    <author>
+      <name>Yair Carmon</name>
+    </author>
+    <author>
+      <name>Achal Dave</name>
+    </author>
+    <author>
+      <name>Ludwig Schmidt</name>
+    </author>
+    <author>
+      <name>Vaishaal Shankar</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Project page: https://www.datacomp.ai/dclm/</arxiv:comment>
+    <link href="http://arxiv.org/abs/2406.11794v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2406.11794v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

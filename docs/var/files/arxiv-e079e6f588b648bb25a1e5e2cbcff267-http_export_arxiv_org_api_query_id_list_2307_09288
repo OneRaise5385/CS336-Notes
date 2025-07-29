@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2307.09288%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2307.09288&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/ro8EB6J7qbqC+frg3/MEzdF6fDw</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2307.09288v2</id>
+    <updated>2023-07-19T17:08:59Z</updated>
+    <published>2023-07-18T14:31:57Z</published>
+    <title>Llama 2: Open Foundation and Fine-Tuned Chat Models</title>
+    <summary>  In this work, we develop and release Llama 2, a collection of pretrained and
+fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70
+billion parameters. Our fine-tuned LLMs, called Llama 2-Chat, are optimized for
+dialogue use cases. Our models outperform open-source chat models on most
+benchmarks we tested, and based on our human evaluations for helpfulness and
+safety, may be a suitable substitute for closed-source models. We provide a
+detailed description of our approach to fine-tuning and safety improvements of
+Llama 2-Chat in order to enable the community to build on our work and
+contribute to the responsible development of LLMs.
+</summary>
+    <author>
+      <name>Hugo Touvron</name>
+    </author>
+    <author>
+      <name>Louis Martin</name>
+    </author>
+    <author>
+      <name>Kevin Stone</name>
+    </author>
+    <author>
+      <name>Peter Albert</name>
+    </author>
+    <author>
+      <name>Amjad Almahairi</name>
+    </author>
+    <author>
+      <name>Yasmine Babaei</name>
+    </author>
+    <author>
+      <name>Nikolay Bashlykov</name>
+    </author>
+    <author>
+      <name>Soumya Batra</name>
+    </author>
+    <author>
+      <name>Prajjwal Bhargava</name>
+    </author>
+    <author>
+      <name>Shruti Bhosale</name>
+    </author>
+    <author>
+      <name>Dan Bikel</name>
+    </author>
+    <author>
+      <name>Lukas Blecher</name>
+    </author>
+    <author>
+      <name>Cristian Canton Ferrer</name>
+    </author>
+    <author>
+      <name>Moya Chen</name>
+    </author>
+    <author>
+      <name>Guillem Cucurull</name>
+    </author>
+    <author>
+      <name>David Esiobu</name>
+    </author>
+    <author>
+      <name>Jude Fernandes</name>
+    </author>
+    <author>
+      <name>Jeremy Fu</name>
+    </author>
+    <author>
+      <name>Wenyin Fu</name>
+    </author>
+    <author>
+      <name>Brian Fuller</name>
+    </author>
+    <author>
+      <name>Cynthia Gao</name>
+    </author>
+    <author>
+      <name>Vedanuj Goswami</name>
+    </author>
+    <author>
+      <name>Naman Goyal</name>
+    </author>
+    <author>
+      <name>Anthony Hartshorn</name>
+    </author>
+    <author>
+      <name>Saghar Hosseini</name>
+    </author>
+    <author>
+      <name>Rui Hou</name>
+    </author>
+    <author>
+      <name>Hakan Inan</name>
+    </author>
+    <author>
+      <name>Marcin Kardas</name>
+    </author>
+    <author>
+      <name>Viktor Kerkez</name>
+    </author>
+    <author>
+      <name>Madian Khabsa</name>
+    </author>
+    <author>
+      <name>Isabel Kloumann</name>
+    </author>
+    <author>
+      <name>Artem Korenev</name>
+    </author>
+    <author>
+      <name>Punit Singh Koura</name>
+    </author>
+    <author>
+      <name>Marie-Anne Lachaux</name>
+    </author>
+    <author>
+      <name>Thibaut Lavril</name>
+    </author>
+    <author>
+      <name>Jenya Lee</name>
+    </author>
+    <author>
+      <name>Diana Liskovich</name>
+    </author>
+    <author>
+      <name>Yinghai Lu</name>
+    </author>
+    <author>
+      <name>Yuning Mao</name>
+    </author>
+    <author>
+      <name>Xavier Martinet</name>
+    </author>
+    <author>
+      <name>Todor Mihaylov</name>
+    </author>
+    <author>
+      <name>Pushkar Mishra</name>
+    </author>
+    <author>
+      <name>Igor Molybog</name>
+    </author>
+    <author>
+      <name>Yixin Nie</name>
+    </author>
+    <author>
+      <name>Andrew Poulton</name>
+    </author>
+    <author>
+      <name>Jeremy Reizenstein</name>
+    </author>
+    <author>
+      <name>Rashi Rungta</name>
+    </author>
+    <author>
+      <name>Kalyan Saladi</name>
+    </author>
+    <author>
+      <name>Alan Schelten</name>
+    </author>
+    <author>
+      <name>Ruan Silva</name>
+    </author>
+    <author>
+      <name>Eric Michael Smith</name>
+    </author>
+    <author>
+      <name>Ranjan Subramanian</name>
+    </author>
+    <author>
+      <name>Xiaoqing Ellen Tan</name>
+    </author>
+    <author>
+      <name>Binh Tang</name>
+    </author>
+    <author>
+      <name>Ross Taylor</name>
+    </author>
+    <author>
+      <name>Adina Williams</name>
+    </author>
+    <author>
+      <name>Jian Xiang Kuan</name>
+    </author>
+    <author>
+      <name>Puxin Xu</name>
+    </author>
+    <author>
+      <name>Zheng Yan</name>
+    </author>
+    <author>
+      <name>Iliyan Zarov</name>
+    </author>
+    <author>
+      <name>Yuchen Zhang</name>
+    </author>
+    <author>
+      <name>Angela Fan</name>
+    </author>
+    <author>
+      <name>Melanie Kambadur</name>
+    </author>
+    <author>
+      <name>Sharan Narang</name>
+    </author>
+    <author>
+      <name>Aurelien Rodriguez</name>
+    </author>
+    <author>
+      <name>Robert Stojnic</name>
+    </author>
+    <author>
+      <name>Sergey Edunov</name>
+    </author>
+    <author>
+      <name>Thomas Scialom</name>
+    </author>
+    <link href="http://arxiv.org/abs/2307.09288v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2307.09288v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

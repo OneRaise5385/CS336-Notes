@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1711.05101%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1711.05101&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/WPQLKZKaNG7/RQ8ZoQRhyLYg+QY</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1711.05101v3</id>
+    <updated>2019-01-04T21:01:49Z</updated>
+    <published>2017-11-14T14:24:06Z</published>
+    <title>Decoupled Weight Decay Regularization</title>
+    <summary>  L$_2$ regularization and weight decay regularization are equivalent for
+standard stochastic gradient descent (when rescaled by the learning rate), but
+as we demonstrate this is \emph{not} the case for adaptive gradient algorithms,
+such as Adam. While common implementations of these algorithms employ L$_2$
+regularization (often calling it "weight decay" in what may be misleading due
+to the inequivalence we expose), we propose a simple modification to recover
+the original formulation of weight decay regularization by \emph{decoupling}
+the weight decay from the optimization steps taken w.r.t. the loss function. We
+provide empirical evidence that our proposed modification (i) decouples the
+optimal choice of weight decay factor from the setting of the learning rate for
+both standard SGD and Adam and (ii) substantially improves Adam's
+generalization performance, allowing it to compete with SGD with momentum on
+image classification datasets (on which it was previously typically
+outperformed by the latter). Our proposed decoupled weight decay has already
+been adopted by many researchers, and the community has implemented it in
+TensorFlow and PyTorch; the complete source code for our experiments is
+available at https://github.com/loshchil/AdamW-and-SGDW
+</summary>
+    <author>
+      <name>Ilya Loshchilov</name>
+    </author>
+    <author>
+      <name>Frank Hutter</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Published as a conference paper at ICLR 2019</arxiv:comment>
+    <link href="http://arxiv.org/abs/1711.05101v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1711.05101v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

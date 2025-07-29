@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2301.13688%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2301.13688&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/cAKDF6oHTiF5Fb/nHOXkbB1Yur8</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2301.13688v2</id>
+    <updated>2023-02-14T16:33:33Z</updated>
+    <published>2023-01-31T15:03:44Z</published>
+    <title>The Flan Collection: Designing Data and Methods for Effective
+  Instruction Tuning</title>
+    <summary>  We study the design decisions of publicly available instruction tuning
+methods, and break down the development of Flan 2022 (Chung et al., 2022).
+Through careful ablation studies on the Flan Collection of tasks and methods,
+we tease apart the effect of design decisions which enable Flan-T5 to
+outperform prior work by 3-17%+ across evaluation settings. We find task
+balancing and enrichment techniques are overlooked but critical to effective
+instruction tuning, and in particular, training with mixed prompt settings
+(zero-shot, few-shot, and chain-of-thought) actually yields stronger (2%+)
+performance in all settings. In further experiments, we show Flan-T5 requires
+less finetuning to converge higher and faster than T5 on single downstream
+tasks, motivating instruction-tuned models as more computationally-efficient
+starting checkpoints for new tasks. Finally, to accelerate research on
+instruction tuning, we make the Flan 2022 collection of datasets, templates,
+and methods publicly available at
+https://github.com/google-research/FLAN/tree/main/flan/v2.
+</summary>
+    <author>
+      <name>Shayne Longpre</name>
+    </author>
+    <author>
+      <name>Le Hou</name>
+    </author>
+    <author>
+      <name>Tu Vu</name>
+    </author>
+    <author>
+      <name>Albert Webson</name>
+    </author>
+    <author>
+      <name>Hyung Won Chung</name>
+    </author>
+    <author>
+      <name>Yi Tay</name>
+    </author>
+    <author>
+      <name>Denny Zhou</name>
+    </author>
+    <author>
+      <name>Quoc V. Le</name>
+    </author>
+    <author>
+      <name>Barret Zoph</name>
+    </author>
+    <author>
+      <name>Jason Wei</name>
+    </author>
+    <author>
+      <name>Adam Roberts</name>
+    </author>
+    <link href="http://arxiv.org/abs/2301.13688v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2301.13688v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

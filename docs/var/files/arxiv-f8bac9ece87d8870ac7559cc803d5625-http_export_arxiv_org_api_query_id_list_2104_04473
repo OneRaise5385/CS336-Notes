@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2104.04473%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2104.04473&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/H+7LIjQp83DplW7s4BYSQfz28s4</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2104.04473v5</id>
+    <updated>2021-08-23T19:41:13Z</updated>
+    <published>2021-04-09T16:43:11Z</published>
+    <title>Efficient Large-Scale Language Model Training on GPU Clusters Using
+  Megatron-LM</title>
+    <summary>  Large language models have led to state-of-the-art accuracies across a range
+of tasks. However, training these models efficiently is challenging for two
+reasons: a) GPU memory capacity is limited, making it impossible to fit large
+models on even a multi-GPU server, and b) the number of compute operations
+required to train these models can result in unrealistically long training
+times. Consequently, new methods of model parallelism such as tensor and
+pipeline parallelism have been proposed. Unfortunately, naive usage of these
+methods leads to fundamental scaling issues at thousands of GPUs, e.g., due to
+expensive cross-node communication or devices spending significant time waiting
+on other devices to make progress.
+  In this paper, we show how different types of parallelism methods (tensor,
+pipeline, and data parallelism) can be composed to scale to thousands of GPUs
+and models with trillions of parameters. We survey techniques for pipeline
+parallelism and propose a novel interleaved pipeline parallelism schedule that
+can improve throughput by 10+% with memory footprint comparable to existing
+approaches. We quantitatively study the trade-offs between tensor, pipeline,
+and data parallelism, and provide intuition as to how to configure distributed
+training of a large model. Our approach allows us to perform training
+iterations on a model with 1 trillion parameters at 502 petaFLOP/s on 3072 GPUs
+with achieved per-GPU throughput of 52% of theoretical peak. Our code is open
+sourced at https://github.com/nvidia/megatron-lm.
+</summary>
+    <author>
+      <name>Deepak Narayanan</name>
+    </author>
+    <author>
+      <name>Mohammad Shoeybi</name>
+    </author>
+    <author>
+      <name>Jared Casper</name>
+    </author>
+    <author>
+      <name>Patrick LeGresley</name>
+    </author>
+    <author>
+      <name>Mostofa Patwary</name>
+    </author>
+    <author>
+      <name>Vijay Anand Korthikanti</name>
+    </author>
+    <author>
+      <name>Dmitri Vainbrand</name>
+    </author>
+    <author>
+      <name>Prethvi Kashinkunti</name>
+    </author>
+    <author>
+      <name>Julie Bernauer</name>
+    </author>
+    <author>
+      <name>Bryan Catanzaro</name>
+    </author>
+    <author>
+      <name>Amar Phanishayee</name>
+    </author>
+    <author>
+      <name>Matei Zaharia</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted to SC 2021</arxiv:comment>
+    <link href="http://arxiv.org/abs/2104.04473v5" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2104.04473v5" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

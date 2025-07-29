@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2406.19223%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2406.19223&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/BMwakfmx0nv6TareH8caPeDV70c</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2406.19223v2</id>
+    <updated>2025-01-07T16:20:17Z</updated>
+    <published>2024-06-27T14:49:08Z</published>
+    <title>T-FREE: Subword Tokenizer-Free Generative LLMs via Sparse
+  Representations for Memory-Efficient Embeddings</title>
+    <summary>  Tokenizers are crucial for encoding information in Large Language Models, but
+their development has recently stagnated, and they contain inherent weaknesses.
+Major limitations include computational overhead, ineffective vocabulary use,
+and unnecessarily large embedding and head layers. Additionally, their
+performance is biased towards a reference corpus, leading to reduced
+effectiveness for underrepresented languages.
+  To remedy these issues, we propose T-FREE, which directly embeds words
+through sparse activation patterns over character triplets, and does not
+require a reference corpus. T-FREE inherently exploits morphological
+similarities and allows for strong compression of embedding layers. In our
+exhaustive experimental evaluation, we achieve competitive downstream
+performance with a parameter reduction of more than 85% on these layers.
+Further, T-FREE shows significant improvements in cross-lingual transfer
+learning.
+</summary>
+    <author>
+      <name>Björn Deiseroth</name>
+    </author>
+    <author>
+      <name>Manuel Brack</name>
+    </author>
+    <author>
+      <name>Patrick Schramowski</name>
+    </author>
+    <author>
+      <name>Kristian Kersting</name>
+    </author>
+    <author>
+      <name>Samuel Weinbach</name>
+    </author>
+    <link href="http://arxiv.org/abs/2406.19223v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2406.19223v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

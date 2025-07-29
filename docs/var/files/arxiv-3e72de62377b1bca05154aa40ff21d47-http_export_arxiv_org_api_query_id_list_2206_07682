@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2206.07682%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2206.07682&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/klmNiVINzdHYrcZqHlKiCEyeUMU</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2206.07682v2</id>
+    <updated>2022-10-26T05:06:24Z</updated>
+    <published>2022-06-15T17:32:01Z</published>
+    <title>Emergent Abilities of Large Language Models</title>
+    <summary>  Scaling up language models has been shown to predictably improve performance
+and sample efficiency on a wide range of downstream tasks. This paper instead
+discusses an unpredictable phenomenon that we refer to as emergent abilities of
+large language models. We consider an ability to be emergent if it is not
+present in smaller models but is present in larger models. Thus, emergent
+abilities cannot be predicted simply by extrapolating the performance of
+smaller models. The existence of such emergence implies that additional scaling
+could further expand the range of capabilities of language models.
+</summary>
+    <author>
+      <name>Jason Wei</name>
+    </author>
+    <author>
+      <name>Yi Tay</name>
+    </author>
+    <author>
+      <name>Rishi Bommasani</name>
+    </author>
+    <author>
+      <name>Colin Raffel</name>
+    </author>
+    <author>
+      <name>Barret Zoph</name>
+    </author>
+    <author>
+      <name>Sebastian Borgeaud</name>
+    </author>
+    <author>
+      <name>Dani Yogatama</name>
+    </author>
+    <author>
+      <name>Maarten Bosma</name>
+    </author>
+    <author>
+      <name>Denny Zhou</name>
+    </author>
+    <author>
+      <name>Donald Metzler</name>
+    </author>
+    <author>
+      <name>Ed H. Chi</name>
+    </author>
+    <author>
+      <name>Tatsunori Hashimoto</name>
+    </author>
+    <author>
+      <name>Oriol Vinyals</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <author>
+      <name>Jeff Dean</name>
+    </author>
+    <author>
+      <name>William Fedus</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Transactions on Machine Learning Research (TMLR), 2022</arxiv:comment>
+    <link href="http://arxiv.org/abs/2206.07682v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2206.07682v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

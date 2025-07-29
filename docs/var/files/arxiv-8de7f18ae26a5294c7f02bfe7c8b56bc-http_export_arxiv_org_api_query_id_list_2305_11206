@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2305.11206%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2305.11206&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/TvELz45H5Sl9bdDcYauvj+pfUc8</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2305.11206v1</id>
+    <updated>2023-05-18T17:45:22Z</updated>
+    <published>2023-05-18T17:45:22Z</published>
+    <title>LIMA: Less Is More for Alignment</title>
+    <summary>  Large language models are trained in two stages: (1) unsupervised pretraining
+from raw text, to learn general-purpose representations, and (2) large scale
+instruction tuning and reinforcement learning, to better align to end tasks and
+user preferences. We measure the relative importance of these two stages by
+training LIMA, a 65B parameter LLaMa language model fine-tuned with the
+standard supervised loss on only 1,000 carefully curated prompts and responses,
+without any reinforcement learning or human preference modeling. LIMA
+demonstrates remarkably strong performance, learning to follow specific
+response formats from only a handful of examples in the training data,
+including complex queries that range from planning trip itineraries to
+speculating about alternate history. Moreover, the model tends to generalize
+well to unseen tasks that did not appear in the training data. In a controlled
+human study, responses from LIMA are either equivalent or strictly preferred to
+GPT-4 in 43% of cases; this statistic is as high as 58% when compared to Bard
+and 65% versus DaVinci003, which was trained with human feedback. Taken
+together, these results strongly suggest that almost all knowledge in large
+language models is learned during pretraining, and only limited instruction
+tuning data is necessary to teach models to produce high quality output.
+</summary>
+    <author>
+      <name>Chunting Zhou</name>
+    </author>
+    <author>
+      <name>Pengfei Liu</name>
+    </author>
+    <author>
+      <name>Puxin Xu</name>
+    </author>
+    <author>
+      <name>Srini Iyer</name>
+    </author>
+    <author>
+      <name>Jiao Sun</name>
+    </author>
+    <author>
+      <name>Yuning Mao</name>
+    </author>
+    <author>
+      <name>Xuezhe Ma</name>
+    </author>
+    <author>
+      <name>Avia Efrat</name>
+    </author>
+    <author>
+      <name>Ping Yu</name>
+    </author>
+    <author>
+      <name>Lili Yu</name>
+    </author>
+    <author>
+      <name>Susan Zhang</name>
+    </author>
+    <author>
+      <name>Gargi Ghosh</name>
+    </author>
+    <author>
+      <name>Mike Lewis</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Omer Levy</name>
+    </author>
+    <link href="http://arxiv.org/abs/2305.11206v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2305.11206v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

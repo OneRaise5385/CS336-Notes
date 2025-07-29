@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2403.04132%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2403.04132&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/61pYpSdlUPUUpWQMmHwmkWDUJMQ</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2403.04132v1</id>
+    <updated>2024-03-07T01:22:38Z</updated>
+    <published>2024-03-07T01:22:38Z</published>
+    <title>Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference</title>
+    <summary>  Large Language Models (LLMs) have unlocked new capabilities and applications;
+however, evaluating the alignment with human preferences still poses
+significant challenges. To address this issue, we introduce Chatbot Arena, an
+open platform for evaluating LLMs based on human preferences. Our methodology
+employs a pairwise comparison approach and leverages input from a diverse user
+base through crowdsourcing. The platform has been operational for several
+months, amassing over 240K votes. This paper describes the platform, analyzes
+the data we have collected so far, and explains the tried-and-true statistical
+methods we are using for efficient and accurate evaluation and ranking of
+models. We confirm that the crowdsourced questions are sufficiently diverse and
+discriminating and that the crowdsourced human votes are in good agreement with
+those of expert raters. These analyses collectively establish a robust
+foundation for the credibility of Chatbot Arena. Because of its unique value
+and openness, Chatbot Arena has emerged as one of the most referenced LLM
+leaderboards, widely cited by leading LLM developers and companies. Our demo is
+publicly available at \url{https://chat.lmsys.org}.
+</summary>
+    <author>
+      <name>Wei-Lin Chiang</name>
+    </author>
+    <author>
+      <name>Lianmin Zheng</name>
+    </author>
+    <author>
+      <name>Ying Sheng</name>
+    </author>
+    <author>
+      <name>Anastasios Nikolas Angelopoulos</name>
+    </author>
+    <author>
+      <name>Tianle Li</name>
+    </author>
+    <author>
+      <name>Dacheng Li</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+    <author>
+      <name>Banghua Zhu</name>
+    </author>
+    <author>
+      <name>Michael Jordan</name>
+    </author>
+    <author>
+      <name>Joseph E. Gonzalez</name>
+    </author>
+    <author>
+      <name>Ion Stoica</name>
+    </author>
+    <link href="http://arxiv.org/abs/2403.04132v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2403.04132v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

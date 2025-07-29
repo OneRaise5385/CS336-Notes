@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2107.06499%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2107.06499&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/s6OJGfTyp32JUDHUHke4EIYvTXU</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2107.06499v2</id>
+    <updated>2022-03-24T19:29:45Z</updated>
+    <published>2021-07-14T06:06:52Z</published>
+    <title>Deduplicating Training Data Makes Language Models Better</title>
+    <summary>  We find that existing language modeling datasets contain many near-duplicate
+examples and long repetitive substrings. As a result, over 1% of the unprompted
+output of language models trained on these datasets is copied verbatim from the
+training data. We develop two tools that allow us to deduplicate training
+datasets -- for example removing from C4 a single 61 word English sentence that
+is repeated over 60,000 times. Deduplication allows us to train models that
+emit memorized text ten times less frequently and require fewer train steps to
+achieve the same or better accuracy. We can also reduce train-test overlap,
+which affects over 4% of the validation set of standard datasets, thus allowing
+for more accurate evaluation. We release code for reproducing our work and
+performing dataset deduplication at
+https://github.com/google-research/deduplicate-text-datasets.
+</summary>
+    <author>
+      <name>Katherine Lee</name>
+    </author>
+    <author>
+      <name>Daphne Ippolito</name>
+    </author>
+    <author>
+      <name>Andrew Nystrom</name>
+    </author>
+    <author>
+      <name>Chiyuan Zhang</name>
+    </author>
+    <author>
+      <name>Douglas Eck</name>
+    </author>
+    <author>
+      <name>Chris Callison-Burch</name>
+    </author>
+    <author>
+      <name>Nicholas Carlini</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted to ACL 2022</arxiv:comment>
+    <link href="http://arxiv.org/abs/2107.06499v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2107.06499v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

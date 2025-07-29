@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2304.01196%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2304.01196&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api//IGdfXwDPC5Ogxt/Un03237o8iY</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2304.01196v4</id>
+    <updated>2023-12-02T21:05:22Z</updated>
+    <published>2023-04-03T17:59:09Z</published>
+    <title>Baize: An Open-Source Chat Model with Parameter-Efficient Tuning on
+  Self-Chat Data</title>
+    <summary>  Chat models, such as ChatGPT, have shown impressive capabilities and have
+been rapidly adopted across numerous domains. However, these models are only
+accessible through a restricted API, creating barriers for new research and
+progress in the field. We propose a pipeline that can automatically generate a
+high-quality multi-turn chat corpus by leveraging ChatGPT to engage in a
+conversation with itself. Subsequently, we employ parameter-efficient tuning to
+enhance LLaMA, an open-source large language model. The resulting model, named
+Baize, demonstrates good performance in multi-turn dialogues with guardrails
+that minimize potential risks. Furthermore, we propose a new technique called
+Self-Distill with Feedback, to further improve the performance of the Baize
+models with feedback from ChatGPT. The Baize models and data are released for
+research purposes only at https://github.com/project-baize/baize-chatbot. An
+online demo is also available at
+https://huggingface.co/spaces/project-baize/chat-with-baize.
+</summary>
+    <author>
+      <name>Canwen Xu</name>
+    </author>
+    <author>
+      <name>Daya Guo</name>
+    </author>
+    <author>
+      <name>Nan Duan</name>
+    </author>
+    <author>
+      <name>Julian McAuley</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Baize v2; EMNLP 2023</arxiv:comment>
+    <link href="http://arxiv.org/abs/2304.01196v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2304.01196v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

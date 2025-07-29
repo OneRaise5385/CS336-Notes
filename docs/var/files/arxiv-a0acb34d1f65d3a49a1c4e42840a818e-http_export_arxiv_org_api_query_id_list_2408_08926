@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2408.08926%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2408.08926&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/hq9qH1yduuf17bhrgmjG0g6SYmU</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2408.08926v4</id>
+    <updated>2025-04-12T21:26:07Z</updated>
+    <published>2024-08-15T17:23:10Z</published>
+    <title>Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks
+  of Language Models</title>
+    <summary>  Language Model (LM) agents for cybersecurity that are capable of autonomously
+identifying vulnerabilities and executing exploits have potential to cause
+real-world impact. Policymakers, model providers, and researchers in the AI and
+cybersecurity communities are interested in quantifying the capabilities of
+such agents to help mitigate cyberrisk and investigate opportunities for
+penetration testing. Toward that end, we introduce Cybench, a framework for
+specifying cybersecurity tasks and evaluating agents on those tasks. We include
+40 professional-level Capture the Flag (CTF) tasks from 4 distinct CTF
+competitions, chosen to be recent, meaningful, and spanning a wide range of
+difficulties. Each task includes its own description, starter files, and is
+initialized in an environment where an agent can execute commands and observe
+outputs. Since many tasks are beyond the capabilities of existing LM agents, we
+introduce subtasks for each task, which break down a task into intermediary
+steps for a more detailed evaluation. To evaluate agent capabilities, we
+construct a cybersecurity agent and evaluate 8 models: GPT-4o, OpenAI
+o1-preview, Claude 3 Opus, Claude 3.5 Sonnet, Mixtral 8x22b Instruct, Gemini
+1.5 Pro, Llama 3 70B Chat, and Llama 3.1 405B Instruct. For the top performing
+models (GPT-4o and Claude 3.5 Sonnet), we further investigate performance
+across 4 agent scaffolds (structed bash, action-only, pseudoterminal, and web
+search). Without subtask guidance, agents leveraging Claude 3.5 Sonnet, GPT-4o,
+OpenAI o1-preview, and Claude 3 Opus successfully solved complete tasks that
+took human teams up to 11 minutes to solve. In comparison, the most difficult
+task took human teams 24 hours and 54 minutes to solve. All code and data are
+publicly available at https://cybench.github.io.
+</summary>
+    <author>
+      <name>Andy K. Zhang</name>
+    </author>
+    <author>
+      <name>Neil Perry</name>
+    </author>
+    <author>
+      <name>Riya Dulepet</name>
+    </author>
+    <author>
+      <name>Joey Ji</name>
+    </author>
+    <author>
+      <name>Celeste Menders</name>
+    </author>
+    <author>
+      <name>Justin W. Lin</name>
+    </author>
+    <author>
+      <name>Eliot Jones</name>
+    </author>
+    <author>
+      <name>Gashon Hussein</name>
+    </author>
+    <author>
+      <name>Samantha Liu</name>
+    </author>
+    <author>
+      <name>Donovan Jasper</name>
+    </author>
+    <author>
+      <name>Pura Peetathawatchai</name>
+    </author>
+    <author>
+      <name>Ari Glenn</name>
+    </author>
+    <author>
+      <name>Vikram Sivashankar</name>
+    </author>
+    <author>
+      <name>Daniel Zamoshchin</name>
+    </author>
+    <author>
+      <name>Leo Glikbarg</name>
+    </author>
+    <author>
+      <name>Derek Askaryar</name>
+    </author>
+    <author>
+      <name>Mike Yang</name>
+    </author>
+    <author>
+      <name>Teddy Zhang</name>
+    </author>
+    <author>
+      <name>Rishi Alluri</name>
+    </author>
+    <author>
+      <name>Nathan Tran</name>
+    </author>
+    <author>
+      <name>Rinnara Sangpisit</name>
+    </author>
+    <author>
+      <name>Polycarpos Yiorkadjis</name>
+    </author>
+    <author>
+      <name>Kenny Osele</name>
+    </author>
+    <author>
+      <name>Gautham Raghupathi</name>
+    </author>
+    <author>
+      <name>Dan Boneh</name>
+    </author>
+    <author>
+      <name>Daniel E. Ho</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">ICLR 2025 Oral</arxiv:comment>
+    <link href="http://arxiv.org/abs/2408.08926v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2408.08926v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

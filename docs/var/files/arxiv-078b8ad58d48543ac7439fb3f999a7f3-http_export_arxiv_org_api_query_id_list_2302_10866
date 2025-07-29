@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2302.10866%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2302.10866&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/xN5C65+H2xAXJjixhyEzWbR/j7o</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2302.10866v3</id>
+    <updated>2023-04-19T20:08:39Z</updated>
+    <published>2023-02-21T18:29:25Z</published>
+    <title>Hyena Hierarchy: Towards Larger Convolutional Language Models</title>
+    <summary>  Recent advances in deep learning have relied heavily on the use of large
+Transformers due to their ability to learn at scale. However, the core building
+block of Transformers, the attention operator, exhibits quadratic cost in
+sequence length, limiting the amount of context accessible. Existing
+subquadratic methods based on low-rank and sparse approximations need to be
+combined with dense attention layers to match Transformers, indicating a gap in
+capability. In this work, we propose Hyena, a subquadratic drop-in replacement
+for attention constructed by interleaving implicitly parametrized long
+convolutions and data-controlled gating. In recall and reasoning tasks on
+sequences of thousands to hundreds of thousands of tokens, Hyena improves
+accuracy by more than 50 points over operators relying on state-spaces and
+other implicit and explicit methods, matching attention-based models. We set a
+new state-of-the-art for dense-attention-free architectures on language
+modeling in standard datasets (WikiText103 and The Pile), reaching Transformer
+quality with a 20% reduction in training compute required at sequence length
+2K. Hyena operators are twice as fast as highly optimized attention at sequence
+length 8K, and 100x faster at sequence length 64K.
+</summary>
+    <author>
+      <name>Michael Poli</name>
+    </author>
+    <author>
+      <name>Stefano Massaroli</name>
+    </author>
+    <author>
+      <name>Eric Nguyen</name>
+    </author>
+    <author>
+      <name>Daniel Y. Fu</name>
+    </author>
+    <author>
+      <name>Tri Dao</name>
+    </author>
+    <author>
+      <name>Stephen Baccus</name>
+    </author>
+    <author>
+      <name>Yoshua Bengio</name>
+    </author>
+    <author>
+      <name>Stefano Ermon</name>
+    </author>
+    <author>
+      <name>Christopher Ré</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Additional details</arxiv:comment>
+    <link href="http://arxiv.org/abs/2302.10866v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2302.10866v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

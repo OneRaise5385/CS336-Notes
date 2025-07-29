@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2212.10560%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2212.10560&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/sxQmsDqWoQicq5d6DUYHnBDOFZA</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2212.10560v2</id>
+    <updated>2023-05-25T23:50:07Z</updated>
+    <published>2022-12-20T18:59:19Z</published>
+    <title>Self-Instruct: Aligning Language Models with Self-Generated Instructions</title>
+    <summary>  Large "instruction-tuned" language models (i.e., finetuned to respond to
+instructions) have demonstrated a remarkable ability to generalize zero-shot to
+new tasks. Nevertheless, they depend heavily on human-written instruction data
+that is often limited in quantity, diversity, and creativity, therefore
+hindering the generality of the tuned model. We introduce Self-Instruct, a
+framework for improving the instruction-following capabilities of pretrained
+language models by bootstrapping off their own generations. Our pipeline
+generates instructions, input, and output samples from a language model, then
+filters invalid or similar ones before using them to finetune the original
+model. Applying our method to the vanilla GPT3, we demonstrate a 33% absolute
+improvement over the original model on Super-NaturalInstructions, on par with
+the performance of InstructGPT-001, which was trained with private user data
+and human annotations. For further evaluation, we curate a set of
+expert-written instructions for novel tasks, and show through human evaluation
+that tuning GPT3 with Self-Instruct outperforms using existing public
+instruction datasets by a large margin, leaving only a 5% absolute gap behind
+InstructGPT-001. Self-Instruct provides an almost annotation-free method for
+aligning pre-trained language models with instructions, and we release our
+large synthetic dataset to facilitate future studies on instruction tuning. Our
+code and data are available at https://github.com/yizhongw/self-instruct.
+</summary>
+    <author>
+      <name>Yizhong Wang</name>
+    </author>
+    <author>
+      <name>Yeganeh Kordi</name>
+    </author>
+    <author>
+      <name>Swaroop Mishra</name>
+    </author>
+    <author>
+      <name>Alisa Liu</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Daniel Khashabi</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">ACL 2023 camera ready, 23 pages, 9 figures, 11 tables</arxiv:comment>
+    <link href="http://arxiv.org/abs/2212.10560v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2212.10560v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

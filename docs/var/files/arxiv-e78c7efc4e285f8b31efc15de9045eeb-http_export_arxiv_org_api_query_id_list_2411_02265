@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2411.02265%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2411.02265&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/XWDv+Elya8bMc499APXLRE2lFqU</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2411.02265v3</id>
+    <updated>2024-11-06T09:15:27Z</updated>
+    <published>2024-11-04T16:56:26Z</published>
+    <title>Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated
+  Parameters by Tencent</title>
+    <summary>  In this paper, we introduce Hunyuan-Large, which is currently the largest
+open-source Transformer-based mixture of experts model, with a total of 389
+billion parameters and 52 billion activation parameters, capable of handling up
+to 256K tokens. We conduct a thorough evaluation of Hunyuan-Large's superior
+performance across various benchmarks including language understanding and
+generation, logical reasoning, mathematical problem-solving, coding,
+long-context, and aggregated tasks, where it outperforms LLama3.1-70B and
+exhibits comparable performance when compared to the significantly larger
+LLama3.1-405B model. Key practice of Hunyuan-Large include large-scale
+synthetic data that is orders larger than in previous literature, a mixed
+expert routing strategy, a key-value cache compression technique, and an
+expert-specific learning rate strategy. Additionally, we also investigate the
+scaling laws and learning rate schedule of mixture of experts models, providing
+valuable insights and guidances for future model development and optimization.
+The code and checkpoints of Hunyuan-Large are released to facilitate future
+innovations and applications.
+  Codes: https://github.com/Tencent/Hunyuan-Large
+  Models: https://huggingface.co/tencent/Tencent-Hunyuan-Large
+</summary>
+    <author>
+      <name>Xingwu Sun</name>
+    </author>
+    <author>
+      <name>Yanfeng Chen</name>
+    </author>
+    <author>
+      <name>Yiqing Huang</name>
+    </author>
+    <author>
+      <name>Ruobing Xie</name>
+    </author>
+    <author>
+      <name>Jiaqi Zhu</name>
+    </author>
+    <author>
+      <name>Kai Zhang</name>
+    </author>
+    <author>
+      <name>Shuaipeng Li</name>
+    </author>
+    <author>
+      <name>Zhen Yang</name>
+    </author>
+    <author>
+      <name>Jonny Han</name>
+    </author>
+    <author>
+      <name>Xiaobo Shu</name>
+    </author>
+    <author>
+      <name>Jiahao Bu</name>
+    </author>
+    <author>
+      <name>Zhongzhi Chen</name>
+    </author>
+    <author>
+      <name>Xuemeng Huang</name>
+    </author>
+    <author>
+      <name>Fengzong Lian</name>
+    </author>
+    <author>
+      <name>Saiyong Yang</name>
+    </author>
+    <author>
+      <name>Jianfeng Yan</name>
+    </author>
+    <author>
+      <name>Yuyuan Zeng</name>
+    </author>
+    <author>
+      <name>Xiaoqin Ren</name>
+    </author>
+    <author>
+      <name>Chao Yu</name>
+    </author>
+    <author>
+      <name>Lulu Wu</name>
+    </author>
+    <author>
+      <name>Yue Mao</name>
+    </author>
+    <author>
+      <name>Jun Xia</name>
+    </author>
+    <author>
+      <name>Tao Yang</name>
+    </author>
+    <author>
+      <name>Suncong Zheng</name>
+    </author>
+    <author>
+      <name>Kan Wu</name>
+    </author>
+    <author>
+      <name>Dian Jiao</name>
+    </author>
+    <author>
+      <name>Jinbao Xue</name>
+    </author>
+    <author>
+      <name>Xipeng Zhang</name>
+    </author>
+    <author>
+      <name>Decheng Wu</name>
+    </author>
+    <author>
+      <name>Kai Liu</name>
+    </author>
+    <author>
+      <name>Dengpeng Wu</name>
+    </author>
+    <author>
+      <name>Guanghui Xu</name>
+    </author>
+    <author>
+      <name>Shaohua Chen</name>
+    </author>
+    <author>
+      <name>Shuang Chen</name>
+    </author>
+    <author>
+      <name>Xiao Feng</name>
+    </author>
+    <author>
+      <name>Yigeng Hong</name>
+    </author>
+    <author>
+      <name>Junqiang Zheng</name>
+    </author>
+    <author>
+      <name>Chengcheng Xu</name>
+    </author>
+    <author>
+      <name>Zongwei Li</name>
+    </author>
+    <author>
+      <name>Xiong Kuang</name>
+    </author>
+    <author>
+      <name>Jianglu Hu</name>
+    </author>
+    <author>
+      <name>Yiqi Chen</name>
+    </author>
+    <author>
+      <name>Yuchi Deng</name>
+    </author>
+    <author>
+      <name>Guiyang Li</name>
+    </author>
+    <author>
+      <name>Ao Liu</name>
+    </author>
+    <author>
+      <name>Chenchen Zhang</name>
+    </author>
+    <author>
+      <name>Shihui Hu</name>
+    </author>
+    <author>
+      <name>Zilong Zhao</name>
+    </author>
+    <author>
+      <name>Zifan Wu</name>
+    </author>
+    <author>
+      <name>Yao Ding</name>
+    </author>
+    <author>
+      <name>Weichao Wang</name>
+    </author>
+    <author>
+      <name>Han Liu</name>
+    </author>
+    <author>
+      <name>Roberts Wang</name>
+    </author>
+    <author>
+      <name>Hao Fei</name>
+    </author>
+    <author>
+      <name>Peijie Yu</name>
+    </author>
+    <author>
+      <name>Ze Zhao</name>
+    </author>
+    <author>
+      <name>Xun Cao</name>
+    </author>
+    <author>
+      <name>Hai Wang</name>
+    </author>
+    <author>
+      <name>Fusheng Xiang</name>
+    </author>
+    <author>
+      <name>Mengyuan Huang</name>
+    </author>
+    <author>
+      <name>Zhiyuan Xiong</name>
+    </author>
+    <author>
+      <name>Bin Hu</name>
+    </author>
+    <author>
+      <name>Xuebin Hou</name>
+    </author>
+    <author>
+      <name>Lei Jiang</name>
+    </author>
+    <author>
+      <name>Jianqiang Ma</name>
+    </author>
+    <author>
+      <name>Jiajia Wu</name>
+    </author>
+    <author>
+      <name>Yaping Deng</name>
+    </author>
+    <author>
+      <name>Yi Shen</name>
+    </author>
+    <author>
+      <name>Qian Wang</name>
+    </author>
+    <author>
+      <name>Weijie Liu</name>
+    </author>
+    <author>
+      <name>Jie Liu</name>
+    </author>
+    <author>
+      <name>Meng Chen</name>
+    </author>
+    <author>
+      <name>Liang Dong</name>
+    </author>
+    <author>
+      <name>Weiwen Jia</name>
+    </author>
+    <author>
+      <name>Hu Chen</name>
+    </author>
+    <author>
+      <name>Feifei Liu</name>
+    </author>
+    <author>
+      <name>Rui Yuan</name>
+    </author>
+    <author>
+      <name>Huilin Xu</name>
+    </author>
+    <author>
+      <name>Zhenxiang Yan</name>
+    </author>
+    <author>
+      <name>Tengfei Cao</name>
+    </author>
+    <author>
+      <name>Zhichao Hu</name>
+    </author>
+    <author>
+      <name>Xinhua Feng</name>
+    </author>
+    <author>
+      <name>Dong Du</name>
+    </author>
+    <author>
+      <name>Tinghao Yu</name>
+    </author>
+    <author>
+      <name>Yangyu Tao</name>
+    </author>
+    <author>
+      <name>Feng Zhang</name>
+    </author>
+    <author>
+      <name>Jianchen Zhu</name>
+    </author>
+    <author>
+      <name>Chengzhong Xu</name>
+    </author>
+    <author>
+      <name>Xirui Li</name>
+    </author>
+    <author>
+      <name>Chong Zha</name>
+    </author>
+    <author>
+      <name>Wen Ouyang</name>
+    </author>
+    <author>
+      <name>Yinben Xia</name>
+    </author>
+    <author>
+      <name>Xiang Li</name>
+    </author>
+    <author>
+      <name>Zekun He</name>
+    </author>
+    <author>
+      <name>Rongpeng Chen</name>
+    </author>
+    <author>
+      <name>Jiawei Song</name>
+    </author>
+    <author>
+      <name>Ruibin Chen</name>
+    </author>
+    <author>
+      <name>Fan Jiang</name>
+    </author>
+    <author>
+      <name>Chongqing Zhao</name>
+    </author>
+    <author>
+      <name>Bo Wang</name>
+    </author>
+    <author>
+      <name>Hao Gong</name>
+    </author>
+    <author>
+      <name>Rong Gan</name>
+    </author>
+    <author>
+      <name>Winston Hu</name>
+    </author>
+    <author>
+      <name>Zhanhui Kang</name>
+    </author>
+    <author>
+      <name>Yong Yang</name>
+    </author>
+    <author>
+      <name>Yuhong Liu</name>
+    </author>
+    <author>
+      <name>Di Wang</name>
+    </author>
+    <author>
+      <name>Jie Jiang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">17 pages, 4 Figures</arxiv:comment>
+    <link href="http://arxiv.org/abs/2411.02265v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2411.02265v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

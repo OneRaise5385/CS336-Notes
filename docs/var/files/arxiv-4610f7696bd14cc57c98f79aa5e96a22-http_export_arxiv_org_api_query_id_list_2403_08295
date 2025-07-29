@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2403.08295%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2403.08295&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/w+ncf56x2+nybRBGOgo3DWEHgG4</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2403.08295v4</id>
+    <updated>2024-04-16T12:52:47Z</updated>
+    <published>2024-03-13T06:59:16Z</published>
+    <title>Gemma: Open Models Based on Gemini Research and Technology</title>
+    <summary>  This work introduces Gemma, a family of lightweight, state-of-the art open
+models built from the research and technology used to create Gemini models.
+Gemma models demonstrate strong performance across academic benchmarks for
+language understanding, reasoning, and safety. We release two sizes of models
+(2 billion and 7 billion parameters), and provide both pretrained and
+fine-tuned checkpoints. Gemma outperforms similarly sized open models on 11 out
+of 18 text-based tasks, and we present comprehensive evaluations of safety and
+responsibility aspects of the models, alongside a detailed description of model
+development. We believe the responsible release of LLMs is critical for
+improving the safety of frontier models, and for enabling the next wave of LLM
+innovations.
+</summary>
+    <author>
+      <name> Gemma Team</name>
+    </author>
+    <author>
+      <name>Thomas Mesnard</name>
+    </author>
+    <author>
+      <name>Cassidy Hardin</name>
+    </author>
+    <author>
+      <name>Robert Dadashi</name>
+    </author>
+    <author>
+      <name>Surya Bhupatiraju</name>
+    </author>
+    <author>
+      <name>Shreya Pathak</name>
+    </author>
+    <author>
+      <name>Laurent Sifre</name>
+    </author>
+    <author>
+      <name>Morgane Rivière</name>
+    </author>
+    <author>
+      <name>Mihir Sanjay Kale</name>
+    </author>
+    <author>
+      <name>Juliette Love</name>
+    </author>
+    <author>
+      <name>Pouya Tafti</name>
+    </author>
+    <author>
+      <name>Léonard Hussenot</name>
+    </author>
+    <author>
+      <name>Pier Giuseppe Sessa</name>
+    </author>
+    <author>
+      <name>Aakanksha Chowdhery</name>
+    </author>
+    <author>
+      <name>Adam Roberts</name>
+    </author>
+    <author>
+      <name>Aditya Barua</name>
+    </author>
+    <author>
+      <name>Alex Botev</name>
+    </author>
+    <author>
+      <name>Alex Castro-Ros</name>
+    </author>
+    <author>
+      <name>Ambrose Slone</name>
+    </author>
+    <author>
+      <name>Amélie Héliou</name>
+    </author>
+    <author>
+      <name>Andrea Tacchetti</name>
+    </author>
+    <author>
+      <name>Anna Bulanova</name>
+    </author>
+    <author>
+      <name>Antonia Paterson</name>
+    </author>
+    <author>
+      <name>Beth Tsai</name>
+    </author>
+    <author>
+      <name>Bobak Shahriari</name>
+    </author>
+    <author>
+      <name>Charline Le Lan</name>
+    </author>
+    <author>
+      <name>Christopher A. Choquette-Choo</name>
+    </author>
+    <author>
+      <name>Clément Crepy</name>
+    </author>
+    <author>
+      <name>Daniel Cer</name>
+    </author>
+    <author>
+      <name>Daphne Ippolito</name>
+    </author>
+    <author>
+      <name>David Reid</name>
+    </author>
+    <author>
+      <name>Elena Buchatskaya</name>
+    </author>
+    <author>
+      <name>Eric Ni</name>
+    </author>
+    <author>
+      <name>Eric Noland</name>
+    </author>
+    <author>
+      <name>Geng Yan</name>
+    </author>
+    <author>
+      <name>George Tucker</name>
+    </author>
+    <author>
+      <name>George-Christian Muraru</name>
+    </author>
+    <author>
+      <name>Grigory Rozhdestvenskiy</name>
+    </author>
+    <author>
+      <name>Henryk Michalewski</name>
+    </author>
+    <author>
+      <name>Ian Tenney</name>
+    </author>
+    <author>
+      <name>Ivan Grishchenko</name>
+    </author>
+    <author>
+      <name>Jacob Austin</name>
+    </author>
+    <author>
+      <name>James Keeling</name>
+    </author>
+    <author>
+      <name>Jane Labanowski</name>
+    </author>
+    <author>
+      <name>Jean-Baptiste Lespiau</name>
+    </author>
+    <author>
+      <name>Jeff Stanway</name>
+    </author>
+    <author>
+      <name>Jenny Brennan</name>
+    </author>
+    <author>
+      <name>Jeremy Chen</name>
+    </author>
+    <author>
+      <name>Johan Ferret</name>
+    </author>
+    <author>
+      <name>Justin Chiu</name>
+    </author>
+    <author>
+      <name>Justin Mao-Jones</name>
+    </author>
+    <author>
+      <name>Katherine Lee</name>
+    </author>
+    <author>
+      <name>Kathy Yu</name>
+    </author>
+    <author>
+      <name>Katie Millican</name>
+    </author>
+    <author>
+      <name>Lars Lowe Sjoesund</name>
+    </author>
+    <author>
+      <name>Lisa Lee</name>
+    </author>
+    <author>
+      <name>Lucas Dixon</name>
+    </author>
+    <author>
+      <name>Machel Reid</name>
+    </author>
+    <author>
+      <name>Maciej Mikuła</name>
+    </author>
+    <author>
+      <name>Mateo Wirth</name>
+    </author>
+    <author>
+      <name>Michael Sharman</name>
+    </author>
+    <author>
+      <name>Nikolai Chinaev</name>
+    </author>
+    <author>
+      <name>Nithum Thain</name>
+    </author>
+    <author>
+      <name>Olivier Bachem</name>
+    </author>
+    <author>
+      <name>Oscar Chang</name>
+    </author>
+    <author>
+      <name>Oscar Wahltinez</name>
+    </author>
+    <author>
+      <name>Paige Bailey</name>
+    </author>
+    <author>
+      <name>Paul Michel</name>
+    </author>
+    <author>
+      <name>Petko Yotov</name>
+    </author>
+    <author>
+      <name>Rahma Chaabouni</name>
+    </author>
+    <author>
+      <name>Ramona Comanescu</name>
+    </author>
+    <author>
+      <name>Reena Jana</name>
+    </author>
+    <author>
+      <name>Rohan Anil</name>
+    </author>
+    <author>
+      <name>Ross McIlroy</name>
+    </author>
+    <author>
+      <name>Ruibo Liu</name>
+    </author>
+    <author>
+      <name>Ryan Mullins</name>
+    </author>
+    <author>
+      <name>Samuel L Smith</name>
+    </author>
+    <author>
+      <name>Sebastian Borgeaud</name>
+    </author>
+    <author>
+      <name>Sertan Girgin</name>
+    </author>
+    <author>
+      <name>Sholto Douglas</name>
+    </author>
+    <author>
+      <name>Shree Pandya</name>
+    </author>
+    <author>
+      <name>Siamak Shakeri</name>
+    </author>
+    <author>
+      <name>Soham De</name>
+    </author>
+    <author>
+      <name>Ted Klimenko</name>
+    </author>
+    <author>
+      <name>Tom Hennigan</name>
+    </author>
+    <author>
+      <name>Vlad Feinberg</name>
+    </author>
+    <author>
+      <name>Wojciech Stokowiec</name>
+    </author>
+    <author>
+      <name>Yu-hui Chen</name>
+    </author>
+    <author>
+      <name>Zafarali Ahmed</name>
+    </author>
+    <author>
+      <name>Zhitao Gong</name>
+    </author>
+    <author>
+      <name>Tris Warkentin</name>
+    </author>
+    <author>
+      <name>Ludovic Peran</name>
+    </author>
+    <author>
+      <name>Minh Giang</name>
+    </author>
+    <author>
+      <name>Clément Farabet</name>
+    </author>
+    <author>
+      <name>Oriol Vinyals</name>
+    </author>
+    <author>
+      <name>Jeff Dean</name>
+    </author>
+    <author>
+      <name>Koray Kavukcuoglu</name>
+    </author>
+    <author>
+      <name>Demis Hassabis</name>
+    </author>
+    <author>
+      <name>Zoubin Ghahramani</name>
+    </author>
+    <author>
+      <name>Douglas Eck</name>
+    </author>
+    <author>
+      <name>Joelle Barral</name>
+    </author>
+    <author>
+      <name>Fernando Pereira</name>
+    </author>
+    <author>
+      <name>Eli Collins</name>
+    </author>
+    <author>
+      <name>Armand Joulin</name>
+    </author>
+    <author>
+      <name>Noah Fiedel</name>
+    </author>
+    <author>
+      <name>Evan Senter</name>
+    </author>
+    <author>
+      <name>Alek Andreev</name>
+    </author>
+    <author>
+      <name>Kathleen Kenealy</name>
+    </author>
+    <link href="http://arxiv.org/abs/2403.08295v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2403.08295v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

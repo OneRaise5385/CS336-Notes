@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2303.17951%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2303.17951&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/CwdAMJAuQeeO0e25xGXhFhXWdtc</id>
+  <updated>2025-04-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2303.17951v2</id>
+    <updated>2023-06-15T08:14:02Z</updated>
+    <published>2023-03-31T10:29:17Z</published>
+    <title>FP8 versus INT8 for efficient deep learning inference</title>
+    <summary>  Recently, the idea of using FP8 as a number format for neural network
+training has been floating around the deep learning world. Given that most
+training is currently conducted with entire networks in FP32, or sometimes FP16
+with mixed-precision, the step to having some parts of a network run in FP8
+with 8-bit weights is an appealing potential speed-up for the generally costly
+and time-intensive training procedures in deep learning. A natural question
+arises regarding what this development means for efficient inference on edge
+devices. In the efficient inference device world, workloads are frequently
+executed in INT8. Sometimes going even as low as INT4 when efficiency calls for
+it. In this whitepaper, we compare the performance for both the FP8 and INT
+formats for efficient on-device inference. We theoretically show the difference
+between the INT and FP formats for neural networks and present a plethora of
+post-training quantization and quantization-aware-training results to show how
+this theory translates to practice. We also provide a hardware analysis showing
+that the FP formats are somewhere between 50-180% less efficient in terms of
+compute in dedicated hardware than the INT format. Based on our research and a
+read of the research field, we conclude that although the proposed FP8 format
+could be good for training, the results for inference do not warrant a
+dedicated implementation of FP8 in favor of INT8 for efficient inference. We
+show that our results are mostly consistent with previous findings but that
+important comparisons between the formats have thus far been lacking. Finally,
+we discuss what happens when FP8-trained networks are converted to INT8 and
+conclude with a brief discussion on the most efficient way for on-device
+deployment and an extensive suite of INT8 results for many models.
+</summary>
+    <author>
+      <name>Mart van Baalen</name>
+    </author>
+    <author>
+      <name>Andrey Kuzmin</name>
+    </author>
+    <author>
+      <name>Suparna S Nair</name>
+    </author>
+    <author>
+      <name>Yuwei Ren</name>
+    </author>
+    <author>
+      <name>Eric Mahurin</name>
+    </author>
+    <author>
+      <name>Chirag Patel</name>
+    </author>
+    <author>
+      <name>Sundar Subramanian</name>
+    </author>
+    <author>
+      <name>Sanghyuk Lee</name>
+    </author>
+    <author>
+      <name>Markus Nagel</name>
+    </author>
+    <author>
+      <name>Joseph Soriaga</name>
+    </author>
+    <author>
+      <name>Tijmen Blankevoort</name>
+    </author>
+    <link href="http://arxiv.org/abs/2303.17951v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2303.17951v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

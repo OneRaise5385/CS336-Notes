@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2204.02311%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2204.02311&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/iNjI2/2cimmiwlBwLV2L/0bfzOc</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2204.02311v5</id>
+    <updated>2022-10-05T06:02:24Z</updated>
+    <published>2022-04-05T16:11:45Z</published>
+    <title>PaLM: Scaling Language Modeling with Pathways</title>
+    <summary>  Large language models have been shown to achieve remarkable performance
+across a variety of natural language tasks using few-shot learning, which
+drastically reduces the number of task-specific training examples needed to
+adapt the model to a particular application. To further our understanding of
+the impact of scale on few-shot learning, we trained a 540-billion parameter,
+densely activated, Transformer language model, which we call Pathways Language
+Model PaLM. We trained PaLM on 6144 TPU v4 chips using Pathways, a new ML
+system which enables highly efficient training across multiple TPU Pods. We
+demonstrate continued benefits of scaling by achieving state-of-the-art
+few-shot learning results on hundreds of language understanding and generation
+benchmarks. On a number of these tasks, PaLM 540B achieves breakthrough
+performance, outperforming the finetuned state-of-the-art on a suite of
+multi-step reasoning tasks, and outperforming average human performance on the
+recently released BIG-bench benchmark. A significant number of BIG-bench tasks
+showed discontinuous improvements from model scale, meaning that performance
+steeply increased as we scaled to our largest model. PaLM also has strong
+capabilities in multilingual tasks and source code generation, which we
+demonstrate on a wide array of benchmarks. We additionally provide a
+comprehensive analysis on bias and toxicity, and study the extent of training
+data memorization with respect to model scale. Finally, we discuss the ethical
+considerations related to large language models and discuss potential
+mitigation strategies.
+</summary>
+    <author>
+      <name>Aakanksha Chowdhery</name>
+    </author>
+    <author>
+      <name>Sharan Narang</name>
+    </author>
+    <author>
+      <name>Jacob Devlin</name>
+    </author>
+    <author>
+      <name>Maarten Bosma</name>
+    </author>
+    <author>
+      <name>Gaurav Mishra</name>
+    </author>
+    <author>
+      <name>Adam Roberts</name>
+    </author>
+    <author>
+      <name>Paul Barham</name>
+    </author>
+    <author>
+      <name>Hyung Won Chung</name>
+    </author>
+    <author>
+      <name>Charles Sutton</name>
+    </author>
+    <author>
+      <name>Sebastian Gehrmann</name>
+    </author>
+    <author>
+      <name>Parker Schuh</name>
+    </author>
+    <author>
+      <name>Kensen Shi</name>
+    </author>
+    <author>
+      <name>Sasha Tsvyashchenko</name>
+    </author>
+    <author>
+      <name>Joshua Maynez</name>
+    </author>
+    <author>
+      <name>Abhishek Rao</name>
+    </author>
+    <author>
+      <name>Parker Barnes</name>
+    </author>
+    <author>
+      <name>Yi Tay</name>
+    </author>
+    <author>
+      <name>Noam Shazeer</name>
+    </author>
+    <author>
+      <name>Vinodkumar Prabhakaran</name>
+    </author>
+    <author>
+      <name>Emily Reif</name>
+    </author>
+    <author>
+      <name>Nan Du</name>
+    </author>
+    <author>
+      <name>Ben Hutchinson</name>
+    </author>
+    <author>
+      <name>Reiner Pope</name>
+    </author>
+    <author>
+      <name>James Bradbury</name>
+    </author>
+    <author>
+      <name>Jacob Austin</name>
+    </author>
+    <author>
+      <name>Michael Isard</name>
+    </author>
+    <author>
+      <name>Guy Gur-Ari</name>
+    </author>
+    <author>
+      <name>Pengcheng Yin</name>
+    </author>
+    <author>
+      <name>Toju Duke</name>
+    </author>
+    <author>
+      <name>Anselm Levskaya</name>
+    </author>
+    <author>
+      <name>Sanjay Ghemawat</name>
+    </author>
+    <author>
+      <name>Sunipa Dev</name>
+    </author>
+    <author>
+      <name>Henryk Michalewski</name>
+    </author>
+    <author>
+      <name>Xavier Garcia</name>
+    </author>
+    <author>
+      <name>Vedant Misra</name>
+    </author>
+    <author>
+      <name>Kevin Robinson</name>
+    </author>
+    <author>
+      <name>Liam Fedus</name>
+    </author>
+    <author>
+      <name>Denny Zhou</name>
+    </author>
+    <author>
+      <name>Daphne Ippolito</name>
+    </author>
+    <author>
+      <name>David Luan</name>
+    </author>
+    <author>
+      <name>Hyeontaek Lim</name>
+    </author>
+    <author>
+      <name>Barret Zoph</name>
+    </author>
+    <author>
+      <name>Alexander Spiridonov</name>
+    </author>
+    <author>
+      <name>Ryan Sepassi</name>
+    </author>
+    <author>
+      <name>David Dohan</name>
+    </author>
+    <author>
+      <name>Shivani Agrawal</name>
+    </author>
+    <author>
+      <name>Mark Omernick</name>
+    </author>
+    <author>
+      <name>Andrew M. Dai</name>
+    </author>
+    <author>
+      <name>Thanumalayan Sankaranarayana Pillai</name>
+    </author>
+    <author>
+      <name>Marie Pellat</name>
+    </author>
+    <author>
+      <name>Aitor Lewkowycz</name>
+    </author>
+    <author>
+      <name>Erica Moreira</name>
+    </author>
+    <author>
+      <name>Rewon Child</name>
+    </author>
+    <author>
+      <name>Oleksandr Polozov</name>
+    </author>
+    <author>
+      <name>Katherine Lee</name>
+    </author>
+    <author>
+      <name>Zongwei Zhou</name>
+    </author>
+    <author>
+      <name>Xuezhi Wang</name>
+    </author>
+    <author>
+      <name>Brennan Saeta</name>
+    </author>
+    <author>
+      <name>Mark Diaz</name>
+    </author>
+    <author>
+      <name>Orhan Firat</name>
+    </author>
+    <author>
+      <name>Michele Catasta</name>
+    </author>
+    <author>
+      <name>Jason Wei</name>
+    </author>
+    <author>
+      <name>Kathy Meier-Hellstern</name>
+    </author>
+    <author>
+      <name>Douglas Eck</name>
+    </author>
+    <author>
+      <name>Jeff Dean</name>
+    </author>
+    <author>
+      <name>Slav Petrov</name>
+    </author>
+    <author>
+      <name>Noah Fiedel</name>
+    </author>
+    <link href="http://arxiv.org/abs/2204.02311v5" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2204.02311v5" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

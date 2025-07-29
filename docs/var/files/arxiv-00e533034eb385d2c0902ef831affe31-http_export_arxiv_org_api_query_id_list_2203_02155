@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2203.02155%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2203.02155&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/Ywgzdkp4Q8LEpeDGi4+q4yNGwNo</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2203.02155v1</id>
+    <updated>2022-03-04T07:04:42Z</updated>
+    <published>2022-03-04T07:04:42Z</published>
+    <title>Training language models to follow instructions with human feedback</title>
+    <summary>  Making language models bigger does not inherently make them better at
+following a user's intent. For example, large language models can generate
+outputs that are untruthful, toxic, or simply not helpful to the user. In other
+words, these models are not aligned with their users. In this paper, we show an
+avenue for aligning language models with user intent on a wide range of tasks
+by fine-tuning with human feedback. Starting with a set of labeler-written
+prompts and prompts submitted through the OpenAI API, we collect a dataset of
+labeler demonstrations of the desired model behavior, which we use to fine-tune
+GPT-3 using supervised learning. We then collect a dataset of rankings of model
+outputs, which we use to further fine-tune this supervised model using
+reinforcement learning from human feedback. We call the resulting models
+InstructGPT. In human evaluations on our prompt distribution, outputs from the
+1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3,
+despite having 100x fewer parameters. Moreover, InstructGPT models show
+improvements in truthfulness and reductions in toxic output generation while
+having minimal performance regressions on public NLP datasets. Even though
+InstructGPT still makes simple mistakes, our results show that fine-tuning with
+human feedback is a promising direction for aligning language models with human
+intent.
+</summary>
+    <author>
+      <name>Long Ouyang</name>
+    </author>
+    <author>
+      <name>Jeff Wu</name>
+    </author>
+    <author>
+      <name>Xu Jiang</name>
+    </author>
+    <author>
+      <name>Diogo Almeida</name>
+    </author>
+    <author>
+      <name>Carroll L. Wainwright</name>
+    </author>
+    <author>
+      <name>Pamela Mishkin</name>
+    </author>
+    <author>
+      <name>Chong Zhang</name>
+    </author>
+    <author>
+      <name>Sandhini Agarwal</name>
+    </author>
+    <author>
+      <name>Katarina Slama</name>
+    </author>
+    <author>
+      <name>Alex Ray</name>
+    </author>
+    <author>
+      <name>John Schulman</name>
+    </author>
+    <author>
+      <name>Jacob Hilton</name>
+    </author>
+    <author>
+      <name>Fraser Kelton</name>
+    </author>
+    <author>
+      <name>Luke Miller</name>
+    </author>
+    <author>
+      <name>Maddie Simens</name>
+    </author>
+    <author>
+      <name>Amanda Askell</name>
+    </author>
+    <author>
+      <name>Peter Welinder</name>
+    </author>
+    <author>
+      <name>Paul Christiano</name>
+    </author>
+    <author>
+      <name>Jan Leike</name>
+    </author>
+    <author>
+      <name>Ryan Lowe</name>
+    </author>
+    <link href="http://arxiv.org/abs/2203.02155v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2203.02155v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

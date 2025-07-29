@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1811.06965%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1811.06965&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/bui0tfMDgb4ZhjQiamnU/0qPPzM</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1811.06965v5</id>
+    <updated>2019-07-25T21:42:58Z</updated>
+    <published>2018-11-16T18:43:28Z</published>
+    <title>GPipe: Efficient Training of Giant Neural Networks using Pipeline
+  Parallelism</title>
+    <summary>  Scaling up deep neural network capacity has been known as an effective
+approach to improving model quality for several different machine learning
+tasks. In many cases, increasing model capacity beyond the memory limit of a
+single accelerator has required developing special algorithms or
+infrastructure. These solutions are often architecture-specific and do not
+transfer to other tasks. To address the need for efficient and task-independent
+model parallelism, we introduce GPipe, a pipeline parallelism library that
+allows scaling any network that can be expressed as a sequence of layers. By
+pipelining different sub-sequences of layers on separate accelerators, GPipe
+provides the flexibility of scaling a variety of different networks to gigantic
+sizes efficiently. Moreover, GPipe utilizes a novel batch-splitting pipelining
+algorithm, resulting in almost linear speedup when a model is partitioned
+across multiple accelerators. We demonstrate the advantages of GPipe by
+training large-scale neural networks on two different tasks with distinct
+network architectures: (i) Image Classification: We train a
+557-million-parameter AmoebaNet model and attain a top-1 accuracy of 84.4% on
+ImageNet-2012, (ii) Multilingual Neural Machine Translation: We train a single
+6-billion-parameter, 128-layer Transformer model on a corpus spanning over 100
+languages and achieve better quality than all bilingual models.
+</summary>
+    <author>
+      <name>Yanping Huang</name>
+    </author>
+    <author>
+      <name>Youlong Cheng</name>
+    </author>
+    <author>
+      <name>Ankur Bapna</name>
+    </author>
+    <author>
+      <name>Orhan Firat</name>
+    </author>
+    <author>
+      <name>Mia Xu Chen</name>
+    </author>
+    <author>
+      <name>Dehao Chen</name>
+    </author>
+    <author>
+      <name>HyoukJoong Lee</name>
+    </author>
+    <author>
+      <name>Jiquan Ngiam</name>
+    </author>
+    <author>
+      <name>Quoc V. Le</name>
+    </author>
+    <author>
+      <name>Yonghui Wu</name>
+    </author>
+    <author>
+      <name>Zhifeng Chen</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">11 pages. Work in progress. Copyright 2018 by the authors</arxiv:comment>
+    <link href="http://arxiv.org/abs/1811.06965v5" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1811.06965v5" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

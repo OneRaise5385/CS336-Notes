@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2406.04770%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2406.04770&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/d1ut3oQzOQ3KFPXKC8jheB819/w</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2406.04770v2</id>
+    <updated>2024-10-05T22:39:51Z</updated>
+    <published>2024-06-07T09:15:44Z</published>
+    <title>WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in
+  the Wild</title>
+    <summary>  We introduce WildBench, an automated evaluation framework designed to
+benchmark large language models (LLMs) using challenging, real-world user
+queries. WildBench consists of 1,024 tasks carefully selected from over one
+million human-chatbot conversation logs. For automated evaluation with
+WildBench, we have developed two metrics, WB-Reward and WB-Score, which are
+computable using advanced LLMs such as GPT-4-turbo. WildBench evaluation uses
+task-specific checklists to evaluate model outputs systematically and provides
+structured explanations that justify the scores and comparisons, resulting in
+more reliable and interpretable automatic judgments. WB-Reward employs
+fine-grained pairwise comparisons between model responses, generating five
+potential outcomes: much better, slightly better, slightly worse, much worse,
+or a tie. Unlike previous evaluations that employed a single baseline model, we
+selected three baseline models at varying performance levels to ensure a
+comprehensive pairwise evaluation. Additionally, we propose a simple method to
+mitigate length bias, by converting outcomes of ``slightly better/worse'' to
+``tie'' if the winner response exceeds the loser one by more than $K$
+characters. WB-Score evaluates the quality of model outputs individually,
+making it a fast and cost-efficient evaluation metric. WildBench results
+demonstrate a strong correlation with the human-voted Elo ratings from Chatbot
+Arena on hard tasks. Specifically, WB-Reward achieves a Pearson correlation of
+0.98 with top-ranking models. Additionally, WB-Score reaches 0.95, surpassing
+both ArenaHard's 0.91 and AlpacaEval2.0's 0.89 for length-controlled win rates,
+as well as the 0.87 for regular win rates.
+</summary>
+    <author>
+      <name>Bill Yuchen Lin</name>
+    </author>
+    <author>
+      <name>Yuntian Deng</name>
+    </author>
+    <author>
+      <name>Khyathi Chandu</name>
+    </author>
+    <author>
+      <name>Faeze Brahman</name>
+    </author>
+    <author>
+      <name>Abhilasha Ravichander</name>
+    </author>
+    <author>
+      <name>Valentina Pyatkin</name>
+    </author>
+    <author>
+      <name>Nouha Dziri</name>
+    </author>
+    <author>
+      <name>Ronan Le Bras</name>
+    </author>
+    <author>
+      <name>Yejin Choi</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Link: https://hf.co/spaces/allenai/WildBench</arxiv:comment>
+    <link href="http://arxiv.org/abs/2406.04770v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2406.04770v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

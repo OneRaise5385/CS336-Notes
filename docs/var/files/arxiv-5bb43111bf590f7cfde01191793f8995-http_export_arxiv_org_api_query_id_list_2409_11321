@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2409.11321%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2409.11321&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/IrCmENVdOSJMLknU19QF5GskEcY</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2409.11321v2</id>
+    <updated>2025-01-31T18:52:42Z</updated>
+    <published>2024-09-17T16:18:05Z</published>
+    <title>SOAP: Improving and Stabilizing Shampoo using Adam</title>
+    <summary>  There is growing evidence of the effectiveness of Shampoo, a higher-order
+preconditioning method, over Adam in deep learning optimization tasks. However,
+Shampoo's drawbacks include additional hyperparameters and computational
+overhead when compared to Adam, which only updates running averages of first-
+and second-moment quantities. This work establishes a formal connection between
+Shampoo (implemented with the 1/2 power) and Adafactor -- a memory-efficient
+approximation of Adam -- showing that Shampoo is equivalent to running
+Adafactor in the eigenbasis of Shampoo's preconditioner. This insight leads to
+the design of a simpler and computationally efficient algorithm:
+$\textbf{S}$hampo$\textbf{O}$ with $\textbf{A}$dam in the
+$\textbf{P}$reconditioner's eigenbasis (SOAP).
+  With regards to improving Shampoo's computational efficiency, the most
+straightforward approach would be to simply compute Shampoo's
+eigendecomposition less frequently. Unfortunately, as our empirical results
+show, this leads to performance degradation that worsens with this frequency.
+SOAP mitigates this degradation by continually updating the running average of
+the second moment, just as Adam does, but in the current (slowly changing)
+coordinate basis. Furthermore, since SOAP is equivalent to running Adam in a
+rotated space, it introduces only one additional hyperparameter (the
+preconditioning frequency) compared to Adam. We empirically evaluate SOAP on
+language model pre-training with 360m and 660m sized models. In the large batch
+regime, SOAP reduces the number of iterations by over 40% and wall clock time
+by over 35% compared to AdamW, with approximately 20% improvements in both
+metrics compared to Shampoo. An implementation of SOAP is available at
+https://github.com/nikhilvyas/SOAP.
+</summary>
+    <author>
+      <name>Nikhil Vyas</name>
+    </author>
+    <author>
+      <name>Depen Morwani</name>
+    </author>
+    <author>
+      <name>Rosie Zhao</name>
+    </author>
+    <author>
+      <name>Mujin Kwun</name>
+    </author>
+    <author>
+      <name>Itai Shapira</name>
+    </author>
+    <author>
+      <name>David Brandfonbrener</name>
+    </author>
+    <author>
+      <name>Lucas Janson</name>
+    </author>
+    <author>
+      <name>Sham Kakade</name>
+    </author>
+    <link href="http://arxiv.org/abs/2409.11321v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2409.11321v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

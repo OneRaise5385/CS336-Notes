@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1710.03740%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1710.03740&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/jMdlltXrbL7+3W+j08V41Mt7b1Y</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1710.03740v3</id>
+    <updated>2018-02-15T20:04:02Z</updated>
+    <published>2017-10-10T17:42:04Z</published>
+    <title>Mixed Precision Training</title>
+    <summary>  Deep neural networks have enabled progress in a wide variety of applications.
+Growing the size of the neural network typically results in improved accuracy.
+As model sizes grow, the memory and compute requirements for training these
+models also increases. We introduce a technique to train deep neural networks
+using half precision floating point numbers. In our technique, weights,
+activations and gradients are stored in IEEE half-precision format.
+Half-precision floating numbers have limited numerical range compared to
+single-precision numbers. We propose two techniques to handle this loss of
+information. Firstly, we recommend maintaining a single-precision copy of the
+weights that accumulates the gradients after each optimizer step. This
+single-precision copy is rounded to half-precision format during training.
+Secondly, we propose scaling the loss appropriately to handle the loss of
+information with half-precision gradients. We demonstrate that this approach
+works for a wide variety of models including convolution neural networks,
+recurrent neural networks and generative adversarial networks. This technique
+works for large scale models with more than 100 million parameters trained on
+large datasets. Using this approach, we can reduce the memory consumption of
+deep learning models by nearly 2x. In future processors, we can also expect a
+significant computation speedup using half-precision hardware units.
+</summary>
+    <author>
+      <name>Paulius Micikevicius</name>
+    </author>
+    <author>
+      <name>Sharan Narang</name>
+    </author>
+    <author>
+      <name>Jonah Alben</name>
+    </author>
+    <author>
+      <name>Gregory Diamos</name>
+    </author>
+    <author>
+      <name>Erich Elsen</name>
+    </author>
+    <author>
+      <name>David Garcia</name>
+    </author>
+    <author>
+      <name>Boris Ginsburg</name>
+    </author>
+    <author>
+      <name>Michael Houston</name>
+    </author>
+    <author>
+      <name>Oleksii Kuchaiev</name>
+    </author>
+    <author>
+      <name>Ganesh Venkatesh</name>
+    </author>
+    <author>
+      <name>Hao Wu</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Published as a conference paper at ICLR 2018</arxiv:comment>
+    <link href="http://arxiv.org/abs/1710.03740v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1710.03740v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

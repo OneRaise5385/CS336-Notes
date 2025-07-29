@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2305.13245%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2305.13245&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/k99xJKlbmlD5t3fHCISQFGskWYU</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2305.13245v3</id>
+    <updated>2023-12-23T17:55:11Z</updated>
+    <published>2023-05-22T17:16:38Z</published>
+    <title>GQA: Training Generalized Multi-Query Transformer Models from Multi-Head
+  Checkpoints</title>
+    <summary>  Multi-query attention (MQA), which only uses a single key-value head,
+drastically speeds up decoder inference. However, MQA can lead to quality
+degradation, and moreover it may not be desirable to train a separate model
+just for faster inference. We (1) propose a recipe for uptraining existing
+multi-head language model checkpoints into models with MQA using 5% of original
+pre-training compute, and (2) introduce grouped-query attention (GQA), a
+generalization of multi-query attention which uses an intermediate (more than
+one, less than number of query heads) number of key-value heads. We show that
+uptrained GQA achieves quality close to multi-head attention with comparable
+speed to MQA.
+</summary>
+    <author>
+      <name>Joshua Ainslie</name>
+    </author>
+    <author>
+      <name>James Lee-Thorp</name>
+    </author>
+    <author>
+      <name>Michiel de Jong</name>
+    </author>
+    <author>
+      <name>Yury Zemlyanskiy</name>
+    </author>
+    <author>
+      <name>Federico Lebrón</name>
+    </author>
+    <author>
+      <name>Sumit Sanghai</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted at EMNLP 2023. Added to related work</arxiv:comment>
+    <link href="http://arxiv.org/abs/2305.13245v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2305.13245v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

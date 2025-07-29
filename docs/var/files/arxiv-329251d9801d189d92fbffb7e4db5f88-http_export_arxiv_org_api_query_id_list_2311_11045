@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2311.11045%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2311.11045&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/YMIowGmFzK9cgcZNDUri3wmLPG4</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2311.11045v2</id>
+    <updated>2023-11-21T19:43:31Z</updated>
+    <published>2023-11-18T11:44:52Z</published>
+    <title>Orca 2: Teaching Small Language Models How to Reason</title>
+    <summary>  Orca 1 learns from rich signals, such as explanation traces, allowing it to
+outperform conventional instruction-tuned models on benchmarks like BigBench
+Hard and AGIEval. In Orca 2, we continue exploring how improved training
+signals can enhance smaller LMs' reasoning abilities. Research on training
+small LMs has often relied on imitation learning to replicate the output of
+more capable models. We contend that excessive emphasis on imitation may
+restrict the potential of smaller models. We seek to teach small LMs to employ
+different solution strategies for different tasks, potentially different from
+the one used by the larger model. For example, while larger models might
+provide a direct answer to a complex task, smaller models may not have the same
+capacity. In Orca 2, we teach the model various reasoning techniques
+(step-by-step, recall then generate, recall-reason-generate, direct answer,
+etc.). More crucially, we aim to help the model learn to determine the most
+effective solution strategy for each task. We evaluate Orca 2 using a
+comprehensive set of 15 diverse benchmarks (corresponding to approximately 100
+tasks and over 36,000 unique prompts). Orca 2 significantly surpasses models of
+similar size and attains performance levels similar or better to those of
+models 5-10x larger, as assessed on complex tasks that test advanced reasoning
+abilities in zero-shot settings. make Orca 2 weights publicly available at
+aka.ms/orca-lm to support research on the development, evaluation, and
+alignment of smaller LMs
+</summary>
+    <author>
+      <name>Arindam Mitra</name>
+    </author>
+    <author>
+      <name>Luciano Del Corro</name>
+    </author>
+    <author>
+      <name>Shweti Mahajan</name>
+    </author>
+    <author>
+      <name>Andres Codas</name>
+    </author>
+    <author>
+      <name>Clarisse Simoes</name>
+    </author>
+    <author>
+      <name>Sahaj Agarwal</name>
+    </author>
+    <author>
+      <name>Xuxi Chen</name>
+    </author>
+    <author>
+      <name>Anastasia Razdaibiedina</name>
+    </author>
+    <author>
+      <name>Erik Jones</name>
+    </author>
+    <author>
+      <name>Kriti Aggarwal</name>
+    </author>
+    <author>
+      <name>Hamid Palangi</name>
+    </author>
+    <author>
+      <name>Guoqing Zheng</name>
+    </author>
+    <author>
+      <name>Corby Rosset</name>
+    </author>
+    <author>
+      <name>Hamed Khanpour</name>
+    </author>
+    <author>
+      <name>Ahmed Awadallah</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Added url to model weights fixed typo in Author name</arxiv:comment>
+    <link href="http://arxiv.org/abs/2311.11045v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2311.11045v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1707.06347%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1707.06347&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/PfPzm4cUYy8YCZhsCIiST6kpmQc</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1707.06347v2</id>
+    <updated>2017-08-28T09:20:06Z</updated>
+    <published>2017-07-20T02:32:33Z</published>
+    <title>Proximal Policy Optimization Algorithms</title>
+    <summary>  We propose a new family of policy gradient methods for reinforcement
+learning, which alternate between sampling data through interaction with the
+environment, and optimizing a "surrogate" objective function using stochastic
+gradient ascent. Whereas standard policy gradient methods perform one gradient
+update per data sample, we propose a novel objective function that enables
+multiple epochs of minibatch updates. The new methods, which we call proximal
+policy optimization (PPO), have some of the benefits of trust region policy
+optimization (TRPO), but they are much simpler to implement, more general, and
+have better sample complexity (empirically). Our experiments test PPO on a
+collection of benchmark tasks, including simulated robotic locomotion and Atari
+game playing, and we show that PPO outperforms other online policy gradient
+methods, and overall strikes a favorable balance between sample complexity,
+simplicity, and wall-time.
+</summary>
+    <author>
+      <name>John Schulman</name>
+    </author>
+    <author>
+      <name>Filip Wolski</name>
+    </author>
+    <author>
+      <name>Prafulla Dhariwal</name>
+    </author>
+    <author>
+      <name>Alec Radford</name>
+    </author>
+    <author>
+      <name>Oleg Klimov</name>
+    </author>
+    <link href="http://arxiv.org/abs/1707.06347v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1707.06347v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2410.08385%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2410.08385&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/iU61/SsfZyBgrb6uI6dKm/28cI8</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2410.08385v1</id>
+    <updated>2024-10-10T21:44:56Z</updated>
+    <published>2024-10-10T21:44:56Z</published>
+    <title>Language model developers should report train-test overlap</title>
+    <summary>  Language models are extensively evaluated, but correctly interpreting
+evaluation results requires knowledge of train-test overlap which refers to the
+extent to which the language model is trained on the very data it is being
+tested on. The public currently lacks adequate information about train-test
+overlap: most models have no public train-test overlap statistics, and third
+parties cannot directly measure train-test overlap since they do not have
+access to the training data. To make this clear, we document the practices of
+30 model developers, finding that just 9 developers report train-test overlap:
+4 developers release training data under open-source licenses, enabling the
+community to directly measure train-test overlap, and 5 developers publish
+their train-test overlap methodology and statistics. By engaging with language
+model developers, we provide novel information about train-test overlap for
+three additional developers. Overall, we take the position that language model
+developers should publish train-test overlap statistics and/or training data
+whenever they report evaluation results on public test sets. We hope our work
+increases transparency into train-test overlap to increase the community-wide
+trust in model evaluations.
+</summary>
+    <author>
+      <name>Andy K Zhang</name>
+    </author>
+    <author>
+      <name>Kevin Klyman</name>
+    </author>
+    <author>
+      <name>Yifan Mai</name>
+    </author>
+    <author>
+      <name>Yoav Levine</name>
+    </author>
+    <author>
+      <name>Yian Zhang</name>
+    </author>
+    <author>
+      <name>Rishi Bommasani</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">18 pages</arxiv:comment>
+    <link href="http://arxiv.org/abs/2410.08385v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2410.08385v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

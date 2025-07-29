@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2104.08758%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2104.08758&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/8H1GfKZwyqNqLCHikyo96/UrSyI</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2104.08758v2</id>
+    <updated>2021-09-30T17:20:01Z</updated>
+    <published>2021-04-18T07:42:52Z</published>
+    <title>Documenting Large Webtext Corpora: A Case Study on the Colossal Clean
+  Crawled Corpus</title>
+    <summary>  Large language models have led to remarkable progress on many NLP tasks, and
+researchers are turning to ever-larger text corpora to train them. Some of the
+largest corpora available are made by scraping significant portions of the
+internet, and are frequently introduced with only minimal documentation. In
+this work we provide some of the first documentation for the Colossal Clean
+Crawled Corpus (C4; Raffel et al., 2020), a dataset created by applying a set
+of filters to a single snapshot of Common Crawl. We begin by investigating
+where the data came from, and find a significant amount of text from unexpected
+sources like patents and US military websites. Then we explore the content of
+the text itself, and find machine-generated text (e.g., from machine
+translation systems) and evaluation examples from other benchmark NLP datasets.
+To understand the impact of the filters applied to create this dataset, we
+evaluate the text that was removed, and show that blocklist filtering
+disproportionately removes text from and about minority individuals. Finally,
+we conclude with some recommendations for how to created and document web-scale
+datasets from a scrape of the internet.
+</summary>
+    <author>
+      <name>Jesse Dodge</name>
+    </author>
+    <author>
+      <name>Maarten Sap</name>
+    </author>
+    <author>
+      <name>Ana Marasović</name>
+    </author>
+    <author>
+      <name>William Agnew</name>
+    </author>
+    <author>
+      <name>Gabriel Ilharco</name>
+    </author>
+    <author>
+      <name>Dirk Groeneveld</name>
+    </author>
+    <author>
+      <name>Margaret Mitchell</name>
+    </author>
+    <author>
+      <name>Matt Gardner</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">EMNLP 2021 accepted paper camera ready version</arxiv:comment>
+    <link href="http://arxiv.org/abs/2104.08758v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2104.08758v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

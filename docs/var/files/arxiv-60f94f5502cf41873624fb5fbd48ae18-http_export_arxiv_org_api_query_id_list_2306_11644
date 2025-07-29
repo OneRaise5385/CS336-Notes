@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2306.11644%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2306.11644&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/3vUKEzfxdh2ByoWdWQd4IBA6Y3A</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2306.11644v2</id>
+    <updated>2023-10-02T06:12:30Z</updated>
+    <published>2023-06-20T16:14:25Z</published>
+    <title>Textbooks Are All You Need</title>
+    <summary>  We introduce phi-1, a new large language model for code, with significantly
+smaller size than competing models: phi-1 is a Transformer-based model with
+1.3B parameters, trained for 4 days on 8 A100s, using a selection of ``textbook
+quality" data from the web (6B tokens) and synthetically generated textbooks
+and exercises with GPT-3.5 (1B tokens). Despite this small scale, phi-1 attains
+pass@1 accuracy 50.6% on HumanEval and 55.5% on MBPP. It also displays
+surprising emergent properties compared to phi-1-base, our model before our
+finetuning stage on a dataset of coding exercises, and phi-1-small, a smaller
+model with 350M parameters trained with the same pipeline as phi-1 that still
+achieves 45% on HumanEval.
+</summary>
+    <author>
+      <name>Suriya Gunasekar</name>
+    </author>
+    <author>
+      <name>Yi Zhang</name>
+    </author>
+    <author>
+      <name>Jyoti Aneja</name>
+    </author>
+    <author>
+      <name>Caio César Teodoro Mendes</name>
+    </author>
+    <author>
+      <name>Allie Del Giorno</name>
+    </author>
+    <author>
+      <name>Sivakanth Gopi</name>
+    </author>
+    <author>
+      <name>Mojan Javaheripi</name>
+    </author>
+    <author>
+      <name>Piero Kauffmann</name>
+    </author>
+    <author>
+      <name>Gustavo de Rosa</name>
+    </author>
+    <author>
+      <name>Olli Saarikivi</name>
+    </author>
+    <author>
+      <name>Adil Salim</name>
+    </author>
+    <author>
+      <name>Shital Shah</name>
+    </author>
+    <author>
+      <name>Harkirat Singh Behl</name>
+    </author>
+    <author>
+      <name>Xin Wang</name>
+    </author>
+    <author>
+      <name>Sébastien Bubeck</name>
+    </author>
+    <author>
+      <name>Ronen Eldan</name>
+    </author>
+    <author>
+      <name>Adam Tauman Kalai</name>
+    </author>
+    <author>
+      <name>Yin Tat Lee</name>
+    </author>
+    <author>
+      <name>Yuanzhi Li</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">26 pages; changed color scheme of plot. fixed minor typos and added
+  couple clarifications</arxiv:comment>
+    <link href="http://arxiv.org/abs/2306.11644v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2306.11644v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

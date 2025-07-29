@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2402.00838%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2402.00838&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/Vir1jlQeqRomQaw3mSQ7whUV7t0</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2402.00838v4</id>
+    <updated>2024-06-07T21:59:52Z</updated>
+    <published>2024-02-01T18:28:55Z</published>
+    <title>OLMo: Accelerating the Science of Language Models</title>
+    <summary>  Language models (LMs) have become ubiquitous in both NLP research and in
+commercial product offerings. As their commercial importance has surged, the
+most powerful models have become closed off, gated behind proprietary
+interfaces, with important details of their training data, architectures, and
+development undisclosed. Given the importance of these details in
+scientifically studying these models, including their biases and potential
+risks, we believe it is essential for the research community to have access to
+powerful, truly open LMs. To this end, we have built OLMo, a competitive, truly
+Open Language Model, to enable the scientific study of language models. Unlike
+most prior efforts that have only released model weights and inference code, we
+release OLMo alongside open training data and training and evaluation code. We
+hope this release will empower the open research community and inspire a new
+wave of innovation.
+</summary>
+    <author>
+      <name>Dirk Groeneveld</name>
+    </author>
+    <author>
+      <name>Iz Beltagy</name>
+    </author>
+    <author>
+      <name>Pete Walsh</name>
+    </author>
+    <author>
+      <name>Akshita Bhagia</name>
+    </author>
+    <author>
+      <name>Rodney Kinney</name>
+    </author>
+    <author>
+      <name>Oyvind Tafjord</name>
+    </author>
+    <author>
+      <name>Ananya Harsh Jha</name>
+    </author>
+    <author>
+      <name>Hamish Ivison</name>
+    </author>
+    <author>
+      <name>Ian Magnusson</name>
+    </author>
+    <author>
+      <name>Yizhong Wang</name>
+    </author>
+    <author>
+      <name>Shane Arora</name>
+    </author>
+    <author>
+      <name>David Atkinson</name>
+    </author>
+    <author>
+      <name>Russell Authur</name>
+    </author>
+    <author>
+      <name>Khyathi Raghavi Chandu</name>
+    </author>
+    <author>
+      <name>Arman Cohan</name>
+    </author>
+    <author>
+      <name>Jennifer Dumas</name>
+    </author>
+    <author>
+      <name>Yanai Elazar</name>
+    </author>
+    <author>
+      <name>Yuling Gu</name>
+    </author>
+    <author>
+      <name>Jack Hessel</name>
+    </author>
+    <author>
+      <name>Tushar Khot</name>
+    </author>
+    <author>
+      <name>William Merrill</name>
+    </author>
+    <author>
+      <name>Jacob Morrison</name>
+    </author>
+    <author>
+      <name>Niklas Muennighoff</name>
+    </author>
+    <author>
+      <name>Aakanksha Naik</name>
+    </author>
+    <author>
+      <name>Crystal Nam</name>
+    </author>
+    <author>
+      <name>Matthew E. Peters</name>
+    </author>
+    <author>
+      <name>Valentina Pyatkin</name>
+    </author>
+    <author>
+      <name>Abhilasha Ravichander</name>
+    </author>
+    <author>
+      <name>Dustin Schwenk</name>
+    </author>
+    <author>
+      <name>Saurabh Shah</name>
+    </author>
+    <author>
+      <name>Will Smith</name>
+    </author>
+    <author>
+      <name>Emma Strubell</name>
+    </author>
+    <author>
+      <name>Nishant Subramani</name>
+    </author>
+    <author>
+      <name>Mitchell Wortsman</name>
+    </author>
+    <author>
+      <name>Pradeep Dasigi</name>
+    </author>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Kyle Richardson</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Jesse Dodge</name>
+    </author>
+    <author>
+      <name>Kyle Lo</name>
+    </author>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+    <link href="http://arxiv.org/abs/2402.00838v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2402.00838v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

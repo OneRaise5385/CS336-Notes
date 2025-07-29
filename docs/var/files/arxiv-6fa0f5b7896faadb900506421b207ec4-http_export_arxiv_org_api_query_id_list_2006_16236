@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2006.16236%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2006.16236&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/ywG1J2IeIkysinlMDVcRQFpl9jc</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2006.16236v3</id>
+    <updated>2020-08-31T11:09:32Z</updated>
+    <published>2020-06-29T17:55:38Z</published>
+    <title>Transformers are RNNs: Fast Autoregressive Transformers with Linear
+  Attention</title>
+    <summary>  Transformers achieve remarkable performance in several tasks but due to their
+quadratic complexity, with respect to the input's length, they are
+prohibitively slow for very long sequences. To address this limitation, we
+express the self-attention as a linear dot-product of kernel feature maps and
+make use of the associativity property of matrix products to reduce the
+complexity from $\mathcal{O}\left(N^2\right)$ to $\mathcal{O}\left(N\right)$,
+where $N$ is the sequence length. We show that this formulation permits an
+iterative implementation that dramatically accelerates autoregressive
+transformers and reveals their relationship to recurrent neural networks. Our
+linear transformers achieve similar performance to vanilla transformers and
+they are up to 4000x faster on autoregressive prediction of very long
+sequences.
+</summary>
+    <author>
+      <name>Angelos Katharopoulos</name>
+    </author>
+    <author>
+      <name>Apoorv Vyas</name>
+    </author>
+    <author>
+      <name>Nikolaos Pappas</name>
+    </author>
+    <author>
+      <name>François Fleuret</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">ICML 2020, project at https://linear-transformers.com/</arxiv:comment>
+    <link href="http://arxiv.org/abs/2006.16236v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2006.16236v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2101.00027%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2101.00027&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/iybHv3S3Yqj+gCAm3p2NvFqIY04</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2101.00027v1</id>
+    <updated>2020-12-31T19:00:10Z</updated>
+    <published>2020-12-31T19:00:10Z</published>
+    <title>The Pile: An 800GB Dataset of Diverse Text for Language Modeling</title>
+    <summary>  Recent work has demonstrated that increased training dataset diversity
+improves general cross-domain knowledge and downstream generalization
+capability for large-scale language models. With this in mind, we present
+\textit{the Pile}: an 825 GiB English text corpus targeted at training
+large-scale language models. The Pile is constructed from 22 diverse
+high-quality subsets -- both existing and newly constructed -- many of which
+derive from academic or professional sources. Our evaluation of the untuned
+performance of GPT-2 and GPT-3 on the Pile shows that these models struggle on
+many of its components, such as academic writing. Conversely, models trained on
+the Pile improve significantly over both Raw CC and CC-100 on all components of
+the Pile, while improving performance on downstream evaluations. Through an
+in-depth exploratory analysis, we document potentially concerning aspects of
+the data for prospective users. We make publicly available the code used in its
+construction.
+</summary>
+    <author>
+      <name>Leo Gao</name>
+    </author>
+    <author>
+      <name>Stella Biderman</name>
+    </author>
+    <author>
+      <name>Sid Black</name>
+    </author>
+    <author>
+      <name>Laurence Golding</name>
+    </author>
+    <author>
+      <name>Travis Hoppe</name>
+    </author>
+    <author>
+      <name>Charles Foster</name>
+    </author>
+    <author>
+      <name>Jason Phang</name>
+    </author>
+    <author>
+      <name>Horace He</name>
+    </author>
+    <author>
+      <name>Anish Thite</name>
+    </author>
+    <author>
+      <name>Noa Nabeshima</name>
+    </author>
+    <author>
+      <name>Shawn Presser</name>
+    </author>
+    <author>
+      <name>Connor Leahy</name>
+    </author>
+    <link href="http://arxiv.org/abs/2101.00027v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2101.00027v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2305.18290%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2305.18290&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/oE7v4j4FI3cGrJ2R+I2dvAYmsz4</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2305.18290v3</id>
+    <updated>2024-07-29T22:26:36Z</updated>
+    <published>2023-05-29T17:57:46Z</published>
+    <title>Direct Preference Optimization: Your Language Model is Secretly a Reward
+  Model</title>
+    <summary>  While large-scale unsupervised language models (LMs) learn broad world
+knowledge and some reasoning skills, achieving precise control of their
+behavior is difficult due to the completely unsupervised nature of their
+training. Existing methods for gaining such steerability collect human labels
+of the relative quality of model generations and fine-tune the unsupervised LM
+to align with these preferences, often with reinforcement learning from human
+feedback (RLHF). However, RLHF is a complex and often unstable procedure, first
+fitting a reward model that reflects the human preferences, and then
+fine-tuning the large unsupervised LM using reinforcement learning to maximize
+this estimated reward without drifting too far from the original model. In this
+paper we introduce a new parameterization of the reward model in RLHF that
+enables extraction of the corresponding optimal policy in closed form, allowing
+us to solve the standard RLHF problem with only a simple classification loss.
+The resulting algorithm, which we call Direct Preference Optimization (DPO), is
+stable, performant, and computationally lightweight, eliminating the need for
+sampling from the LM during fine-tuning or performing significant
+hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align
+with human preferences as well as or better than existing methods. Notably,
+fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of
+generations, and matches or improves response quality in summarization and
+single-turn dialogue while being substantially simpler to implement and train.
+</summary>
+    <author>
+      <name>Rafael Rafailov</name>
+    </author>
+    <author>
+      <name>Archit Sharma</name>
+    </author>
+    <author>
+      <name>Eric Mitchell</name>
+    </author>
+    <author>
+      <name>Stefano Ermon</name>
+    </author>
+    <author>
+      <name>Christopher D. Manning</name>
+    </author>
+    <author>
+      <name>Chelsea Finn</name>
+    </author>
+    <link href="http://arxiv.org/abs/2305.18290v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2305.18290v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

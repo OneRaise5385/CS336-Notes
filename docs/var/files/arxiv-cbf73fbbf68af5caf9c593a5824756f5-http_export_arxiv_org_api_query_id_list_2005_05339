@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2005.05339%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2005.05339&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/Zgj4JFAFf+e2VYgGL/Ixf4Wj7LE</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2005.05339v2</id>
+    <updated>2020-09-10T18:03:11Z</updated>
+    <published>2020-05-11T18:00:03Z</published>
+    <title>Enabling Language Models to Fill in the Blanks</title>
+    <summary>  We present a simple approach for text infilling, the task of predicting
+missing spans of text at any position in a document. While infilling could
+enable rich functionality especially for writing assistance tools, more
+attention has been devoted to language modeling---a special case of infilling
+where text is predicted at the end of a document. In this paper, we aim to
+extend the capabilities of language models (LMs) to the more general task of
+infilling. To this end, we train (or fine-tune) off-the-shelf LMs on sequences
+containing the concatenation of artificially-masked text and the text which was
+masked. We show that this approach, which we call infilling by language
+modeling, can enable LMs to infill entire sentences effectively on three
+different domains: short stories, scientific abstracts, and lyrics.
+Furthermore, we show that humans have difficulty identifying sentences infilled
+by our approach as machine-generated in the domain of short stories.
+</summary>
+    <author>
+      <name>Chris Donahue</name>
+    </author>
+    <author>
+      <name>Mina Lee</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Published as a conference paper at ACL 2020</arxiv:comment>
+    <link href="http://arxiv.org/abs/2005.05339v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2005.05339v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

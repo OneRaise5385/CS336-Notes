@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2501.00656%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2501.00656&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/ooeQWQl0aF46tIUGAcUTQyM45cg</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2501.00656v2</id>
+    <updated>2025-01-15T01:44:16Z</updated>
+    <published>2024-12-31T21:55:10Z</published>
+    <title>2 OLMo 2 Furious</title>
+    <summary>  We present OLMo 2, the next generation of our fully open language models.
+OLMo 2 includes dense autoregressive models with improved architecture and
+training recipe, pretraining data mixtures, and instruction tuning recipes. Our
+modified model architecture and training recipe achieve both better training
+stability and improved per-token efficiency. Our updated pretraining data
+mixture introduces a new, specialized data mix called Dolmino Mix 1124, which
+significantly improves model capabilities across many downstream task
+benchmarks when introduced via late-stage curriculum training (i.e. specialized
+data during the annealing phase of pretraining). Finally, we incorporate best
+practices from T\"ulu 3 to develop OLMo 2-Instruct, focusing on permissive data
+and extending our final-stage reinforcement learning with verifiable rewards
+(RLVR). Our OLMo 2 base models sit at the Pareto frontier of performance to
+compute, often matching or outperforming open-weight only models like Llama 3.1
+and Qwen 2.5 while using fewer FLOPs and with fully transparent training data,
+code, and recipe. Our fully open OLMo 2-Instruct models are competitive with or
+surpassing open-weight only models of comparable size, including Qwen 2.5,
+Llama 3.1 and Gemma 2. We release all OLMo 2 artifacts openly -- models at 7B
+and 13B scales, both pretrained and post-trained, including their full training
+data, training code and recipes, training logs and thousands of intermediate
+checkpoints. The final instruction model is available on the Ai2 Playground as
+a free research demo.
+</summary>
+    <author>
+      <name>Team OLMo</name>
+    </author>
+    <author>
+      <name>Pete Walsh</name>
+    </author>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Dirk Groeneveld</name>
+    </author>
+    <author>
+      <name>Kyle Lo</name>
+    </author>
+    <author>
+      <name>Shane Arora</name>
+    </author>
+    <author>
+      <name>Akshita Bhagia</name>
+    </author>
+    <author>
+      <name>Yuling Gu</name>
+    </author>
+    <author>
+      <name>Shengyi Huang</name>
+    </author>
+    <author>
+      <name>Matt Jordan</name>
+    </author>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Dustin Schwenk</name>
+    </author>
+    <author>
+      <name>Oyvind Tafjord</name>
+    </author>
+    <author>
+      <name>Taira Anderson</name>
+    </author>
+    <author>
+      <name>David Atkinson</name>
+    </author>
+    <author>
+      <name>Faeze Brahman</name>
+    </author>
+    <author>
+      <name>Christopher Clark</name>
+    </author>
+    <author>
+      <name>Pradeep Dasigi</name>
+    </author>
+    <author>
+      <name>Nouha Dziri</name>
+    </author>
+    <author>
+      <name>Michal Guerquin</name>
+    </author>
+    <author>
+      <name>Hamish Ivison</name>
+    </author>
+    <author>
+      <name>Pang Wei Koh</name>
+    </author>
+    <author>
+      <name>Jiacheng Liu</name>
+    </author>
+    <author>
+      <name>Saumya Malik</name>
+    </author>
+    <author>
+      <name>William Merrill</name>
+    </author>
+    <author>
+      <name>Lester James V. Miranda</name>
+    </author>
+    <author>
+      <name>Jacob Morrison</name>
+    </author>
+    <author>
+      <name>Tyler Murray</name>
+    </author>
+    <author>
+      <name>Crystal Nam</name>
+    </author>
+    <author>
+      <name>Valentina Pyatkin</name>
+    </author>
+    <author>
+      <name>Aman Rangapur</name>
+    </author>
+    <author>
+      <name>Michael Schmitz</name>
+    </author>
+    <author>
+      <name>Sam Skjonsberg</name>
+    </author>
+    <author>
+      <name>David Wadden</name>
+    </author>
+    <author>
+      <name>Christopher Wilhelm</name>
+    </author>
+    <author>
+      <name>Michael Wilson</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Ali Farhadi</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Model demo available at playground.allenai.org</arxiv:comment>
+    <link href="http://arxiv.org/abs/2501.00656v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2501.00656v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

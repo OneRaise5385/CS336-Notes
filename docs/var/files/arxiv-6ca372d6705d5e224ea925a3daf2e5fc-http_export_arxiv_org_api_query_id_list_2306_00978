@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2306.00978%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2306.00978&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/UoRYRmN7fwQBPmzPLQf0pkGQkZs</id>
+  <updated>2025-04-27T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2306.00978v5</id>
+    <updated>2024-07-18T17:51:33Z</updated>
+    <published>2023-06-01T17:59:10Z</published>
+    <title>AWQ: Activation-aware Weight Quantization for LLM Compression and
+  Acceleration</title>
+    <summary>  Large language models (LLMs) have transformed numerous AI applications.
+On-device LLM is becoming increasingly important: running LLMs locally on edge
+devices can reduce the cloud computing cost and protect users' privacy.
+However, the astronomical model size and the limited hardware resource pose
+significant deployment challenges. We propose Activation-aware Weight
+Quantization (AWQ), a hardware-friendly approach for LLM low-bit weight-only
+quantization. AWQ finds that not all weights in an LLM are equally important.
+Protecting only 1% salient weights can greatly reduce quantization error. To
+identify salient weight channels, we should refer to the activation
+distribution, not weights. To avoid the hardware-inefficient mix-precision
+quantization, we mathematically derive that scaling up the salient channels can
+reduce the quantization error. AWQ employs an equivalent transformation to
+scale the salient weight channels to protect them. The scale is determined by
+collecting the activation statistics offline. AWQ does not rely on any
+backpropagation or reconstruction, so it generalizes to different domains and
+modalities without overfitting the calibration set. AWQ outperforms existing
+work on various language modeling and domain-specific benchmarks (coding and
+math). Thanks to better generalization, it achieves excellent quantization
+performance for instruction-tuned LMs and, for the first time, multi-modal LMs.
+Alongside AWQ, we implement TinyChat, an efficient and flexible inference
+framework tailored for 4-bit on-device LLM/VLMs. With kernel fusion and
+platform-aware weight packing, TinyChat offers more than 3x speedup over the
+Huggingface FP16 implementation on both desktop and mobile GPUs. It also
+democratizes the deployment of the 70B Llama-2 model on mobile GPUs.
+</summary>
+    <author>
+      <name>Ji Lin</name>
+    </author>
+    <author>
+      <name>Jiaming Tang</name>
+    </author>
+    <author>
+      <name>Haotian Tang</name>
+    </author>
+    <author>
+      <name>Shang Yang</name>
+    </author>
+    <author>
+      <name>Wei-Ming Chen</name>
+    </author>
+    <author>
+      <name>Wei-Chen Wang</name>
+    </author>
+    <author>
+      <name>Guangxuan Xiao</name>
+    </author>
+    <author>
+      <name>Xingyu Dang</name>
+    </author>
+    <author>
+      <name>Chuang Gan</name>
+    </author>
+    <author>
+      <name>Song Han</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">MLSys 2024 Best Paper Award. Code available at:
+  https://github.com/mit-han-lab/llm-awq</arxiv:comment>
+    <link href="http://arxiv.org/abs/2306.00978v5" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2306.00978v5" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

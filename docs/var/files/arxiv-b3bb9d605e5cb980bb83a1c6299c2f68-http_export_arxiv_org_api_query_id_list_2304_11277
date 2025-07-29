@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2304.11277%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2304.11277&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/zMibSzsLkde4tuOJ7jDFbUY+fQ0</id>
+  <updated>2025-04-22T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2304.11277v2</id>
+    <updated>2023-09-12T16:28:00Z</updated>
+    <published>2023-04-21T23:52:27Z</published>
+    <title>PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel</title>
+    <summary>  It is widely acknowledged that large models have the potential to deliver
+superior performance across a broad range of domains. Despite the remarkable
+progress made in the field of machine learning systems research, which has
+enabled the development and exploration of large models, such abilities remain
+confined to a small group of advanced users and industry leaders, resulting in
+an implicit technical barrier for the wider community to access and leverage
+these technologies. In this paper, we introduce PyTorch Fully Sharded Data
+Parallel (FSDP) as an industry-grade solution for large model training. FSDP
+has been closely co-designed with several key PyTorch core components including
+Tensor implementation, dispatcher system, and CUDA memory caching allocator, to
+provide non-intrusive user experiences and high training efficiency.
+Additionally, FSDP natively incorporates a range of techniques and settings to
+optimize resource utilization across a variety of hardware configurations. The
+experimental results demonstrate that FSDP is capable of achieving comparable
+performance to Distributed Data Parallel while providing support for
+significantly larger models with near-linear scalability in terms of TFLOPS.
+</summary>
+    <author>
+      <name>Yanli Zhao</name>
+    </author>
+    <author>
+      <name>Andrew Gu</name>
+    </author>
+    <author>
+      <name>Rohan Varma</name>
+    </author>
+    <author>
+      <name>Liang Luo</name>
+    </author>
+    <author>
+      <name>Chien-Chin Huang</name>
+    </author>
+    <author>
+      <name>Min Xu</name>
+    </author>
+    <author>
+      <name>Less Wright</name>
+    </author>
+    <author>
+      <name>Hamid Shojanazeri</name>
+    </author>
+    <author>
+      <name>Myle Ott</name>
+    </author>
+    <author>
+      <name>Sam Shleifer</name>
+    </author>
+    <author>
+      <name>Alban Desmaison</name>
+    </author>
+    <author>
+      <name>Can Balioglu</name>
+    </author>
+    <author>
+      <name>Pritam Damania</name>
+    </author>
+    <author>
+      <name>Bernard Nguyen</name>
+    </author>
+    <author>
+      <name>Geeta Chauhan</name>
+    </author>
+    <author>
+      <name>Yuchen Hao</name>
+    </author>
+    <author>
+      <name>Ajit Mathews</name>
+    </author>
+    <author>
+      <name>Shen Li</name>
+    </author>
+    <link href="http://arxiv.org/abs/2304.11277v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2304.11277v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PF" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

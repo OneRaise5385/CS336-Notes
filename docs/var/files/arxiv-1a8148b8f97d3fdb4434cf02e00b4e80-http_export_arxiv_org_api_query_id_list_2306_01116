@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2306.01116%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2306.01116&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/V4iYRxUTopboTVCm1qNKy935Xgw</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2306.01116v1</id>
+    <updated>2023-06-01T20:03:56Z</updated>
+    <published>2023-06-01T20:03:56Z</published>
+    <title>The RefinedWeb Dataset for Falcon LLM: Outperforming Curated Corpora
+  with Web Data, and Web Data Only</title>
+    <summary>  Large language models are commonly trained on a mixture of filtered web data
+and curated high-quality corpora, such as social media conversations, books, or
+technical papers. This curation process is believed to be necessary to produce
+performant models with broad zero-shot generalization abilities. However, as
+larger models requiring pretraining on trillions of tokens are considered, it
+is unclear how scalable is curation and whether we will run out of unique
+high-quality data soon. At variance with previous beliefs, we show that
+properly filtered and deduplicated web data alone can lead to powerful models;
+even significantly outperforming models from the state-of-the-art trained on
+The Pile. Despite extensive filtering, the high-quality data we extract from
+the web is still plentiful, and we are able to obtain five trillion tokens from
+CommonCrawl. We publicly release an extract of 600 billion tokens from our
+RefinedWeb dataset, and 1.3/7.5B parameters language models trained on it.
+</summary>
+    <author>
+      <name>Guilherme Penedo</name>
+    </author>
+    <author>
+      <name>Quentin Malartic</name>
+    </author>
+    <author>
+      <name>Daniel Hesslow</name>
+    </author>
+    <author>
+      <name>Ruxandra Cojocaru</name>
+    </author>
+    <author>
+      <name>Alessandro Cappelli</name>
+    </author>
+    <author>
+      <name>Hamza Alobeidli</name>
+    </author>
+    <author>
+      <name>Baptiste Pannier</name>
+    </author>
+    <author>
+      <name>Ebtesam Almazrouei</name>
+    </author>
+    <author>
+      <name>Julien Launay</name>
+    </author>
+    <link href="http://arxiv.org/abs/2306.01116v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2306.01116v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

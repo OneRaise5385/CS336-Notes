@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2104.09864%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2104.09864&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/qnMIzRCjMXe64WtksOFsfvz8rqw</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2104.09864v5</id>
+    <updated>2023-11-08T13:36:32Z</updated>
+    <published>2021-04-20T09:54:06Z</published>
+    <title>RoFormer: Enhanced Transformer with Rotary Position Embedding</title>
+    <summary>  Position encoding recently has shown effective in the transformer
+architecture. It enables valuable supervision for dependency modeling between
+elements at different positions of the sequence. In this paper, we first
+investigate various methods to integrate positional information into the
+learning process of transformer-based language models. Then, we propose a novel
+method named Rotary Position Embedding(RoPE) to effectively leverage the
+positional information. Specifically, the proposed RoPE encodes the absolute
+position with a rotation matrix and meanwhile incorporates the explicit
+relative position dependency in self-attention formulation. Notably, RoPE
+enables valuable properties, including the flexibility of sequence length,
+decaying inter-token dependency with increasing relative distances, and the
+capability of equipping the linear self-attention with relative position
+encoding. Finally, we evaluate the enhanced transformer with rotary position
+embedding, also called RoFormer, on various long text classification benchmark
+datasets. Our experiments show that it consistently overcomes its alternatives.
+Furthermore, we provide a theoretical analysis to explain some experimental
+results. RoFormer is already integrated into Huggingface:
+\url{https://huggingface.co/docs/transformers/model_doc/roformer}.
+</summary>
+    <author>
+      <name>Jianlin Su</name>
+    </author>
+    <author>
+      <name>Yu Lu</name>
+    </author>
+    <author>
+      <name>Shengfeng Pan</name>
+    </author>
+    <author>
+      <name>Ahmed Murtadha</name>
+    </author>
+    <author>
+      <name>Bo Wen</name>
+    </author>
+    <author>
+      <name>Yunfeng Liu</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">fixed some typos</arxiv:comment>
+    <link href="http://arxiv.org/abs/2104.09864v5" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2104.09864v5" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

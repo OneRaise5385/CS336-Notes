@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2502.02737%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2502.02737&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/e6SbXp8Pjipo4PPvNDvBRz2pfVs</id>
+  <updated>2025-03-27T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2502.02737v1</id>
+    <updated>2025-02-04T21:43:16Z</updated>
+    <published>2025-02-04T21:43:16Z</published>
+    <title>SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language
+  Model</title>
+    <summary>  While large language models have facilitated breakthroughs in many
+applications of artificial intelligence, their inherent largeness makes them
+computationally expensive and challenging to deploy in resource-constrained
+settings. In this paper, we document the development of SmolLM2, a
+state-of-the-art "small" (1.7 billion parameter) language model (LM). To attain
+strong performance, we overtrain SmolLM2 on ~11 trillion tokens of data using a
+multi-stage training process that mixes web text with specialized math, code,
+and instruction-following data. We additionally introduce new specialized
+datasets (FineMath, Stack-Edu, and SmolTalk) at stages where we found existing
+datasets to be problematically small or low-quality. To inform our design
+decisions, we perform both small-scale ablations as well as a manual refinement
+process that updates the dataset mixing rates at each stage based on the
+performance at the previous stage. Ultimately, we demonstrate that SmolLM2
+outperforms other recent small LMs including Qwen2.5-1.5B and Llama3.2-1B. To
+facilitate future research on LM development as well as applications of small
+LMs, we release both SmolLM2 as well as all of the datasets we prepared in the
+course of this project.
+</summary>
+    <author>
+      <name>Loubna Ben Allal</name>
+    </author>
+    <author>
+      <name>Anton Lozhkov</name>
+    </author>
+    <author>
+      <name>Elie Bakouch</name>
+    </author>
+    <author>
+      <name>Gabriel Martín Blázquez</name>
+    </author>
+    <author>
+      <name>Guilherme Penedo</name>
+    </author>
+    <author>
+      <name>Lewis Tunstall</name>
+    </author>
+    <author>
+      <name>Andrés Marafioti</name>
+    </author>
+    <author>
+      <name>Hynek Kydlíček</name>
+    </author>
+    <author>
+      <name>Agustín Piqueres Lajarín</name>
+    </author>
+    <author>
+      <name>Vaibhav Srivastav</name>
+    </author>
+    <author>
+      <name>Joshua Lochner</name>
+    </author>
+    <author>
+      <name>Caleb Fahlgren</name>
+    </author>
+    <author>
+      <name>Xuan-Son Nguyen</name>
+    </author>
+    <author>
+      <name>Clémentine Fourrier</name>
+    </author>
+    <author>
+      <name>Ben Burtenshaw</name>
+    </author>
+    <author>
+      <name>Hugo Larcher</name>
+    </author>
+    <author>
+      <name>Haojun Zhao</name>
+    </author>
+    <author>
+      <name>Cyril Zakka</name>
+    </author>
+    <author>
+      <name>Mathieu Morlon</name>
+    </author>
+    <author>
+      <name>Colin Raffel</name>
+    </author>
+    <author>
+      <name>Leandro von Werra</name>
+    </author>
+    <author>
+      <name>Thomas Wolf</name>
+    </author>
+    <link href="http://arxiv.org/abs/2502.02737v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2502.02737v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

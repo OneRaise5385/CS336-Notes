@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2310.06770%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2310.06770&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/QIhoR7/yEQwtzvSiZjqonkYPHXM</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2310.06770v3</id>
+    <updated>2024-11-11T23:05:04Z</updated>
+    <published>2023-10-10T16:47:29Z</published>
+    <title>SWE-bench: Can Language Models Resolve Real-World GitHub Issues?</title>
+    <summary>  Language models have outpaced our ability to evaluate them effectively, but
+for their future development it is essential to study the frontier of their
+capabilities. We find real-world software engineering to be a rich,
+sustainable, and challenging testbed for evaluating the next generation of
+language models. To this end, we introduce SWE-bench, an evaluation framework
+consisting of $2,294$ software engineering problems drawn from real GitHub
+issues and corresponding pull requests across $12$ popular Python repositories.
+Given a codebase along with a description of an issue to be resolved, a
+language model is tasked with editing the codebase to address the issue.
+Resolving issues in SWE-bench frequently requires understanding and
+coordinating changes across multiple functions, classes, and even files
+simultaneously, calling for models to interact with execution environments,
+process extremely long contexts and perform complex reasoning that goes far
+beyond traditional code generation tasks. Our evaluations show that both
+state-of-the-art proprietary models and our fine-tuned model SWE-Llama can
+resolve only the simplest issues. The best-performing model, Claude 2, is able
+to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps
+towards LMs that are more practical, intelligent, and autonomous.
+</summary>
+    <author>
+      <name>Carlos E. Jimenez</name>
+    </author>
+    <author>
+      <name>John Yang</name>
+    </author>
+    <author>
+      <name>Alexander Wettig</name>
+    </author>
+    <author>
+      <name>Shunyu Yao</name>
+    </author>
+    <author>
+      <name>Kexin Pei</name>
+    </author>
+    <author>
+      <name>Ofir Press</name>
+    </author>
+    <author>
+      <name>Karthik Narasimhan</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Data, code, and leaderboard are available at https://www.swebench.com
+  ICLR 2024, https://openreview.net/forum?id=VTF8yNQM66</arxiv:comment>
+    <link href="http://arxiv.org/abs/2310.06770v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2310.06770v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

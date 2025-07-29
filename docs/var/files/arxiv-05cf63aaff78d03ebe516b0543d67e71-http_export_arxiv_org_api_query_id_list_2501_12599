@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2501.12599%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2501.12599&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/0JnHuf8Ib1PlSRHxYPz28H4I4wQ</id>
+  <updated>2025-03-27T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2501.12599v2</id>
+    <updated>2025-03-05T02:16:32Z</updated>
+    <published>2025-01-22T02:48:14Z</published>
+    <title>Kimi k1.5: Scaling Reinforcement Learning with LLMs</title>
+    <summary>  Language model pretraining with next token prediction has proved effective
+for scaling compute but is limited to the amount of available training data.
+Scaling reinforcement learning (RL) unlocks a new axis for the continued
+improvement of artificial intelligence, with the promise that large language
+models (LLMs) can scale their training data by learning to explore with
+rewards. However, prior published work has not produced competitive results. In
+light of this, we report on the training practice of Kimi k1.5, our latest
+multi-modal LLM trained with RL, including its RL training techniques,
+multi-modal data recipes, and infrastructure optimization. Long context scaling
+and improved policy optimization methods are key ingredients of our approach,
+which establishes a simplistic, effective RL framework without relying on more
+complex techniques such as Monte Carlo tree search, value functions, and
+process reward models. Notably, our system achieves state-of-the-art reasoning
+performance across multiple benchmarks and modalities -- e.g., 77.5 on AIME,
+96.2 on MATH 500, 94-th percentile on Codeforces, 74.9 on MathVista -- matching
+OpenAI's o1. Moreover, we present effective long2short methods that use
+long-CoT techniques to improve short-CoT models, yielding state-of-the-art
+short-CoT reasoning results -- e.g., 60.8 on AIME, 94.6 on MATH500, 47.3 on
+LiveCodeBench -- outperforming existing short-CoT models such as GPT-4o and
+Claude Sonnet 3.5 by a large margin (up to +550%).
+</summary>
+    <author>
+      <name> Kimi Team</name>
+    </author>
+    <author>
+      <name>Angang Du</name>
+    </author>
+    <author>
+      <name>Bofei Gao</name>
+    </author>
+    <author>
+      <name>Bowei Xing</name>
+    </author>
+    <author>
+      <name>Changjiu Jiang</name>
+    </author>
+    <author>
+      <name>Cheng Chen</name>
+    </author>
+    <author>
+      <name>Cheng Li</name>
+    </author>
+    <author>
+      <name>Chenjun Xiao</name>
+    </author>
+    <author>
+      <name>Chenzhuang Du</name>
+    </author>
+    <author>
+      <name>Chonghua Liao</name>
+    </author>
+    <author>
+      <name>Chuning Tang</name>
+    </author>
+    <author>
+      <name>Congcong Wang</name>
+    </author>
+    <author>
+      <name>Dehao Zhang</name>
+    </author>
+    <author>
+      <name>Enming Yuan</name>
+    </author>
+    <author>
+      <name>Enzhe Lu</name>
+    </author>
+    <author>
+      <name>Fengxiang Tang</name>
+    </author>
+    <author>
+      <name>Flood Sung</name>
+    </author>
+    <author>
+      <name>Guangda Wei</name>
+    </author>
+    <author>
+      <name>Guokun Lai</name>
+    </author>
+    <author>
+      <name>Haiqing Guo</name>
+    </author>
+    <author>
+      <name>Han Zhu</name>
+    </author>
+    <author>
+      <name>Hao Ding</name>
+    </author>
+    <author>
+      <name>Hao Hu</name>
+    </author>
+    <author>
+      <name>Hao Yang</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+    <author>
+      <name>Haotian Yao</name>
+    </author>
+    <author>
+      <name>Haotian Zhao</name>
+    </author>
+    <author>
+      <name>Haoyu Lu</name>
+    </author>
+    <author>
+      <name>Haoze Li</name>
+    </author>
+    <author>
+      <name>Haozhen Yu</name>
+    </author>
+    <author>
+      <name>Hongcheng Gao</name>
+    </author>
+    <author>
+      <name>Huabin Zheng</name>
+    </author>
+    <author>
+      <name>Huan Yuan</name>
+    </author>
+    <author>
+      <name>Jia Chen</name>
+    </author>
+    <author>
+      <name>Jianhang Guo</name>
+    </author>
+    <author>
+      <name>Jianlin Su</name>
+    </author>
+    <author>
+      <name>Jianzhou Wang</name>
+    </author>
+    <author>
+      <name>Jie Zhao</name>
+    </author>
+    <author>
+      <name>Jin Zhang</name>
+    </author>
+    <author>
+      <name>Jingyuan Liu</name>
+    </author>
+    <author>
+      <name>Junjie Yan</name>
+    </author>
+    <author>
+      <name>Junyan Wu</name>
+    </author>
+    <author>
+      <name>Lidong Shi</name>
+    </author>
+    <author>
+      <name>Ling Ye</name>
+    </author>
+    <author>
+      <name>Longhui Yu</name>
+    </author>
+    <author>
+      <name>Mengnan Dong</name>
+    </author>
+    <author>
+      <name>Neo Zhang</name>
+    </author>
+    <author>
+      <name>Ningchen Ma</name>
+    </author>
+    <author>
+      <name>Qiwei Pan</name>
+    </author>
+    <author>
+      <name>Qucheng Gong</name>
+    </author>
+    <author>
+      <name>Shaowei Liu</name>
+    </author>
+    <author>
+      <name>Shengling Ma</name>
+    </author>
+    <author>
+      <name>Shupeng Wei</name>
+    </author>
+    <author>
+      <name>Sihan Cao</name>
+    </author>
+    <author>
+      <name>Siying Huang</name>
+    </author>
+    <author>
+      <name>Tao Jiang</name>
+    </author>
+    <author>
+      <name>Weihao Gao</name>
+    </author>
+    <author>
+      <name>Weimin Xiong</name>
+    </author>
+    <author>
+      <name>Weiran He</name>
+    </author>
+    <author>
+      <name>Weixiao Huang</name>
+    </author>
+    <author>
+      <name>Wenhao Wu</name>
+    </author>
+    <author>
+      <name>Wenyang He</name>
+    </author>
+    <author>
+      <name>Xianghui Wei</name>
+    </author>
+    <author>
+      <name>Xianqing Jia</name>
+    </author>
+    <author>
+      <name>Xingzhe Wu</name>
+    </author>
+    <author>
+      <name>Xinran Xu</name>
+    </author>
+    <author>
+      <name>Xinxing Zu</name>
+    </author>
+    <author>
+      <name>Xinyu Zhou</name>
+    </author>
+    <author>
+      <name>Xuehai Pan</name>
+    </author>
+    <author>
+      <name>Y. Charles</name>
+    </author>
+    <author>
+      <name>Yang Li</name>
+    </author>
+    <author>
+      <name>Yangyang Hu</name>
+    </author>
+    <author>
+      <name>Yangyang Liu</name>
+    </author>
+    <author>
+      <name>Yanru Chen</name>
+    </author>
+    <author>
+      <name>Yejie Wang</name>
+    </author>
+    <author>
+      <name>Yibo Liu</name>
+    </author>
+    <author>
+      <name>Yidao Qin</name>
+    </author>
+    <author>
+      <name>Yifeng Liu</name>
+    </author>
+    <author>
+      <name>Ying Yang</name>
+    </author>
+    <author>
+      <name>Yiping Bao</name>
+    </author>
+    <author>
+      <name>Yulun Du</name>
+    </author>
+    <author>
+      <name>Yuxin Wu</name>
+    </author>
+    <author>
+      <name>Yuzhi Wang</name>
+    </author>
+    <author>
+      <name>Zaida Zhou</name>
+    </author>
+    <author>
+      <name>Zhaoji Wang</name>
+    </author>
+    <author>
+      <name>Zhaowei Li</name>
+    </author>
+    <author>
+      <name>Zhen Zhu</name>
+    </author>
+    <author>
+      <name>Zheng Zhang</name>
+    </author>
+    <author>
+      <name>Zhexu Wang</name>
+    </author>
+    <author>
+      <name>Zhilin Yang</name>
+    </author>
+    <author>
+      <name>Zhiqi Huang</name>
+    </author>
+    <author>
+      <name>Zihao Huang</name>
+    </author>
+    <author>
+      <name>Ziyao Xu</name>
+    </author>
+    <author>
+      <name>Zonghan Yang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">25 pages</arxiv:comment>
+    <link href="http://arxiv.org/abs/2501.12599v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2501.12599v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

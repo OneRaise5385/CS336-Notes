@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2404.12590%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2404.12590&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/wScqorjfF+1X31v17U9M/hHj61g</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2404.12590v6</id>
+    <updated>2025-03-24T16:58:54Z</updated>
+    <published>2024-04-19T02:37:09Z</published>
+    <title>The Files are in the Computer: Copyright, Memorization, and Generative
+  AI</title>
+    <summary>  The New York Times's copyright lawsuit against OpenAI and Microsoft alleges
+OpenAI's GPT models have "memorized" NYT articles. Other lawsuits make similar
+claims. But parties, courts, and scholars disagree on what memorization is,
+whether it is taking place, and what its copyright implications are. These
+debates are clouded by ambiguities over the nature of "memorization." We
+attempt to bring clarity to the conversation. We draw on the technical
+literature to provide a firm foundation for legal discussions, providing a
+precise definition of memorization: a model has "memorized" a piece of training
+data when (1) it is possible to reconstruct from the model (2) a near-exact
+copy of (3) a substantial portion of (4) that piece of training data. We
+distinguish memorization from "extraction" (user intentionally causes a model
+to generate a near-exact copy), from "regurgitation" (model generates a
+near-exact copy, regardless of user intentions), and from "reconstruction" (the
+near-exact copy can be obtained from the model by any means). Several
+consequences follow. (1) Not all learning is memorization. (2) Memorization
+occurs when a model is trained; regurgitation is a symptom not its cause. (3) A
+model that has memorized training data is a "copy" of that training data in the
+sense used by copyright. (4) A model is not like a VCR or other general-purpose
+copying technology; it is better at generating some types of outputs (possibly
+regurgitated ones) than others. (5) Memorization is not a phenomenon caused by
+"adversarial" users bent on extraction; it is latent in the model itself. (6)
+The amount of training data that a model memorizes is a consequence of choices
+made in training. (7) Whether or not a model that has memorized actually
+regurgitates depends on overall system design. In a very real sense, memorized
+training data is in the model--to quote Zoolander, the files are in the
+computer.
+</summary>
+    <author>
+      <name>A. Feder Cooper</name>
+    </author>
+    <author>
+      <name>James Grimmelmann</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Forthcoming, Chicago-Kent Law Review</arxiv:comment>
+    <link href="http://arxiv.org/abs/2404.12590v6" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2404.12590v6" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

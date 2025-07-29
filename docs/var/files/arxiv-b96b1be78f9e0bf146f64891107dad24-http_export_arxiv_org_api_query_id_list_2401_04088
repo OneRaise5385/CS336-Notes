@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2401.04088%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2401.04088&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/U2QARt/jqiwvtshljG2VmCup2J0</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2401.04088v1</id>
+    <updated>2024-01-08T18:47:34Z</updated>
+    <published>2024-01-08T18:47:34Z</published>
+    <title>Mixtral of Experts</title>
+    <summary>  We introduce Mixtral 8x7B, a Sparse Mixture of Experts (SMoE) language model.
+Mixtral has the same architecture as Mistral 7B, with the difference that each
+layer is composed of 8 feedforward blocks (i.e. experts). For every token, at
+each layer, a router network selects two experts to process the current state
+and combine their outputs. Even though each token only sees two experts, the
+selected experts can be different at each timestep. As a result, each token has
+access to 47B parameters, but only uses 13B active parameters during inference.
+Mixtral was trained with a context size of 32k tokens and it outperforms or
+matches Llama 2 70B and GPT-3.5 across all evaluated benchmarks. In particular,
+Mixtral vastly outperforms Llama 2 70B on mathematics, code generation, and
+multilingual benchmarks. We also provide a model fine-tuned to follow
+instructions, Mixtral 8x7B - Instruct, that surpasses GPT-3.5 Turbo,
+Claude-2.1, Gemini Pro, and Llama 2 70B - chat model on human benchmarks. Both
+the base and instruct models are released under the Apache 2.0 license.
+</summary>
+    <author>
+      <name>Albert Q. Jiang</name>
+    </author>
+    <author>
+      <name>Alexandre Sablayrolles</name>
+    </author>
+    <author>
+      <name>Antoine Roux</name>
+    </author>
+    <author>
+      <name>Arthur Mensch</name>
+    </author>
+    <author>
+      <name>Blanche Savary</name>
+    </author>
+    <author>
+      <name>Chris Bamford</name>
+    </author>
+    <author>
+      <name>Devendra Singh Chaplot</name>
+    </author>
+    <author>
+      <name>Diego de las Casas</name>
+    </author>
+    <author>
+      <name>Emma Bou Hanna</name>
+    </author>
+    <author>
+      <name>Florian Bressand</name>
+    </author>
+    <author>
+      <name>Gianna Lengyel</name>
+    </author>
+    <author>
+      <name>Guillaume Bour</name>
+    </author>
+    <author>
+      <name>Guillaume Lample</name>
+    </author>
+    <author>
+      <name>Lélio Renard Lavaud</name>
+    </author>
+    <author>
+      <name>Lucile Saulnier</name>
+    </author>
+    <author>
+      <name>Marie-Anne Lachaux</name>
+    </author>
+    <author>
+      <name>Pierre Stock</name>
+    </author>
+    <author>
+      <name>Sandeep Subramanian</name>
+    </author>
+    <author>
+      <name>Sophia Yang</name>
+    </author>
+    <author>
+      <name>Szymon Antoniak</name>
+    </author>
+    <author>
+      <name>Teven Le Scao</name>
+    </author>
+    <author>
+      <name>Théophile Gervet</name>
+    </author>
+    <author>
+      <name>Thibaut Lavril</name>
+    </author>
+    <author>
+      <name>Thomas Wang</name>
+    </author>
+    <author>
+      <name>Timothée Lacroix</name>
+    </author>
+    <author>
+      <name>William El Sayed</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">See more details at https://mistral.ai/news/mixtral-of-experts/</arxiv:comment>
+    <link href="http://arxiv.org/abs/2401.04088v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2401.04088v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

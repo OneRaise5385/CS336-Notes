@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2209.05433%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2209.05433&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/lLILhj4vzAo77q0dVHcyHd2Yf1s</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2209.05433v2</id>
+    <updated>2022-09-29T20:47:07Z</updated>
+    <published>2022-09-12T17:39:55Z</published>
+    <title>FP8 Formats for Deep Learning</title>
+    <summary>  FP8 is a natural progression for accelerating deep learning training
+inference beyond the 16-bit formats common in modern processors. In this paper
+we propose an 8-bit floating point (FP8) binary interchange format consisting
+of two encodings - E4M3 (4-bit exponent and 3-bit mantissa) and E5M2 (5-bit
+exponent and 2-bit mantissa). While E5M2 follows IEEE 754 conventions for
+representatio of special values, E4M3's dynamic range is extended by not
+representing infinities and having only one mantissa bit-pattern for NaNs. We
+demonstrate the efficacy of the FP8 format on a variety of image and language
+tasks, effectively matching the result quality achieved by 16-bit training
+sessions. Our study covers the main modern neural network architectures - CNNs,
+RNNs, and Transformer-based models, leaving all the hyperparameters unchanged
+from the 16-bit baseline training sessions. Our training experiments include
+large, up to 175B parameter, language models. We also examine FP8
+post-training-quantization of language models trained using 16-bit formats that
+resisted fixed point int8 quantization.
+</summary>
+    <author>
+      <name>Paulius Micikevicius</name>
+    </author>
+    <author>
+      <name>Dusan Stosic</name>
+    </author>
+    <author>
+      <name>Neil Burgess</name>
+    </author>
+    <author>
+      <name>Marius Cornea</name>
+    </author>
+    <author>
+      <name>Pradeep Dubey</name>
+    </author>
+    <author>
+      <name>Richard Grisenthwaite</name>
+    </author>
+    <author>
+      <name>Sangwon Ha</name>
+    </author>
+    <author>
+      <name>Alexander Heinecke</name>
+    </author>
+    <author>
+      <name>Patrick Judd</name>
+    </author>
+    <author>
+      <name>John Kamalu</name>
+    </author>
+    <author>
+      <name>Naveen Mellempudi</name>
+    </author>
+    <author>
+      <name>Stuart Oberman</name>
+    </author>
+    <author>
+      <name>Mohammad Shoeybi</name>
+    </author>
+    <author>
+      <name>Michael Siu</name>
+    </author>
+    <author>
+      <name>Hao Wu</name>
+    </author>
+    <link href="http://arxiv.org/abs/2209.05433v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2209.05433v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

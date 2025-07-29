@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2205.14217%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2205.14217&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/ult1k8xqgpvwg5at7Fjc1/GGsBY</id>
+  <updated>2025-04-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2205.14217v1</id>
+    <updated>2022-05-27T20:12:09Z</updated>
+    <published>2022-05-27T20:12:09Z</published>
+    <title>Diffusion-LM Improves Controllable Text Generation</title>
+    <summary>  Controlling the behavior of language models (LMs) without re-training is a
+major open problem in natural language generation. While recent works have
+demonstrated successes on controlling simple sentence attributes (e.g.,
+sentiment), there has been little progress on complex, fine-grained controls
+(e.g., syntactic structure). To address this challenge, we develop a new
+non-autoregressive language model based on continuous diffusions that we call
+Diffusion-LM. Building upon the recent successes of diffusion models in
+continuous domains, Diffusion-LM iteratively denoises a sequence of Gaussian
+vectors into word vectors, yielding a sequence of intermediate latent
+variables. The continuous, hierarchical nature of these intermediate variables
+enables a simple gradient-based algorithm to perform complex, controllable
+generation tasks. We demonstrate successful control of Diffusion-LM for six
+challenging fine-grained control tasks, significantly outperforming prior work.
+</summary>
+    <author>
+      <name>Xiang Lisa Li</name>
+    </author>
+    <author>
+      <name>John Thickstun</name>
+    </author>
+    <author>
+      <name>Ishaan Gulrajani</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <author>
+      <name>Tatsunori B. Hashimoto</name>
+    </author>
+    <link href="http://arxiv.org/abs/2205.14217v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2205.14217v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

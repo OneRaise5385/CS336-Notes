@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2302.03169%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2302.03169&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/9aM3kp/6k6JgyPXJnqC/OS6qHl4</id>
+  <updated>2025-05-15T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2302.03169v3</id>
+    <updated>2023-11-18T21:33:01Z</updated>
+    <published>2023-02-06T23:57:56Z</published>
+    <title>Data Selection for Language Models via Importance Resampling</title>
+    <summary>  Selecting a suitable pretraining dataset is crucial for both general-domain
+(e.g., GPT-3) and domain-specific (e.g., Codex) language models (LMs). We
+formalize this problem as selecting a subset of a large raw unlabeled dataset
+to match a desired target distribution given unlabeled target samples. Due to
+the scale and dimensionality of the raw text data, existing methods use simple
+heuristics or require human experts to manually curate data. Instead, we extend
+the classic importance resampling approach used in low-dimensions for LM data
+selection. We propose Data Selection with Importance Resampling (DSIR), an
+efficient and scalable framework that estimates importance weights in a reduced
+feature space for tractability and selects data with importance resampling
+according to these weights. We instantiate the DSIR framework with hashed
+n-gram features for efficiency, enabling the selection of 100M documents from
+the full Pile dataset in 4.5 hours. To measure whether hashed n-gram features
+preserve the aspects of the data that are relevant to the target, we define KL
+reduction, a data metric that measures the proximity between the selected
+pretraining data and the target on some feature space. Across 8 data selection
+methods (including expert selection), KL reduction on hashed n-gram features
+highly correlates with average downstream accuracy (r=0.82). When selecting
+data for continued pretraining on a specific domain, DSIR performs comparably
+to expert curation across 8 target distributions. When pretraining
+general-domain models (target is Wikipedia and books), DSIR improves over
+random selection and heuristic filtering baselines by 2-2.5% on the GLUE
+benchmark. Code is available at https://github.com/p-lambda/dsir.
+</summary>
+    <author>
+      <name>Sang Michael Xie</name>
+    </author>
+    <author>
+      <name>Shibani Santurkar</name>
+    </author>
+    <author>
+      <name>Tengyu Ma</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">NeurIPS 2023</arxiv:comment>
+    <link href="http://arxiv.org/abs/2302.03169v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2302.03169v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

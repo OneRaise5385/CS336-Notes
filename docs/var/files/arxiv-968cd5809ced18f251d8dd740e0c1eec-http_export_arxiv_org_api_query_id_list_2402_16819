@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2402.16819%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2402.16819&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/BtMRAmvNBsmaJkTcRy2JbSUfkpQ</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2402.16819v2</id>
+    <updated>2024-02-27T15:22:57Z</updated>
+    <published>2024-02-26T18:43:45Z</published>
+    <title>Nemotron-4 15B Technical Report</title>
+    <summary>  We introduce Nemotron-4 15B, a 15-billion-parameter large multilingual
+language model trained on 8 trillion text tokens. Nemotron-4 15B demonstrates
+strong performance when assessed on English, multilingual, and coding tasks: it
+outperforms all existing similarly-sized open models on 4 out of 7 downstream
+evaluation areas and achieves competitive performance to the leading open
+models in the remaining ones. Specifically, Nemotron-4 15B exhibits the best
+multilingual capabilities of all similarly-sized models, even outperforming
+models over four times larger and those explicitly specialized for multilingual
+tasks.
+</summary>
+    <author>
+      <name>Jupinder Parmar</name>
+    </author>
+    <author>
+      <name>Shrimai Prabhumoye</name>
+    </author>
+    <author>
+      <name>Joseph Jennings</name>
+    </author>
+    <author>
+      <name>Mostofa Patwary</name>
+    </author>
+    <author>
+      <name>Sandeep Subramanian</name>
+    </author>
+    <author>
+      <name>Dan Su</name>
+    </author>
+    <author>
+      <name>Chen Zhu</name>
+    </author>
+    <author>
+      <name>Deepak Narayanan</name>
+    </author>
+    <author>
+      <name>Aastha Jhunjhunwala</name>
+    </author>
+    <author>
+      <name>Ayush Dattagupta</name>
+    </author>
+    <author>
+      <name>Vibhu Jawa</name>
+    </author>
+    <author>
+      <name>Jiwei Liu</name>
+    </author>
+    <author>
+      <name>Ameya Mahabaleshwarkar</name>
+    </author>
+    <author>
+      <name>Osvald Nitski</name>
+    </author>
+    <author>
+      <name>Annika Brundyn</name>
+    </author>
+    <author>
+      <name>James Maki</name>
+    </author>
+    <author>
+      <name>Miguel Martinez</name>
+    </author>
+    <author>
+      <name>Jiaxuan You</name>
+    </author>
+    <author>
+      <name>John Kamalu</name>
+    </author>
+    <author>
+      <name>Patrick LeGresley</name>
+    </author>
+    <author>
+      <name>Denys Fridman</name>
+    </author>
+    <author>
+      <name>Jared Casper</name>
+    </author>
+    <author>
+      <name>Ashwath Aithal</name>
+    </author>
+    <author>
+      <name>Oleksii Kuchaiev</name>
+    </author>
+    <author>
+      <name>Mohammad Shoeybi</name>
+    </author>
+    <author>
+      <name>Jonathan Cohen</name>
+    </author>
+    <author>
+      <name>Bryan Catanzaro</name>
+    </author>
+    <link href="http://arxiv.org/abs/2402.16819v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2402.16819v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

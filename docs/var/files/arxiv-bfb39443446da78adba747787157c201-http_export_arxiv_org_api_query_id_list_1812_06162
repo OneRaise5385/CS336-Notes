@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1812.06162%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1812.06162&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/qjHOMrgA2tt8KeJhZN1mytLx/5Q</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1812.06162v1</id>
+    <updated>2018-12-14T20:49:09Z</updated>
+    <published>2018-12-14T20:49:09Z</published>
+    <title>An Empirical Model of Large-Batch Training</title>
+    <summary>  In an increasing number of domains it has been demonstrated that deep
+learning models can be trained using relatively large batch sizes without
+sacrificing data efficiency. However the limits of this massive data
+parallelism seem to differ from domain to domain, ranging from batches of tens
+of thousands in ImageNet to batches of millions in RL agents that play the game
+Dota 2. To our knowledge there is limited conceptual understanding of why these
+limits to batch size differ or how we might choose the correct batch size in a
+new domain. In this paper, we demonstrate that a simple and easy-to-measure
+statistic called the gradient noise scale predicts the largest useful batch
+size across many domains and applications, including a number of supervised
+learning datasets (MNIST, SVHN, CIFAR-10, ImageNet, Billion Word),
+reinforcement learning domains (Atari and Dota), and even generative model
+training (autoencoders on SVHN). We find that the noise scale increases as the
+loss decreases over a training run and depends on the model size primarily
+through improved model performance. Our empirically-motivated theory also
+describes the tradeoff between compute-efficiency and time-efficiency, and
+provides a rough model of the benefits of adaptive batch-size training.
+</summary>
+    <author>
+      <name>Sam McCandlish</name>
+    </author>
+    <author>
+      <name>Jared Kaplan</name>
+    </author>
+    <author>
+      <name>Dario Amodei</name>
+    </author>
+    <author>
+      <name>OpenAI Dota Team</name>
+    </author>
+    <link href="http://arxiv.org/abs/1812.06162v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1812.06162v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

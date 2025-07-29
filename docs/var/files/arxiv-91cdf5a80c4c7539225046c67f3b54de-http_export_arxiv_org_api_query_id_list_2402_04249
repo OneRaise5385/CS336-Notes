@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2402.04249%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2402.04249&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/dPzm2507WU+4T6Ks7RJ/sZuZC1g</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2402.04249v2</id>
+    <updated>2024-02-27T04:43:08Z</updated>
+    <published>2024-02-06T18:59:08Z</published>
+    <title>HarmBench: A Standardized Evaluation Framework for Automated Red Teaming
+  and Robust Refusal</title>
+    <summary>  Automated red teaming holds substantial promise for uncovering and mitigating
+the risks associated with the malicious use of large language models (LLMs),
+yet the field lacks a standardized evaluation framework to rigorously assess
+new methods. To address this issue, we introduce HarmBench, a standardized
+evaluation framework for automated red teaming. We identify several desirable
+properties previously unaccounted for in red teaming evaluations and
+systematically design HarmBench to meet these criteria. Using HarmBench, we
+conduct a large-scale comparison of 18 red teaming methods and 33 target LLMs
+and defenses, yielding novel insights. We also introduce a highly efficient
+adversarial training method that greatly enhances LLM robustness across a wide
+range of attacks, demonstrating how HarmBench enables codevelopment of attacks
+and defenses. We open source HarmBench at
+https://github.com/centerforaisafety/HarmBench.
+</summary>
+    <author>
+      <name>Mantas Mazeika</name>
+    </author>
+    <author>
+      <name>Long Phan</name>
+    </author>
+    <author>
+      <name>Xuwang Yin</name>
+    </author>
+    <author>
+      <name>Andy Zou</name>
+    </author>
+    <author>
+      <name>Zifan Wang</name>
+    </author>
+    <author>
+      <name>Norman Mu</name>
+    </author>
+    <author>
+      <name>Elham Sakhaee</name>
+    </author>
+    <author>
+      <name>Nathaniel Li</name>
+    </author>
+    <author>
+      <name>Steven Basart</name>
+    </author>
+    <author>
+      <name>Bo Li</name>
+    </author>
+    <author>
+      <name>David Forsyth</name>
+    </author>
+    <author>
+      <name>Dan Hendrycks</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Website: https://www.harmbench.org</arxiv:comment>
+    <link href="http://arxiv.org/abs/2402.04249v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2402.04249v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

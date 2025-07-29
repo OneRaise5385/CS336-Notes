@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2310.18313%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2310.18313&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/2PUjiZVXngzUgflIaxm4l9FxzE4</id>
+  <updated>2025-03-30T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2310.18313v2</id>
+    <updated>2023-12-19T12:27:58Z</updated>
+    <published>2023-10-27T17:59:51Z</published>
+    <title>FP8-LM: Training FP8 Large Language Models</title>
+    <summary>  In this paper, we explore FP8 low-bit data formats for efficient training of
+large language models (LLMs). Our key insight is that most variables, such as
+gradients and optimizer states, in LLM training can employ low-precision data
+formats without compromising model accuracy and requiring no changes to
+hyper-parameters. Specifically, we propose a new FP8 automatic mixed-precision
+framework for training LLMs. This framework offers three levels of FP8
+utilization to streamline mixed-precision and distributed parallel training for
+LLMs. It gradually incorporates 8-bit gradients, optimizer states, and
+distributed learning in an incremental manner. Experiment results show that,
+during the training of GPT-175B model on H100 GPU platform, our FP8
+mixed-precision training framework not only achieved a remarkable 39% reduction
+in real memory usage but also ran 75% faster than the widely adopted BF16
+framework (i.e., Megatron-LM), surpassing the speed of Nvidia Transformer
+Engine by 37%. This largely reduces the training costs for large foundation
+models. Furthermore, our FP8 mixed-precision training methodology is generic.
+It can be seamlessly applied to other tasks such as LLM instruction tuning and
+reinforcement learning with human feedback, offering savings in fine-tuning
+expenses. Our FP8 low-precision training framework is open-sourced at
+{https://github.com/Azure/MS-AMP}{aka.ms/MS.AMP}.
+</summary>
+    <author>
+      <name>Houwen Peng</name>
+    </author>
+    <author>
+      <name>Kan Wu</name>
+    </author>
+    <author>
+      <name>Yixuan Wei</name>
+    </author>
+    <author>
+      <name>Guoshuai Zhao</name>
+    </author>
+    <author>
+      <name>Yuxiang Yang</name>
+    </author>
+    <author>
+      <name>Ze Liu</name>
+    </author>
+    <author>
+      <name>Yifan Xiong</name>
+    </author>
+    <author>
+      <name>Ziyue Yang</name>
+    </author>
+    <author>
+      <name>Bolin Ni</name>
+    </author>
+    <author>
+      <name>Jingcheng Hu</name>
+    </author>
+    <author>
+      <name>Ruihang Li</name>
+    </author>
+    <author>
+      <name>Miaosen Zhang</name>
+    </author>
+    <author>
+      <name>Chen Li</name>
+    </author>
+    <author>
+      <name>Jia Ning</name>
+    </author>
+    <author>
+      <name>Ruizhe Wang</name>
+    </author>
+    <author>
+      <name>Zheng Zhang</name>
+    </author>
+    <author>
+      <name>Shuguang Liu</name>
+    </author>
+    <author>
+      <name>Joe Chau</name>
+    </author>
+    <author>
+      <name>Han Hu</name>
+    </author>
+    <author>
+      <name>Peng Cheng</name>
+    </author>
+    <link href="http://arxiv.org/abs/2310.18313v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2310.18313v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

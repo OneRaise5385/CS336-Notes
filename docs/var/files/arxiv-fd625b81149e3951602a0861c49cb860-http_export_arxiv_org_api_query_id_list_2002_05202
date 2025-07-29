@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2002.05202%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2002.05202&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/A1jdCTiSM0RrIzOpztfZFn5gOhI</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2002.05202v1</id>
+    <updated>2020-02-12T19:57:13Z</updated>
+    <published>2020-02-12T19:57:13Z</published>
+    <title>GLU Variants Improve Transformer</title>
+    <summary>  Gated Linear Units (arXiv:1612.08083) consist of the component-wise product
+of two linear projections, one of which is first passed through a sigmoid
+function. Variations on GLU are possible, using different nonlinear (or even
+linear) functions in place of sigmoid. We test these variants in the
+feed-forward sublayers of the Transformer (arXiv:1706.03762)
+sequence-to-sequence model, and find that some of them yield quality
+improvements over the typically-used ReLU or GELU activations.
+</summary>
+    <author>
+      <name>Noam Shazeer</name>
+    </author>
+    <link href="http://arxiv.org/abs/2002.05202v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2002.05202v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

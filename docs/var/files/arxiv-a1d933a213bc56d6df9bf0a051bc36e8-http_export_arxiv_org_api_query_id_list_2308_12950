@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2308.12950%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2308.12950&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/YgWvDSYbcySJtkyfCx/fe3DVqrU</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2308.12950v3</id>
+    <updated>2024-01-31T19:47:26Z</updated>
+    <published>2023-08-24T17:39:13Z</published>
+    <title>Code Llama: Open Foundation Models for Code</title>
+    <summary>  We release Code Llama, a family of large language models for code based on
+Llama 2 providing state-of-the-art performance among open models, infilling
+capabilities, support for large input contexts, and zero-shot instruction
+following ability for programming tasks. We provide multiple flavors to cover a
+wide range of applications: foundation models (Code Llama), Python
+specializations (Code Llama - Python), and instruction-following models (Code
+Llama - Instruct) with 7B, 13B, 34B and 70B parameters each. All models are
+trained on sequences of 16k tokens and show improvements on inputs with up to
+100k tokens. 7B, 13B and 70B Code Llama and Code Llama - Instruct variants
+support infilling based on surrounding content. Code Llama reaches
+state-of-the-art performance among open models on several code benchmarks, with
+scores of up to 67% and 65% on HumanEval and MBPP, respectively. Notably, Code
+Llama - Python 7B outperforms Llama 2 70B on HumanEval and MBPP, and all our
+models outperform every other publicly available model on MultiPL-E. We release
+Code Llama under a permissive license that allows for both research and
+commercial use.
+</summary>
+    <author>
+      <name>Baptiste Rozière</name>
+    </author>
+    <author>
+      <name>Jonas Gehring</name>
+    </author>
+    <author>
+      <name>Fabian Gloeckle</name>
+    </author>
+    <author>
+      <name>Sten Sootla</name>
+    </author>
+    <author>
+      <name>Itai Gat</name>
+    </author>
+    <author>
+      <name>Xiaoqing Ellen Tan</name>
+    </author>
+    <author>
+      <name>Yossi Adi</name>
+    </author>
+    <author>
+      <name>Jingyu Liu</name>
+    </author>
+    <author>
+      <name>Romain Sauvestre</name>
+    </author>
+    <author>
+      <name>Tal Remez</name>
+    </author>
+    <author>
+      <name>Jérémy Rapin</name>
+    </author>
+    <author>
+      <name>Artyom Kozhevnikov</name>
+    </author>
+    <author>
+      <name>Ivan Evtimov</name>
+    </author>
+    <author>
+      <name>Joanna Bitton</name>
+    </author>
+    <author>
+      <name>Manish Bhatt</name>
+    </author>
+    <author>
+      <name>Cristian Canton Ferrer</name>
+    </author>
+    <author>
+      <name>Aaron Grattafiori</name>
+    </author>
+    <author>
+      <name>Wenhan Xiong</name>
+    </author>
+    <author>
+      <name>Alexandre Défossez</name>
+    </author>
+    <author>
+      <name>Jade Copet</name>
+    </author>
+    <author>
+      <name>Faisal Azhar</name>
+    </author>
+    <author>
+      <name>Hugo Touvron</name>
+    </author>
+    <author>
+      <name>Louis Martin</name>
+    </author>
+    <author>
+      <name>Nicolas Usunier</name>
+    </author>
+    <author>
+      <name>Thomas Scialom</name>
+    </author>
+    <author>
+      <name>Gabriel Synnaeve</name>
+    </author>
+    <link href="http://arxiv.org/abs/2308.12950v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2308.12950v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

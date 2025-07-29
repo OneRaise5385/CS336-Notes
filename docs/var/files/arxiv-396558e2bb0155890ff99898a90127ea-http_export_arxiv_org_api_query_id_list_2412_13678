@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2412.13678%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2412.13678&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/WL0Ejaq2XtctGzOW0h8tJvka3lk</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2412.13678v1</id>
+    <updated>2024-12-18T10:05:43Z</updated>
+    <published>2024-12-18T10:05:43Z</published>
+    <title>Clio: Privacy-Preserving Insights into Real-World AI Use</title>
+    <summary>  How are AI assistants being used in the real world? While model providers in
+theory have a window into this impact via their users' data, both privacy
+concerns and practical challenges have made analyzing this data difficult. To
+address these issues, we present Clio (Claude insights and observations), a
+privacy-preserving platform that uses AI assistants themselves to analyze and
+surface aggregated usage patterns across millions of conversations, without the
+need for human reviewers to read raw conversations. We validate this can be
+done with a high degree of accuracy and privacy by conducting extensive
+evaluations. We demonstrate Clio's usefulness in two broad ways. First, we
+share insights about how models are being used in the real world from one
+million Claude.ai Free and Pro conversations, ranging from providing advice on
+hairstyles to providing guidance on Git operations and concepts. We also
+identify the most common high-level use cases on Claude.ai (coding, writing,
+and research tasks) as well as patterns that differ across languages (e.g.,
+conversations in Japanese discuss elder care and aging populations at
+higher-than-typical rates). Second, we use Clio to make our systems safer by
+identifying coordinated attempts to abuse our systems, monitoring for unknown
+unknowns during critical periods like launches of new capabilities or major
+world events, and improving our existing monitoring systems. We also discuss
+the limitations of our approach, as well as risks and ethical concerns. By
+enabling analysis of real-world AI usage, Clio provides a scalable platform for
+empirically grounded AI safety and governance.
+</summary>
+    <author>
+      <name>Alex Tamkin</name>
+    </author>
+    <author>
+      <name>Miles McCain</name>
+    </author>
+    <author>
+      <name>Kunal Handa</name>
+    </author>
+    <author>
+      <name>Esin Durmus</name>
+    </author>
+    <author>
+      <name>Liane Lovitt</name>
+    </author>
+    <author>
+      <name>Ankur Rathi</name>
+    </author>
+    <author>
+      <name>Saffron Huang</name>
+    </author>
+    <author>
+      <name>Alfred Mountfield</name>
+    </author>
+    <author>
+      <name>Jerry Hong</name>
+    </author>
+    <author>
+      <name>Stuart Ritchie</name>
+    </author>
+    <author>
+      <name>Michael Stern</name>
+    </author>
+    <author>
+      <name>Brian Clarke</name>
+    </author>
+    <author>
+      <name>Landon Goldberg</name>
+    </author>
+    <author>
+      <name>Theodore R. Sumers</name>
+    </author>
+    <author>
+      <name>Jared Mueller</name>
+    </author>
+    <author>
+      <name>William McEachen</name>
+    </author>
+    <author>
+      <name>Wes Mitchell</name>
+    </author>
+    <author>
+      <name>Shan Carter</name>
+    </author>
+    <author>
+      <name>Jack Clark</name>
+    </author>
+    <author>
+      <name>Jared Kaplan</name>
+    </author>
+    <author>
+      <name>Deep Ganguli</name>
+    </author>
+    <link href="http://arxiv.org/abs/2412.13678v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2412.13678v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2203.14465%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2203.14465&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/UZi/1QYTAKsxZ8kEo3CRSfFJd+M</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2203.14465v2</id>
+    <updated>2022-05-20T13:52:54Z</updated>
+    <published>2022-03-28T03:12:15Z</published>
+    <title>STaR: Bootstrapping Reasoning With Reasoning</title>
+    <summary>  Generating step-by-step "chain-of-thought" rationales improves language model
+performance on complex reasoning tasks like mathematics or commonsense
+question-answering. However, inducing language model rationale generation
+currently requires either constructing massive rationale datasets or
+sacrificing accuracy by using only few-shot inference. We propose a technique
+to iteratively leverage a small number of rationale examples and a large
+dataset without rationales, to bootstrap the ability to perform successively
+more complex reasoning. This technique, the "Self-Taught Reasoner" (STaR),
+relies on a simple loop: generate rationales to answer many questions, prompted
+with a few rationale examples; if the generated answers are wrong, try again to
+generate a rationale given the correct answer; fine-tune on all the rationales
+that ultimately yielded correct answers; repeat. We show that STaR
+significantly improves performance on multiple datasets compared to a model
+fine-tuned to directly predict final answers, and performs comparably to
+fine-tuning a 30$\times$ larger state-of-the-art language model on
+CommensenseQA. Thus, STaR lets a model improve itself by learning from its own
+generated reasoning.
+</summary>
+    <author>
+      <name>Eric Zelikman</name>
+    </author>
+    <author>
+      <name>Yuhuai Wu</name>
+    </author>
+    <author>
+      <name>Jesse Mu</name>
+    </author>
+    <author>
+      <name>Noah D. Goodman</name>
+    </author>
+    <link href="http://arxiv.org/abs/2203.14465v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2203.14465v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

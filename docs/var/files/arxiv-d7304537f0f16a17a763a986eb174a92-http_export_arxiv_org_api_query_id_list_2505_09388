@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2505.09388%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2505.09388&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/pNOmIItYartiJwtvJPjBWLcaFP0</id>
+  <updated>2025-05-27T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2505.09388v1</id>
+    <updated>2025-05-14T13:41:34Z</updated>
+    <published>2025-05-14T13:41:34Z</published>
+    <title>Qwen3 Technical Report</title>
+    <summary>  In this work, we present Qwen3, the latest version of the Qwen model family.
+Qwen3 comprises a series of large language models (LLMs) designed to advance
+performance, efficiency, and multilingual capabilities. The Qwen3 series
+includes models of both dense and Mixture-of-Expert (MoE) architectures, with
+parameter scales ranging from 0.6 to 235 billion. A key innovation in Qwen3 is
+the integration of thinking mode (for complex, multi-step reasoning) and
+non-thinking mode (for rapid, context-driven responses) into a unified
+framework. This eliminates the need to switch between different models--such as
+chat-optimized models (e.g., GPT-4o) and dedicated reasoning models (e.g.,
+QwQ-32B)--and enables dynamic mode switching based on user queries or chat
+templates. Meanwhile, Qwen3 introduces a thinking budget mechanism, allowing
+users to allocate computational resources adaptively during inference, thereby
+balancing latency and performance based on task complexity. Moreover, by
+leveraging the knowledge from the flagship models, we significantly reduce the
+computational resources required to build smaller-scale models, while ensuring
+their highly competitive performance. Empirical evaluations demonstrate that
+Qwen3 achieves state-of-the-art results across diverse benchmarks, including
+tasks in code generation, mathematical reasoning, agent tasks, etc.,
+competitive against larger MoE models and proprietary models. Compared to its
+predecessor Qwen2.5, Qwen3 expands multilingual support from 29 to 119
+languages and dialects, enhancing global accessibility through improved
+cross-lingual understanding and generation capabilities. To facilitate
+reproducibility and community-driven research and development, all Qwen3 models
+are publicly accessible under Apache 2.0.
+</summary>
+    <author>
+      <name>An Yang</name>
+    </author>
+    <author>
+      <name>Anfeng Li</name>
+    </author>
+    <author>
+      <name>Baosong Yang</name>
+    </author>
+    <author>
+      <name>Beichen Zhang</name>
+    </author>
+    <author>
+      <name>Binyuan Hui</name>
+    </author>
+    <author>
+      <name>Bo Zheng</name>
+    </author>
+    <author>
+      <name>Bowen Yu</name>
+    </author>
+    <author>
+      <name>Chang Gao</name>
+    </author>
+    <author>
+      <name>Chengen Huang</name>
+    </author>
+    <author>
+      <name>Chenxu Lv</name>
+    </author>
+    <author>
+      <name>Chujie Zheng</name>
+    </author>
+    <author>
+      <name>Dayiheng Liu</name>
+    </author>
+    <author>
+      <name>Fan Zhou</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+    <author>
+      <name>Feng Hu</name>
+    </author>
+    <author>
+      <name>Hao Ge</name>
+    </author>
+    <author>
+      <name>Haoran Wei</name>
+    </author>
+    <author>
+      <name>Huan Lin</name>
+    </author>
+    <author>
+      <name>Jialong Tang</name>
+    </author>
+    <author>
+      <name>Jian Yang</name>
+    </author>
+    <author>
+      <name>Jianhong Tu</name>
+    </author>
+    <author>
+      <name>Jianwei Zhang</name>
+    </author>
+    <author>
+      <name>Jianxin Yang</name>
+    </author>
+    <author>
+      <name>Jiaxi Yang</name>
+    </author>
+    <author>
+      <name>Jing Zhou</name>
+    </author>
+    <author>
+      <name>Jingren Zhou</name>
+    </author>
+    <author>
+      <name>Junyang Lin</name>
+    </author>
+    <author>
+      <name>Kai Dang</name>
+    </author>
+    <author>
+      <name>Keqin Bao</name>
+    </author>
+    <author>
+      <name>Kexin Yang</name>
+    </author>
+    <author>
+      <name>Le Yu</name>
+    </author>
+    <author>
+      <name>Lianghao Deng</name>
+    </author>
+    <author>
+      <name>Mei Li</name>
+    </author>
+    <author>
+      <name>Mingfeng Xue</name>
+    </author>
+    <author>
+      <name>Mingze Li</name>
+    </author>
+    <author>
+      <name>Pei Zhang</name>
+    </author>
+    <author>
+      <name>Peng Wang</name>
+    </author>
+    <author>
+      <name>Qin Zhu</name>
+    </author>
+    <author>
+      <name>Rui Men</name>
+    </author>
+    <author>
+      <name>Ruize Gao</name>
+    </author>
+    <author>
+      <name>Shixuan Liu</name>
+    </author>
+    <author>
+      <name>Shuang Luo</name>
+    </author>
+    <author>
+      <name>Tianhao Li</name>
+    </author>
+    <author>
+      <name>Tianyi Tang</name>
+    </author>
+    <author>
+      <name>Wenbiao Yin</name>
+    </author>
+    <author>
+      <name>Xingzhang Ren</name>
+    </author>
+    <author>
+      <name>Xinyu Wang</name>
+    </author>
+    <author>
+      <name>Xinyu Zhang</name>
+    </author>
+    <author>
+      <name>Xuancheng Ren</name>
+    </author>
+    <author>
+      <name>Yang Fan</name>
+    </author>
+    <author>
+      <name>Yang Su</name>
+    </author>
+    <author>
+      <name>Yichang Zhang</name>
+    </author>
+    <author>
+      <name>Yinger Zhang</name>
+    </author>
+    <author>
+      <name>Yu Wan</name>
+    </author>
+    <author>
+      <name>Yuqiong Liu</name>
+    </author>
+    <author>
+      <name>Zekun Wang</name>
+    </author>
+    <author>
+      <name>Zeyu Cui</name>
+    </author>
+    <author>
+      <name>Zhenru Zhang</name>
+    </author>
+    <author>
+      <name>Zhipeng Zhou</name>
+    </author>
+    <author>
+      <name>Zihan Qiu</name>
+    </author>
+    <link href="http://arxiv.org/abs/2505.09388v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2505.09388v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

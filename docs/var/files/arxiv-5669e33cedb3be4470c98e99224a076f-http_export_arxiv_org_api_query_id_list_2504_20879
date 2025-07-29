@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2504.20879%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2504.20879&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/sJX6G8z2MEX/68puxieUg0hr71o</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2504.20879v1</id>
+    <updated>2025-04-29T15:48:49Z</updated>
+    <published>2025-04-29T15:48:49Z</published>
+    <title>The Leaderboard Illusion</title>
+    <summary>  Measuring progress is fundamental to the advancement of any scientific field.
+As benchmarks play an increasingly central role, they also grow more
+susceptible to distortion. Chatbot Arena has emerged as the go-to leaderboard
+for ranking the most capable AI systems. Yet, in this work we identify
+systematic issues that have resulted in a distorted playing field. We find that
+undisclosed private testing practices benefit a handful of providers who are
+able to test multiple variants before public release and retract scores if
+desired. We establish that the ability of these providers to choose the best
+score leads to biased Arena scores due to selective disclosure of performance
+results. At an extreme, we identify 27 private LLM variants tested by Meta in
+the lead-up to the Llama-4 release. We also establish that proprietary closed
+models are sampled at higher rates (number of battles) and have fewer models
+removed from the arena than open-weight and open-source alternatives. Both
+these policies lead to large data access asymmetries over time. Providers like
+Google and OpenAI have received an estimated 19.2% and 20.4% of all data on the
+arena, respectively. In contrast, a combined 83 open-weight models have only
+received an estimated 29.7% of the total data. We show that access to Chatbot
+Arena data yields substantial benefits; even limited additional data can result
+in relative performance gains of up to 112% on the arena distribution, based on
+our conservative estimates. Together, these dynamics result in overfitting to
+Arena-specific dynamics rather than general model quality. The Arena builds on
+the substantial efforts of both the organizers and an open community that
+maintains this valuable evaluation platform. We offer actionable
+recommendations to reform the Chatbot Arena's evaluation framework and promote
+fairer, more transparent benchmarking for the field
+</summary>
+    <author>
+      <name>Shivalika Singh</name>
+    </author>
+    <author>
+      <name>Yiyang Nan</name>
+    </author>
+    <author>
+      <name>Alex Wang</name>
+    </author>
+    <author>
+      <name>Daniel D'Souza</name>
+    </author>
+    <author>
+      <name>Sayash Kapoor</name>
+    </author>
+    <author>
+      <name>Ahmet Üstün</name>
+    </author>
+    <author>
+      <name>Sanmi Koyejo</name>
+    </author>
+    <author>
+      <name>Yuntian Deng</name>
+    </author>
+    <author>
+      <name>Shayne Longpre</name>
+    </author>
+    <author>
+      <name>Noah Smith</name>
+    </author>
+    <author>
+      <name>Beyza Ermis</name>
+    </author>
+    <author>
+      <name>Marzieh Fadaee</name>
+    </author>
+    <author>
+      <name>Sara Hooker</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">68 pages, 18 figures, 9 tables</arxiv:comment>
+    <link href="http://arxiv.org/abs/2504.20879v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2504.20879v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,95 @@
+	[4mGPU0	GPU1	GPU2	GPU3	GPU4	GPU5	GPU6	GPU7	NIC0	NIC1	NIC2	NIC3	NIC4	NIC5	NIC6	NIC7	NIC8	NIC9	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NV18	NV18	NV18	NV18	NV18	NV18	NV18	PIX	NODE	NODE	NODE	NODE	NODE	SYS	SYS	SYS	SYS	0-31	0		N/A
+GPU1	NV18	 X 	NV18	NV18	NV18	NV18	NV18	NV18	NODE	PIX	NODE	NODE	NODE	NODE	SYS	SYS	SYS	SYS	0-31	0		N/A
+GPU2	NV18	NV18	 X 	NV18	NV18	NV18	NV18	NV18	NODE	NODE	PIX	NODE	NODE	NODE	SYS	SYS	SYS	SYS	0-31	0		N/A
+GPU3	NV18	NV18	NV18	 X 	NV18	NV18	NV18	NV18	NODE	NODE	NODE	NODE	NODE	PIX	SYS	SYS	SYS	SYS	0-31	0		N/A
+GPU4	NV18	NV18	NV18	NV18	 X 	NV18	NV18	NV18	SYS	SYS	SYS	SYS	SYS	SYS	PIX	NODE	NODE	NODE	32-63	1		N/A
+GPU5	NV18	NV18	NV18	NV18	NV18	 X 	NV18	NV18	SYS	SYS	SYS	SYS	SYS	SYS	NODE	PIX	NODE	NODE	32-63	1		N/A
+GPU6	NV18	NV18	NV18	NV18	NV18	NV18	 X 	NV18	SYS	SYS	SYS	SYS	SYS	SYS	NODE	NODE	PIX	NODE	32-63	1		N/A
+GPU7	NV18	NV18	NV18	NV18	NV18	NV18	NV18	 X 	SYS	SYS	SYS	SYS	SYS	SYS	NODE	NODE	NODE	PIX	32-63	1		N/A
+NIC0	PIX	NODE	NODE	NODE	SYS	SYS	SYS	SYS	 X 	NODE	NODE	NODE	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC1	NODE	PIX	NODE	NODE	SYS	SYS	SYS	SYS	NODE	 X 	NODE	NODE	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC2	NODE	NODE	PIX	NODE	SYS	SYS	SYS	SYS	NODE	NODE	 X 	NODE	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC3	NODE	NODE	NODE	NODE	SYS	SYS	SYS	SYS	NODE	NODE	NODE	 X 	PIX	NODE	SYS	SYS	SYS	SYS				
+NIC4	NODE	NODE	NODE	NODE	SYS	SYS	SYS	SYS	NODE	NODE	NODE	PIX	 X 	NODE	SYS	SYS	SYS	SYS				
+NIC5	NODE	NODE	NODE	PIX	SYS	SYS	SYS	SYS	NODE	NODE	NODE	NODE	NODE	 X 	SYS	SYS	SYS	SYS				
+NIC6	SYS	SYS	SYS	SYS	PIX	NODE	NODE	NODE	SYS	SYS	SYS	SYS	SYS	SYS	 X 	NODE	NODE	NODE				
+NIC7	SYS	SYS	SYS	SYS	NODE	PIX	NODE	NODE	SYS	SYS	SYS	SYS	SYS	SYS	NODE	 X 	NODE	NODE				
+NIC8	SYS	SYS	SYS	SYS	NODE	NODE	PIX	NODE	SYS	SYS	SYS	SYS	SYS	SYS	NODE	NODE	 X 	NODE				
+NIC9	SYS	SYS	SYS	SYS	NODE	NODE	NODE	PIX	SYS	SYS	SYS	SYS	SYS	SYS	NODE	NODE	NODE	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+  NIC1: mlx5_1
+  NIC2: mlx5_2
+  NIC3: mlx5_3
+  NIC4: mlx5_4
+  NIC5: mlx5_5
+  NIC6: mlx5_6
+  NIC7: mlx5_7
+  NIC8: mlx5_8
+  NIC9: mlx5_9
+
+Rank 3 [before all-reduce]: tensor([3., 4., 5., 6.], device='cuda:3')
+Rank 0 [before all-reduce]: tensor([0., 1., 2., 3.], device='cuda:0')
+Rank 1 [before all-reduce]: tensor([1., 2., 3., 4.], device='cuda:1')
+Rank 2 [before all-reduce]: tensor([2., 3., 4., 5.], device='cuda:2')
+Rank 0 [after all-reduce]: tensor([ 6., 10., 14., 18.], device='cuda:0')
+Rank 1 [after all-reduce]: tensor([ 6., 10., 14., 18.], device='cuda:1')
+Rank 3 [after all-reduce]: tensor([ 6., 10., 14., 18.], device='cuda:3')
+Rank 2 [after all-reduce]: tensor([ 6., 10., 14., 18.], device='cuda:2')
+Rank 0 [before reduce-scatter]: input = tensor([0., 1., 2., 3.], device='cuda:0'), output = tensor([0.], device='cuda:0')
+Rank 1 [before reduce-scatter]: input = tensor([1., 2., 3., 4.], device='cuda:1'), output = tensor([0.], device='cuda:1')
+Rank 2 [before reduce-scatter]: input = tensor([2., 3., 4., 5.], device='cuda:2'), output = tensor([0.], device='cuda:2')
+Rank 3 [before reduce-scatter]: input = tensor([3., 4., 5., 6.], device='cuda:3'), output = tensor([0.], device='cuda:3')
+Rank 2 [after reduce-scatter]: input = tensor([2., 3., 4., 5.], device='cuda:2'), output = tensor([14.], device='cuda:2')
+Rank 0 [after reduce-scatter]: input = tensor([0., 1., 2., 3.], device='cuda:0'), output = tensor([6.], device='cuda:0')
+Rank 1 [after reduce-scatter]: input = tensor([1., 2., 3., 4.], device='cuda:1'), output = tensor([10.], device='cuda:1')
+Rank 3 [after reduce-scatter]: input = tensor([3., 4., 5., 6.], device='cuda:3'), output = tensor([18.], device='cuda:3')
+Rank 0 [before all-gather]: input = tensor([6.], device='cuda:0'), output = tensor([ 0., 10., 14., 18.], device='cuda:0')
+Rank 3 [before all-gather]: input = tensor([18.], device='cuda:3'), output = tensor([3., 4., 5., 6.], device='cuda:3')
+Rank 1 [before all-gather]: input = tensor([10.], device='cuda:1'), output = tensor([1., 2., 3., 4.], device='cuda:1')
+Rank 2 [before all-gather]: input = tensor([14.], device='cuda:2'), output = tensor([2., 3., 4., 5.], device='cuda:2')
+Rank 3 [after all-gather]: input = tensor([18.], device='cuda:3'), output = tensor([ 6., 10., 14., 18.], device='cuda:3')
+Rank 0 [after all-gather]: input = tensor([6.], device='cuda:0'), output = tensor([ 6., 10., 14., 18.], device='cuda:0')
+Rank 1 [after all-gather]: input = tensor([10.], device='cuda:1'), output = tensor([ 6., 10., 14., 18.], device='cuda:1')
+Rank 2 [after all-gather]: input = tensor([14.], device='cuda:2'), output = tensor([ 6., 10., 14., 18.], device='cuda:2')
+[all_reduce] Rank 1: all_reduce(world_size=4, num_elements=104857600) took 2.16ms
+[all_reduce] Rank 0: all_reduce(world_size=4, num_elements=104857600) took 2.14ms
+[all_reduce] Rank 2: all_reduce(world_size=4, num_elements=104857600) took 2.11ms
+[all_reduce] Rank 3: all_reduce(world_size=4, num_elements=104857600) took 2.11ms
+[all_reduce] Rank 2: all_reduce measured bandwidth = 278 GB/s
+[all_reduce] Rank 1: all_reduce measured bandwidth = 272 GB/s
+[all_reduce] Rank 0: all_reduce measured bandwidth = 273 GB/s
+[all_reduce] Rank 3: all_reduce measured bandwidth = 278 GB/s
+[reduce_scatter] Rank 3: reduce_scatter(world_size=4, num_elements=104857600) took 3.92ms
+[reduce_scatter] Rank 2: reduce_scatter(world_size=4, num_elements=104857600) took 3.92ms
+[reduce_scatter] Rank 0: reduce_scatter(world_size=4, num_elements=104857600) took 4.06ms
+[reduce_scatter] Rank 1: reduce_scatter(world_size=4, num_elements=104857600) took 4.03ms
+[reduce_scatter] Rank 0: reduce_scatter measured bandwidth = 72 GB/s
+[reduce_scatter] Rank 3: reduce_scatter measured bandwidth = 75 GB/s
+[reduce_scatter] Rank 2: reduce_scatter measured bandwidth = 75 GB/s
+[reduce_scatter] Rank 1: reduce_scatter measured bandwidth = 73 GB/s
+[data_parallelism] Rank 1: step = 0, loss = 0.013036300428211689, params = ['1024x1024[-0.0299...]', '1024x1024[-0.0299...]', '1024x1024[-0.0279...]', '1024x1024[-0.0299...]']
+[data_parallelism] Rank 3: step = 0, loss = 0.01319716777652502, params = ['1024x1024[-0.0299...]', '1024x1024[-0.0299...]', '1024x1024[-0.0279...]', '1024x1024[-0.0299...]']
+[data_parallelism] Rank 2: step = 0, loss = 0.012783264741301537, params = ['1024x1024[-0.0299...]', '1024x1024[-0.0299...]', '1024x1024[-0.0279...]', '1024x1024[-0.0299...]']
+[data_parallelism] Rank 0: step = 0, loss = 0.013143327087163925, params = ['1024x1024[-0.0299...]', '1024x1024[-0.0299...]', '1024x1024[-0.0279...]', '1024x1024[-0.0299...]']
+[tensor_parallelism] Rank 1: forward pass produced activations 128x1024[0.5497...]
+[tensor_parallelism] Rank 3: forward pass produced activations 128x1024[0.5497...]
+[tensor_parallelism] Rank 0: forward pass produced activations 128x1024[0.5497...]
+[tensor_parallelism] Rank 2: forward pass produced activations 128x1024[0.5497...]
+[pipeline_parallelism] Rank 0: sending 32x1024[-0.0603...] to rank 1
+[pipeline_parallelism] Rank 0: sending 32x1024[-0.1507...] to rank 1
+[pipeline_parallelism] Rank 0: sending 32x1024[-0.1025...] to rank 1
+[pipeline_parallelism] Rank 0: sending 32x1024[0.1981...] to rank 1

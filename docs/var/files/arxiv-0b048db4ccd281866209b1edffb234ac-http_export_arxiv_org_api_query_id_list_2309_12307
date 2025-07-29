@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2309.12307%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2309.12307&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/KhKpdeKNL6XrUfiHHDj45g4xypQ</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2309.12307v3</id>
+    <updated>2024-03-08T15:26:38Z</updated>
+    <published>2023-09-21T17:59:11Z</published>
+    <title>LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models</title>
+    <summary>  We present LongLoRA, an efficient fine-tuning approach that extends the
+context sizes of pre-trained large language models (LLMs), with limited
+computation cost. Typically, training LLMs with long context sizes is
+computationally expensive, requiring extensive training hours and GPU
+resources. For example, training on the context length of 8192 needs 16x
+computational costs in self-attention layers as that of 2048. In this paper, we
+speed up the context extension of LLMs in two aspects. On the one hand,
+although dense global attention is needed during inference, fine-tuning the
+model can be effectively and efficiently done by sparse local attention. The
+proposed shifted sparse attention effectively enables context extension,
+leading to non-trivial computation saving with similar performance to
+fine-tuning with vanilla attention. Particularly, it can be implemented with
+only two lines of code in training, while being optional in inference. On the
+other hand, we revisit the parameter-efficient fine-tuning regime for context
+expansion. Notably, we find that LoRA for context extension works well under
+the premise of trainable embedding and normalization. LongLoRA combines this
+improved LoRA with S^2-Attn. LongLoRA demonstrates strong empirical results on
+various tasks on Llama2 models from 7B/13B to 70B. LongLoRA extends Llama2 7B
+from 4k context to 100k, or Llama2 70B to 32k on a single 8x A100 machine.
+LongLoRA extends models' context while retaining their original architectures,
+and is compatible with most existing techniques, like Flash-Attention2. In
+addition, we further conduct supervised fine-tuning with LongLoRA and our long
+instruction-following LongAlpaca dataset.
+</summary>
+    <author>
+      <name>Yukang Chen</name>
+    </author>
+    <author>
+      <name>Shengju Qian</name>
+    </author>
+    <author>
+      <name>Haotian Tang</name>
+    </author>
+    <author>
+      <name>Xin Lai</name>
+    </author>
+    <author>
+      <name>Zhijian Liu</name>
+    </author>
+    <author>
+      <name>Song Han</name>
+    </author>
+    <author>
+      <name>Jiaya Jia</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Code, models, dataset, and demo are available at
+  https://github.com/dvlab-research/LongLoRA</arxiv:comment>
+    <link href="http://arxiv.org/abs/2309.12307v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2309.12307v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2311.12022%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2311.12022&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/KRx0C3Rlj1pela1czVrmbu0HeLs</id>
+  <updated>2025-05-08T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2311.12022v1</id>
+    <updated>2023-11-20T18:57:34Z</updated>
+    <published>2023-11-20T18:57:34Z</published>
+    <title>GPQA: A Graduate-Level Google-Proof Q&amp;A Benchmark</title>
+    <summary>  We present GPQA, a challenging dataset of 448 multiple-choice questions
+written by domain experts in biology, physics, and chemistry. We ensure that
+the questions are high-quality and extremely difficult: experts who have or are
+pursuing PhDs in the corresponding domains reach 65% accuracy (74% when
+discounting clear mistakes the experts identified in retrospect), while highly
+skilled non-expert validators only reach 34% accuracy, despite spending on
+average over 30 minutes with unrestricted access to the web (i.e., the
+questions are "Google-proof"). The questions are also difficult for
+state-of-the-art AI systems, with our strongest GPT-4 based baseline achieving
+39% accuracy. If we are to use future AI systems to help us answer very hard
+questions, for example, when developing new scientific knowledge, we need to
+develop scalable oversight methods that enable humans to supervise their
+outputs, which may be difficult even if the supervisors are themselves skilled
+and knowledgeable. The difficulty of GPQA both for skilled non-experts and
+frontier AI systems should enable realistic scalable oversight experiments,
+which we hope can help devise ways for human experts to reliably get truthful
+information from AI systems that surpass human capabilities.
+</summary>
+    <author>
+      <name>David Rein</name>
+    </author>
+    <author>
+      <name>Betty Li Hou</name>
+    </author>
+    <author>
+      <name>Asa Cooper Stickland</name>
+    </author>
+    <author>
+      <name>Jackson Petty</name>
+    </author>
+    <author>
+      <name>Richard Yuanzhe Pang</name>
+    </author>
+    <author>
+      <name>Julien Dirani</name>
+    </author>
+    <author>
+      <name>Julian Michael</name>
+    </author>
+    <author>
+      <name>Samuel R. Bowman</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">28 pages, 5 figures, 7 tables</arxiv:comment>
+    <link href="http://arxiv.org/abs/2311.12022v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2311.12022v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

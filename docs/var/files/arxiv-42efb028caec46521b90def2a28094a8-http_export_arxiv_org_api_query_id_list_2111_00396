@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2111.00396%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2111.00396&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/KKu8LpxSmgXgaUefibtJ3s8cekI</id>
+  <updated>2025-04-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2111.00396v3</id>
+    <updated>2022-08-05T17:54:38Z</updated>
+    <published>2021-10-31T03:32:18Z</published>
+    <title>Efficiently Modeling Long Sequences with Structured State Spaces</title>
+    <summary>  A central goal of sequence modeling is designing a single principled model
+that can address sequence data across a range of modalities and tasks,
+particularly on long-range dependencies. Although conventional models including
+RNNs, CNNs, and Transformers have specialized variants for capturing long
+dependencies, they still struggle to scale to very long sequences of $10000$ or
+more steps. A promising recent approach proposed modeling sequences by
+simulating the fundamental state space model (SSM) \( x'(t) = Ax(t) + Bu(t),
+y(t) = Cx(t) + Du(t) \), and showed that for appropriate choices of the state
+matrix \( A \), this system could handle long-range dependencies mathematically
+and empirically. However, this method has prohibitive computation and memory
+requirements, rendering it infeasible as a general sequence modeling solution.
+We propose the Structured State Space sequence model (S4) based on a new
+parameterization for the SSM, and show that it can be computed much more
+efficiently than prior approaches while preserving their theoretical strengths.
+Our technique involves conditioning \( A \) with a low-rank correction,
+allowing it to be diagonalized stably and reducing the SSM to the well-studied
+computation of a Cauchy kernel. S4 achieves strong empirical results across a
+diverse range of established benchmarks, including (i) 91\% accuracy on
+sequential CIFAR-10 with no data augmentation or auxiliary losses, on par with
+a larger 2-D ResNet, (ii) substantially closing the gap to Transformers on
+image and language modeling tasks, while performing generation $60\times$
+faster (iii) SoTA on every task from the Long Range Arena benchmark, including
+solving the challenging Path-X task of length 16k that all prior work fails on,
+while being as efficient as all competitors.
+</summary>
+    <author>
+      <name>Albert Gu</name>
+    </author>
+    <author>
+      <name>Karan Goel</name>
+    </author>
+    <author>
+      <name>Christopher Ré</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">ICLR 2022 (Outstanding Paper HM)</arxiv:comment>
+    <link href="http://arxiv.org/abs/2111.00396v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2111.00396v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

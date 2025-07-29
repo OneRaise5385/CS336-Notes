@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2405.03548%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2405.03548&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/sGjeMQPBr6ZYGTJ2VKEsukucTIk</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2405.03548v4</id>
+    <updated>2024-05-23T16:34:35Z</updated>
+    <published>2024-05-06T15:11:38Z</published>
+    <title>MAmmoTH2: Scaling Instructions from the Web</title>
+    <summary>  Instruction tuning improves the reasoning abilities of large language models
+(LLMs), with data quality and scalability being the crucial factors. Most
+instruction tuning data come from human crowd-sourcing or GPT-4 distillation.
+We propose a paradigm to efficiently harvest 10 million naturally existing
+instruction data from the pre-training web corpus to enhance LLM reasoning. Our
+approach involves (1) recalling relevant documents, (2) extracting
+instruction-response pairs, and (3) refining the extracted pairs using
+open-source LLMs. Fine-tuning base LLMs on this dataset, we build MAmmoTH2
+models, which significantly boost performance on reasoning benchmarks. Notably,
+MAmmoTH2-7B's (Mistral) performance increases from 11% to 36.7% on MATH and
+from 36% to 68.4% on GSM8K without training on any in-domain data. Further
+training MAmmoTH2 on public instruction tuning datasets yields MAmmoTH2-Plus,
+achieving state-of-the-art performance on several reasoning and chatbot
+benchmarks. Our work demonstrates how to harvest large-scale, high-quality
+instruction data without costly human annotation or GPT-4 distillation,
+providing a new paradigm for building better instruction tuning data.
+</summary>
+    <author>
+      <name>Xiang Yue</name>
+    </author>
+    <author>
+      <name>Tuney Zheng</name>
+    </author>
+    <author>
+      <name>Ge Zhang</name>
+    </author>
+    <author>
+      <name>Wenhu Chen</name>
+    </author>
+    <link href="http://arxiv.org/abs/2405.03548v4" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2405.03548v4" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2411.15124%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2411.15124&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/oZYzfM4cTFb1Wfp6Zst633CsYKs</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2411.15124v5</id>
+    <updated>2025-04-14T22:39:09Z</updated>
+    <published>2024-11-22T18:44:04Z</published>
+    <title>Tulu 3: Pushing Frontiers in Open Language Model Post-Training</title>
+    <summary>  Language model post-training is applied to refine behaviors and unlock new
+skills across a wide range of recent language models, but open recipes for
+applying these techniques lag behind proprietary ones. The underlying training
+data and recipes for post-training are simultaneously the most important pieces
+of the puzzle and the portion with the least transparency. To bridge this gap,
+we introduce Tulu 3, a family of fully-open state-of-the-art post-trained
+models, alongside its data, code, and training recipes, serving as a
+comprehensive guide for modern post-training techniques. Tulu 3, which builds
+on Llama 3.1 base models, achieves results surpassing the instruct versions of
+Llama 3.1, Qwen 2.5, Mistral, and even closed models such as GPT-4o-mini and
+Claude 3.5-Haiku. The training algorithms for our models include supervised
+finetuning (SFT), Direct Preference Optimization (DPO), and a novel method we
+call Reinforcement Learning with Verifiable Rewards (RLVR). With Tulu 3, we
+introduce a multi-task evaluation scheme for post-training recipes with
+development and unseen evaluations, standard benchmark implementations, and
+substantial decontamination of existing open datasets on said benchmarks. We
+conclude with analysis and discussion of training methods that did not reliably
+improve performance.
+  In addition to the Tulu 3 model weights and demo, we release the complete
+recipe -- including datasets for diverse core skills, a robust toolkit for data
+curation and evaluation, the training code and infrastructure, and, most
+importantly, a detailed report for reproducing and further adapting the Tulu 3
+approach to more domains.
+</summary>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Jacob Morrison</name>
+    </author>
+    <author>
+      <name>Valentina Pyatkin</name>
+    </author>
+    <author>
+      <name>Shengyi Huang</name>
+    </author>
+    <author>
+      <name>Hamish Ivison</name>
+    </author>
+    <author>
+      <name>Faeze Brahman</name>
+    </author>
+    <author>
+      <name>Lester James V. Miranda</name>
+    </author>
+    <author>
+      <name>Alisa Liu</name>
+    </author>
+    <author>
+      <name>Nouha Dziri</name>
+    </author>
+    <author>
+      <name>Shane Lyu</name>
+    </author>
+    <author>
+      <name>Yuling Gu</name>
+    </author>
+    <author>
+      <name>Saumya Malik</name>
+    </author>
+    <author>
+      <name>Victoria Graf</name>
+    </author>
+    <author>
+      <name>Jena D. Hwang</name>
+    </author>
+    <author>
+      <name>Jiangjiang Yang</name>
+    </author>
+    <author>
+      <name>Ronan Le Bras</name>
+    </author>
+    <author>
+      <name>Oyvind Tafjord</name>
+    </author>
+    <author>
+      <name>Chris Wilhelm</name>
+    </author>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Yizhong Wang</name>
+    </author>
+    <author>
+      <name>Pradeep Dasigi</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Added Tulu 3 405B results and additional analyses</arxiv:comment>
+    <link href="http://arxiv.org/abs/2411.15124v5" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2411.15124v5" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

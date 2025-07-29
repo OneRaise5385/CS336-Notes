@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1904.10509%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1904.10509&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/wnlFw7CZNpV7JhDb+ywzjJycOOQ</id>
+  <updated>2025-04-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1904.10509v1</id>
+    <updated>2019-04-23T19:29:47Z</updated>
+    <published>2019-04-23T19:29:47Z</published>
+    <title>Generating Long Sequences with Sparse Transformers</title>
+    <summary>  Transformers are powerful sequence models, but require time and memory that
+grows quadratically with the sequence length. In this paper we introduce sparse
+factorizations of the attention matrix which reduce this to $O(n \sqrt{n})$. We
+also introduce a) a variation on architecture and initialization to train
+deeper networks, b) the recomputation of attention matrices to save memory, and
+c) fast attention kernels for training. We call networks with these changes
+Sparse Transformers, and show they can model sequences tens of thousands of
+timesteps long using hundreds of layers. We use the same architecture to model
+images, audio, and text from raw bytes, setting a new state of the art for
+density modeling of Enwik8, CIFAR-10, and ImageNet-64. We generate
+unconditional samples that demonstrate global coherence and great diversity,
+and show it is possible in principle to use self-attention to model sequences
+of length one million or more.
+</summary>
+    <author>
+      <name>Rewon Child</name>
+    </author>
+    <author>
+      <name>Scott Gray</name>
+    </author>
+    <author>
+      <name>Alec Radford</name>
+    </author>
+    <author>
+      <name>Ilya Sutskever</name>
+    </author>
+    <link href="http://arxiv.org/abs/1904.10509v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1904.10509v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

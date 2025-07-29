@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2304.14454%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2304.14454&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/Yhhv4cKUdBjgwbraMLH1i9enELo</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2304.14454v3</id>
+    <updated>2023-08-25T14:08:38Z</updated>
+    <published>2023-04-27T18:29:05Z</published>
+    <title>PMC-LLaMA: Towards Building Open-source Language Models for Medicine</title>
+    <summary>  Recently, Large Language Models (LLMs) have showcased remarkable capabilities
+in natural language understanding. While demonstrating proficiency in everyday
+conversations and question-answering situations, these models frequently
+struggle in domains that require precision, such as medical applications, due
+to their lack of domain-specific knowledge. In this paper, we describe the
+procedure for building a powerful, open-source language model specifically
+designed for medicine applications, termed as PMC-LLaMA. Our contributions are
+threefold: (i) we systematically investigate the process of adapting a
+general-purpose foundation language model towards medical domain, this involves
+data-centric knowledge injection through the integration of 4.8M biomedical
+academic papers and 30K medical textbooks, as well as comprehensive fine-tuning
+for alignment with domain-specific instructions; (ii) we contribute a
+large-scale, comprehensive dataset for instruction tuning. This dataset
+encompasses medical question-answering (QA), rationale for reasoning, and
+conversational dialogues, comprising a total of 202M tokens; (iii) we conduct
+thorough ablation studies to demonstrate the effectiveness of each proposed
+component. While evaluating on various public medical question-answering
+benchmarks, our lightweight PMCLLaMA, which consists of only 13 billion
+parameters, exhibits superior performance, even surpassing ChatGPT. All models,
+codes, datasets can be found in https://github.com/chaoyi-wu/PMC-LLaMA.
+</summary>
+    <author>
+      <name>Chaoyi Wu</name>
+    </author>
+    <author>
+      <name>Weixiong Lin</name>
+    </author>
+    <author>
+      <name>Xiaoman Zhang</name>
+    </author>
+    <author>
+      <name>Ya Zhang</name>
+    </author>
+    <author>
+      <name>Yanfeng Wang</name>
+    </author>
+    <author>
+      <name>Weidi Xie</name>
+    </author>
+    <link href="http://arxiv.org/abs/2304.14454v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2304.14454v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

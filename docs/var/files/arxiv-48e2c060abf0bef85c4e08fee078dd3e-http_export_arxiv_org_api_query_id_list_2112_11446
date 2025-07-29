@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2112.11446%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2112.11446&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/X8xpCNZRhAm1m1Qit+1q3CsxwKo</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2112.11446v2</id>
+    <updated>2022-01-21T18:39:38Z</updated>
+    <published>2021-12-08T19:41:47Z</published>
+    <title>Scaling Language Models: Methods, Analysis &amp; Insights from Training
+  Gopher</title>
+    <summary>  Language modelling provides a step towards intelligent communication systems
+by harnessing large repositories of written human knowledge to better predict
+and understand the world. In this paper, we present an analysis of
+Transformer-based language model performance across a wide range of model
+scales -- from models with tens of millions of parameters up to a 280 billion
+parameter model called Gopher. These models are evaluated on 152 diverse tasks,
+achieving state-of-the-art performance across the majority. Gains from scale
+are largest in areas such as reading comprehension, fact-checking, and the
+identification of toxic language, but logical and mathematical reasoning see
+less benefit. We provide a holistic analysis of the training dataset and
+model's behaviour, covering the intersection of model scale with bias and
+toxicity. Finally we discuss the application of language models to AI safety
+and the mitigation of downstream harms.
+</summary>
+    <author>
+      <name>Jack W. Rae</name>
+    </author>
+    <author>
+      <name>Sebastian Borgeaud</name>
+    </author>
+    <author>
+      <name>Trevor Cai</name>
+    </author>
+    <author>
+      <name>Katie Millican</name>
+    </author>
+    <author>
+      <name>Jordan Hoffmann</name>
+    </author>
+    <author>
+      <name>Francis Song</name>
+    </author>
+    <author>
+      <name>John Aslanides</name>
+    </author>
+    <author>
+      <name>Sarah Henderson</name>
+    </author>
+    <author>
+      <name>Roman Ring</name>
+    </author>
+    <author>
+      <name>Susannah Young</name>
+    </author>
+    <author>
+      <name>Eliza Rutherford</name>
+    </author>
+    <author>
+      <name>Tom Hennigan</name>
+    </author>
+    <author>
+      <name>Jacob Menick</name>
+    </author>
+    <author>
+      <name>Albin Cassirer</name>
+    </author>
+    <author>
+      <name>Richard Powell</name>
+    </author>
+    <author>
+      <name>George van den Driessche</name>
+    </author>
+    <author>
+      <name>Lisa Anne Hendricks</name>
+    </author>
+    <author>
+      <name>Maribeth Rauh</name>
+    </author>
+    <author>
+      <name>Po-Sen Huang</name>
+    </author>
+    <author>
+      <name>Amelia Glaese</name>
+    </author>
+    <author>
+      <name>Johannes Welbl</name>
+    </author>
+    <author>
+      <name>Sumanth Dathathri</name>
+    </author>
+    <author>
+      <name>Saffron Huang</name>
+    </author>
+    <author>
+      <name>Jonathan Uesato</name>
+    </author>
+    <author>
+      <name>John Mellor</name>
+    </author>
+    <author>
+      <name>Irina Higgins</name>
+    </author>
+    <author>
+      <name>Antonia Creswell</name>
+    </author>
+    <author>
+      <name>Nat McAleese</name>
+    </author>
+    <author>
+      <name>Amy Wu</name>
+    </author>
+    <author>
+      <name>Erich Elsen</name>
+    </author>
+    <author>
+      <name>Siddhant Jayakumar</name>
+    </author>
+    <author>
+      <name>Elena Buchatskaya</name>
+    </author>
+    <author>
+      <name>David Budden</name>
+    </author>
+    <author>
+      <name>Esme Sutherland</name>
+    </author>
+    <author>
+      <name>Karen Simonyan</name>
+    </author>
+    <author>
+      <name>Michela Paganini</name>
+    </author>
+    <author>
+      <name>Laurent Sifre</name>
+    </author>
+    <author>
+      <name>Lena Martens</name>
+    </author>
+    <author>
+      <name>Xiang Lorraine Li</name>
+    </author>
+    <author>
+      <name>Adhiguna Kuncoro</name>
+    </author>
+    <author>
+      <name>Aida Nematzadeh</name>
+    </author>
+    <author>
+      <name>Elena Gribovskaya</name>
+    </author>
+    <author>
+      <name>Domenic Donato</name>
+    </author>
+    <author>
+      <name>Angeliki Lazaridou</name>
+    </author>
+    <author>
+      <name>Arthur Mensch</name>
+    </author>
+    <author>
+      <name>Jean-Baptiste Lespiau</name>
+    </author>
+    <author>
+      <name>Maria Tsimpoukelli</name>
+    </author>
+    <author>
+      <name>Nikolai Grigorev</name>
+    </author>
+    <author>
+      <name>Doug Fritz</name>
+    </author>
+    <author>
+      <name>Thibault Sottiaux</name>
+    </author>
+    <author>
+      <name>Mantas Pajarskas</name>
+    </author>
+    <author>
+      <name>Toby Pohlen</name>
+    </author>
+    <author>
+      <name>Zhitao Gong</name>
+    </author>
+    <author>
+      <name>Daniel Toyama</name>
+    </author>
+    <author>
+      <name>Cyprien de Masson d'Autume</name>
+    </author>
+    <author>
+      <name>Yujia Li</name>
+    </author>
+    <author>
+      <name>Tayfun Terzi</name>
+    </author>
+    <author>
+      <name>Vladimir Mikulik</name>
+    </author>
+    <author>
+      <name>Igor Babuschkin</name>
+    </author>
+    <author>
+      <name>Aidan Clark</name>
+    </author>
+    <author>
+      <name>Diego de Las Casas</name>
+    </author>
+    <author>
+      <name>Aurelia Guy</name>
+    </author>
+    <author>
+      <name>Chris Jones</name>
+    </author>
+    <author>
+      <name>James Bradbury</name>
+    </author>
+    <author>
+      <name>Matthew Johnson</name>
+    </author>
+    <author>
+      <name>Blake Hechtman</name>
+    </author>
+    <author>
+      <name>Laura Weidinger</name>
+    </author>
+    <author>
+      <name>Iason Gabriel</name>
+    </author>
+    <author>
+      <name>William Isaac</name>
+    </author>
+    <author>
+      <name>Ed Lockhart</name>
+    </author>
+    <author>
+      <name>Simon Osindero</name>
+    </author>
+    <author>
+      <name>Laura Rimell</name>
+    </author>
+    <author>
+      <name>Chris Dyer</name>
+    </author>
+    <author>
+      <name>Oriol Vinyals</name>
+    </author>
+    <author>
+      <name>Kareem Ayoub</name>
+    </author>
+    <author>
+      <name>Jeff Stanway</name>
+    </author>
+    <author>
+      <name>Lorrayne Bennett</name>
+    </author>
+    <author>
+      <name>Demis Hassabis</name>
+    </author>
+    <author>
+      <name>Koray Kavukcuoglu</name>
+    </author>
+    <author>
+      <name>Geoffrey Irving</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">120 pages</arxiv:comment>
+    <link href="http://arxiv.org/abs/2112.11446v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2112.11446v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

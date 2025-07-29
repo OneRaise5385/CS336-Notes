@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2501.08313%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2501.08313&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/EgQgtECUs4xJXbxhqWc3vYFGYqQ</id>
+  <updated>2025-05-01T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2501.08313v1</id>
+    <updated>2025-01-14T18:50:05Z</updated>
+    <published>2025-01-14T18:50:05Z</published>
+    <title>MiniMax-01: Scaling Foundation Models with Lightning Attention</title>
+    <summary>  We introduce MiniMax-01 series, including MiniMax-Text-01 and MiniMax-VL-01,
+which are comparable to top-tier models while offering superior capabilities in
+processing longer contexts. The core lies in lightning attention and its
+efficient scaling. To maximize computational capacity, we integrate it with
+Mixture of Experts (MoE), creating a model with 32 experts and 456 billion
+total parameters, of which 45.9 billion are activated for each token. We
+develop an optimized parallel strategy and highly efficient
+computation-communication overlap techniques for MoE and lightning attention.
+This approach enables us to conduct efficient training and inference on models
+with hundreds of billions of parameters across contexts spanning millions of
+tokens. The context window of MiniMax-Text-01 can reach up to 1 million tokens
+during training and extrapolate to 4 million tokens during inference at an
+affordable cost. Our vision-language model, MiniMax-VL-01 is built through
+continued training with 512 billion vision-language tokens. Experiments on both
+standard and in-house benchmarks show that our models match the performance of
+state-of-the-art models like GPT-4o and Claude-3.5-Sonnet while offering 20-32
+times longer context window. We publicly release MiniMax-01 at
+https://github.com/MiniMax-AI.
+</summary>
+    <author>
+      <name> MiniMax</name>
+    </author>
+    <author>
+      <name>Aonian Li</name>
+    </author>
+    <author>
+      <name>Bangwei Gong</name>
+    </author>
+    <author>
+      <name>Bo Yang</name>
+    </author>
+    <author>
+      <name>Boji Shan</name>
+    </author>
+    <author>
+      <name>Chang Liu</name>
+    </author>
+    <author>
+      <name>Cheng Zhu</name>
+    </author>
+    <author>
+      <name>Chunhao Zhang</name>
+    </author>
+    <author>
+      <name>Congchao Guo</name>
+    </author>
+    <author>
+      <name>Da Chen</name>
+    </author>
+    <author>
+      <name>Dong Li</name>
+    </author>
+    <author>
+      <name>Enwei Jiao</name>
+    </author>
+    <author>
+      <name>Gengxin Li</name>
+    </author>
+    <author>
+      <name>Guojun Zhang</name>
+    </author>
+    <author>
+      <name>Haohai Sun</name>
+    </author>
+    <author>
+      <name>Houze Dong</name>
+    </author>
+    <author>
+      <name>Jiadai Zhu</name>
+    </author>
+    <author>
+      <name>Jiaqi Zhuang</name>
+    </author>
+    <author>
+      <name>Jiayuan Song</name>
+    </author>
+    <author>
+      <name>Jin Zhu</name>
+    </author>
+    <author>
+      <name>Jingtao Han</name>
+    </author>
+    <author>
+      <name>Jingyang Li</name>
+    </author>
+    <author>
+      <name>Junbin Xie</name>
+    </author>
+    <author>
+      <name>Junhao Xu</name>
+    </author>
+    <author>
+      <name>Junjie Yan</name>
+    </author>
+    <author>
+      <name>Kaishun Zhang</name>
+    </author>
+    <author>
+      <name>Kecheng Xiao</name>
+    </author>
+    <author>
+      <name>Kexi Kang</name>
+    </author>
+    <author>
+      <name>Le Han</name>
+    </author>
+    <author>
+      <name>Leyang Wang</name>
+    </author>
+    <author>
+      <name>Lianfei Yu</name>
+    </author>
+    <author>
+      <name>Liheng Feng</name>
+    </author>
+    <author>
+      <name>Lin Zheng</name>
+    </author>
+    <author>
+      <name>Linbo Chai</name>
+    </author>
+    <author>
+      <name>Long Xing</name>
+    </author>
+    <author>
+      <name>Meizhi Ju</name>
+    </author>
+    <author>
+      <name>Mingyuan Chi</name>
+    </author>
+    <author>
+      <name>Mozhi Zhang</name>
+    </author>
+    <author>
+      <name>Peikai Huang</name>
+    </author>
+    <author>
+      <name>Pengcheng Niu</name>
+    </author>
+    <author>
+      <name>Pengfei Li</name>
+    </author>
+    <author>
+      <name>Pengyu Zhao</name>
+    </author>
+    <author>
+      <name>Qi Yang</name>
+    </author>
+    <author>
+      <name>Qidi Xu</name>
+    </author>
+    <author>
+      <name>Qiexiang Wang</name>
+    </author>
+    <author>
+      <name>Qin Wang</name>
+    </author>
+    <author>
+      <name>Qiuhui Li</name>
+    </author>
+    <author>
+      <name>Ruitao Leng</name>
+    </author>
+    <author>
+      <name>Shengmin Shi</name>
+    </author>
+    <author>
+      <name>Shuqi Yu</name>
+    </author>
+    <author>
+      <name>Sichen Li</name>
+    </author>
+    <author>
+      <name>Songquan Zhu</name>
+    </author>
+    <author>
+      <name>Tao Huang</name>
+    </author>
+    <author>
+      <name>Tianrun Liang</name>
+    </author>
+    <author>
+      <name>Weigao Sun</name>
+    </author>
+    <author>
+      <name>Weixuan Sun</name>
+    </author>
+    <author>
+      <name>Weiyu Cheng</name>
+    </author>
+    <author>
+      <name>Wenkai Li</name>
+    </author>
+    <author>
+      <name>Xiangjun Song</name>
+    </author>
+    <author>
+      <name>Xiao Su</name>
+    </author>
+    <author>
+      <name>Xiaodong Han</name>
+    </author>
+    <author>
+      <name>Xinjie Zhang</name>
+    </author>
+    <author>
+      <name>Xinzhu Hou</name>
+    </author>
+    <author>
+      <name>Xu Min</name>
+    </author>
+    <author>
+      <name>Xun Zou</name>
+    </author>
+    <author>
+      <name>Xuyang Shen</name>
+    </author>
+    <author>
+      <name>Yan Gong</name>
+    </author>
+    <author>
+      <name>Yingjie Zhu</name>
+    </author>
+    <author>
+      <name>Yipeng Zhou</name>
+    </author>
+    <author>
+      <name>Yiran Zhong</name>
+    </author>
+    <author>
+      <name>Yongyi Hu</name>
+    </author>
+    <author>
+      <name>Yuanxiang Fan</name>
+    </author>
+    <author>
+      <name>Yue Yu</name>
+    </author>
+    <author>
+      <name>Yufeng Yang</name>
+    </author>
+    <author>
+      <name>Yuhao Li</name>
+    </author>
+    <author>
+      <name>Yunan Huang</name>
+    </author>
+    <author>
+      <name>Yunji Li</name>
+    </author>
+    <author>
+      <name>Yunpeng Huang</name>
+    </author>
+    <author>
+      <name>Yunzhi Xu</name>
+    </author>
+    <author>
+      <name>Yuxin Mao</name>
+    </author>
+    <author>
+      <name>Zehan Li</name>
+    </author>
+    <author>
+      <name>Zekang Li</name>
+    </author>
+    <author>
+      <name>Zewei Tao</name>
+    </author>
+    <author>
+      <name>Zewen Ying</name>
+    </author>
+    <author>
+      <name>Zhaoyang Cong</name>
+    </author>
+    <author>
+      <name>Zhen Qin</name>
+    </author>
+    <author>
+      <name>Zhenhua Fan</name>
+    </author>
+    <author>
+      <name>Zhihang Yu</name>
+    </author>
+    <author>
+      <name>Zhuo Jiang</name>
+    </author>
+    <author>
+      <name>Zijia Wu</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">A technical report from MiniMax. The authors are listed in
+  alphabetical order. We open-sourced our MiniMax-01 at
+  https://github.com/MiniMax-AI</arxiv:comment>
+    <link href="http://arxiv.org/abs/2501.08313v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2501.08313v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

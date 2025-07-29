@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2211.15533%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2211.15533&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/g7vNXep4pNtxiHGFti672jJO6kQ</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2211.15533v1</id>
+    <updated>2022-11-20T18:15:30Z</updated>
+    <published>2022-11-20T18:15:30Z</published>
+    <title>The Stack: 3 TB of permissively licensed source code</title>
+    <summary>  Large Language Models (LLMs) play an ever-increasing role in the field of
+Artificial Intelligence (AI)--not only for natural language processing but also
+for code understanding and generation. To stimulate open and responsible
+research on LLMs for code, we introduce The Stack, a 3.1 TB dataset consisting
+of permissively licensed source code in 30 programming languages. We describe
+how we collect the full dataset, construct a permissively licensed subset,
+present a data governance plan, discuss limitations, and show promising results
+on text2code benchmarks by training 350M-parameter decoders on different Python
+subsets. We find that (1) near-deduplicating the data significantly boosts
+performance across all experiments, and (2) it is possible to match previously
+reported HumanEval and MBPP performance using only permissively licensed data.
+We make the dataset available at https://hf.co/BigCode, provide a tool called
+"Am I in The Stack" (https://hf.co/spaces/bigcode/in-the-stack) for developers
+to search The Stack for copies of their code, and provide a process for code to
+be removed from the dataset by following the instructions at
+https://www.bigcode-project.org/docs/about/the-stack/.
+</summary>
+    <author>
+      <name>Denis Kocetkov</name>
+    </author>
+    <author>
+      <name>Raymond Li</name>
+    </author>
+    <author>
+      <name>Loubna Ben Allal</name>
+    </author>
+    <author>
+      <name>Jia Li</name>
+    </author>
+    <author>
+      <name>Chenghao Mou</name>
+    </author>
+    <author>
+      <name>Carlos Muñoz Ferrandis</name>
+    </author>
+    <author>
+      <name>Yacine Jernite</name>
+    </author>
+    <author>
+      <name>Margaret Mitchell</name>
+    </author>
+    <author>
+      <name>Sean Hughes</name>
+    </author>
+    <author>
+      <name>Thomas Wolf</name>
+    </author>
+    <author>
+      <name>Dzmitry Bahdanau</name>
+    </author>
+    <author>
+      <name>Leandro von Werra</name>
+    </author>
+    <author>
+      <name>Harm de Vries</name>
+    </author>
+    <link href="http://arxiv.org/abs/2211.15533v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2211.15533v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

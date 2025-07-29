@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2305.14233%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2305.14233&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/gdEctadbla2nWtI2XZHjlKePJTo</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2305.14233v1</id>
+    <updated>2023-05-23T16:49:14Z</updated>
+    <published>2023-05-23T16:49:14Z</published>
+    <title>Enhancing Chat Language Models by Scaling High-quality Instructional
+  Conversations</title>
+    <summary>  Fine-tuning on instruction data has been widely validated as an effective
+practice for implementing chat language models like ChatGPT. Scaling the
+diversity and quality of such data, although straightforward, stands a great
+chance of leading to improved performance. This paper aims to improve the upper
+bound of open-source models further. We first provide a systematically
+designed, diverse, informative, large-scale dataset of instructional
+conversations, UltraChat, which does not involve human queries. Our objective
+is to capture the breadth of interactions that a human might have with an AI
+assistant and employs a comprehensive framework to generate multi-turn
+conversation iteratively. UltraChat contains 1.5 million high-quality
+multi-turn dialogues and covers a wide range of topics and instructions. Our
+statistical analysis of UltraChat reveals its superiority in various key
+metrics, including scale, average length, diversity, coherence, etc.,
+solidifying its position as a leading open-source dataset. Building upon
+UltraChat, we fine-tune a LLaMA model to create a powerful conversational
+model, UltraLLaMA. Our evaluations indicate that UltraLLaMA consistently
+outperforms other open-source models, including Vicuna, the previously
+recognized state-of-the-art open-source model. The dataset and the model will
+be publicly released\footnote{\url{https://github.com/thunlp/UltraChat}}.
+</summary>
+    <author>
+      <name>Ning Ding</name>
+    </author>
+    <author>
+      <name>Yulin Chen</name>
+    </author>
+    <author>
+      <name>Bokai Xu</name>
+    </author>
+    <author>
+      <name>Yujia Qin</name>
+    </author>
+    <author>
+      <name>Zhi Zheng</name>
+    </author>
+    <author>
+      <name>Shengding Hu</name>
+    </author>
+    <author>
+      <name>Zhiyuan Liu</name>
+    </author>
+    <author>
+      <name>Maosong Sun</name>
+    </author>
+    <author>
+      <name>Bowen Zhou</name>
+    </author>
+    <link href="http://arxiv.org/abs/2305.14233v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2305.14233v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

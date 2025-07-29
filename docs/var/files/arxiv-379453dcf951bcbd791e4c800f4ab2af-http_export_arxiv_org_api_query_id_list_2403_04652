@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2403.04652%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2403.04652&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/n0/+4PcFijI/GR5GLo2pyLmwvDM</id>
+  <updated>2025-03-29T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2403.04652v3</id>
+    <updated>2025-01-21T10:12:05Z</updated>
+    <published>2024-03-07T16:52:49Z</published>
+    <title>Yi: Open Foundation Models by 01.AI</title>
+    <summary>  We introduce the Yi model family, a series of language and multimodal models
+that demonstrate strong multi-dimensional capabilities. The Yi model family is
+based on 6B and 34B pretrained language models, then we extend them to chat
+models, 200K long context models, depth-upscaled models, and vision-language
+models. Our base models achieve strong performance on a wide range of
+benchmarks like MMLU, and our finetuned chat models deliver strong human
+preference rate on major evaluation platforms like AlpacaEval and Chatbot
+Arena. Building upon our scalable super-computing infrastructure and the
+classical transformer architecture, we attribute the performance of Yi models
+primarily to its data quality resulting from our data-engineering efforts. For
+pretraining, we construct 3.1 trillion tokens of English and Chinese corpora
+using a cascaded data deduplication and quality filtering pipeline. For
+finetuning, we polish a small scale (less than 10K) instruction dataset over
+multiple iterations such that every single instance has been verified directly
+by our machine learning engineers. For vision-language, we combine the chat
+language model with a vision transformer encoder and train the model to align
+visual representations to the semantic space of the language model. We further
+extend the context length to 200K through lightweight continual pretraining and
+demonstrate strong needle-in-a-haystack retrieval performance. We show that
+extending the depth of the pretrained checkpoint through continual pretraining
+further improves performance. We believe that given our current results,
+continuing to scale up model parameters using thoroughly optimized data will
+lead to even stronger frontier models.
+</summary>
+    <author>
+      <name>01. AI</name>
+    </author>
+    <author>
+      <name> :</name>
+    </author>
+    <author>
+      <name>Alex Young</name>
+    </author>
+    <author>
+      <name>Bei Chen</name>
+    </author>
+    <author>
+      <name>Chao Li</name>
+    </author>
+    <author>
+      <name>Chengen Huang</name>
+    </author>
+    <author>
+      <name>Ge Zhang</name>
+    </author>
+    <author>
+      <name>Guanwei Zhang</name>
+    </author>
+    <author>
+      <name>Guoyin Wang</name>
+    </author>
+    <author>
+      <name>Heng Li</name>
+    </author>
+    <author>
+      <name>Jiangcheng Zhu</name>
+    </author>
+    <author>
+      <name>Jianqun Chen</name>
+    </author>
+    <author>
+      <name>Jing Chang</name>
+    </author>
+    <author>
+      <name>Kaidong Yu</name>
+    </author>
+    <author>
+      <name>Peng Liu</name>
+    </author>
+    <author>
+      <name>Qiang Liu</name>
+    </author>
+    <author>
+      <name>Shawn Yue</name>
+    </author>
+    <author>
+      <name>Senbin Yang</name>
+    </author>
+    <author>
+      <name>Shiming Yang</name>
+    </author>
+    <author>
+      <name>Wen Xie</name>
+    </author>
+    <author>
+      <name>Wenhao Huang</name>
+    </author>
+    <author>
+      <name>Xiaohui Hu</name>
+    </author>
+    <author>
+      <name>Xiaoyi Ren</name>
+    </author>
+    <author>
+      <name>Xinyao Niu</name>
+    </author>
+    <author>
+      <name>Pengcheng Nie</name>
+    </author>
+    <author>
+      <name>Yanpeng Li</name>
+    </author>
+    <author>
+      <name>Yuchi Xu</name>
+    </author>
+    <author>
+      <name>Yudong Liu</name>
+    </author>
+    <author>
+      <name>Yue Wang</name>
+    </author>
+    <author>
+      <name>Yuxuan Cai</name>
+    </author>
+    <author>
+      <name>Zhenyu Gu</name>
+    </author>
+    <author>
+      <name>Zhiyuan Liu</name>
+    </author>
+    <author>
+      <name>Zonghong Dai</name>
+    </author>
+    <link href="http://arxiv.org/abs/2403.04652v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2403.04652v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

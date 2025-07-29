@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D1701.06538%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=1701.06538&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/jJGueBbtJ8A/nXs0xXdV1O009fU</id>
+  <updated>2025-03-26T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/1701.06538v1</id>
+    <updated>2017-01-23T18:10:00Z</updated>
+    <published>2017-01-23T18:10:00Z</published>
+    <title>Outrageously Large Neural Networks: The Sparsely-Gated
+  Mixture-of-Experts Layer</title>
+    <summary>  The capacity of a neural network to absorb information is limited by its
+number of parameters. Conditional computation, where parts of the network are
+active on a per-example basis, has been proposed in theory as a way of
+dramatically increasing model capacity without a proportional increase in
+computation. In practice, however, there are significant algorithmic and
+performance challenges. In this work, we address these challenges and finally
+realize the promise of conditional computation, achieving greater than 1000x
+improvements in model capacity with only minor losses in computational
+efficiency on modern GPU clusters. We introduce a Sparsely-Gated
+Mixture-of-Experts layer (MoE), consisting of up to thousands of feed-forward
+sub-networks. A trainable gating network determines a sparse combination of
+these experts to use for each example. We apply the MoE to the tasks of
+language modeling and machine translation, where model capacity is critical for
+absorbing the vast quantities of knowledge available in the training corpora.
+We present model architectures in which a MoE with up to 137 billion parameters
+is applied convolutionally between stacked LSTM layers. On large language
+modeling and machine translation benchmarks, these models achieve significantly
+better results than state-of-the-art at lower computational cost.
+</summary>
+    <author>
+      <name>Noam Shazeer</name>
+    </author>
+    <author>
+      <name>Azalia Mirhoseini</name>
+    </author>
+    <author>
+      <name>Krzysztof Maziarz</name>
+    </author>
+    <author>
+      <name>Andy Davis</name>
+    </author>
+    <author>
+      <name>Quoc Le</name>
+    </author>
+    <author>
+      <name>Geoffrey Hinton</name>
+    </author>
+    <author>
+      <name>Jeff Dean</name>
+    </author>
+    <link href="http://arxiv.org/abs/1701.06538v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1701.06538v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

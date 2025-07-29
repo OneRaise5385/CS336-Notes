@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%26id_list%3D2305.02301%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query=&amp;id_list=2305.02301&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/KmUR3xDI+jQOEe13TygO6HYJMqs</id>
+  <updated>2025-05-13T00:00:00-04:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2305.02301v2</id>
+    <updated>2023-07-05T16:59:31Z</updated>
+    <published>2023-05-03T17:50:56Z</published>
+    <title>Distilling Step-by-Step! Outperforming Larger Language Models with Less
+  Training Data and Smaller Model Sizes</title>
+    <summary>  Deploying large language models (LLMs) is challenging because they are memory
+inefficient and compute-intensive for practical applications. In reaction,
+researchers train smaller task-specific models by either finetuning with human
+labels or distilling using LLM-generated labels. However, finetuning and
+distillation require large amounts of training data to achieve comparable
+performance to LLMs. We introduce Distilling step-by-step, a new mechanism that
+(a) trains smaller models that outperform LLMs, and (b) achieves so by
+leveraging less training data needed by finetuning or distillation. Our method
+extracts LLM rationales as additional supervision for training small models
+within a multi-task framework. We present three findings across 4 NLP
+benchmarks: First, compared to both finetuning and distillation, our mechanism
+achieves better performance with much fewer labeled/unlabeled training
+examples. Second, compared to few-shot prompted LLMs, we achieve better
+performance using substantially smaller model sizes. Third, we reduce both the
+model size and the amount of data required to outperform LLMs; our finetuned
+770M T5 model outperforms the few-shot prompted 540B PaLM model using only 80%
+of available data on a benchmark, whereas standard finetuning the same T5 model
+struggles to match even by using 100% of the dataset. We release the code at:
+https://github.com/google-research/distilling-step-by-step .
+</summary>
+    <author>
+      <name>Cheng-Yu Hsieh</name>
+    </author>
+    <author>
+      <name>Chun-Liang Li</name>
+    </author>
+    <author>
+      <name>Chih-Kuan Yeh</name>
+    </author>
+    <author>
+      <name>Hootan Nakhost</name>
+    </author>
+    <author>
+      <name>Yasuhisa Fujii</name>
+    </author>
+    <author>
+      <name>Alexander Ratner</name>
+    </author>
+    <author>
+      <name>Ranjay Krishna</name>
+    </author>
+    <author>
+      <name>Chen-Yu Lee</name>
+    </author>
+    <author>
+      <name>Tomas Pfister</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted to Findings of ACL 2023</arxiv:comment>
+    <link href="http://arxiv.org/abs/2305.02301v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2305.02301v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>
