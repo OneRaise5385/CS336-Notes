@@ -29,10 +29,12 @@ This project is a collection of study notes I compiled while taking the CS336 co
 - `shields.md`
   GitHub 动态徽章大全
 
+#### lecture_01.ipynb
+
 
 
 #### 📜 LICENSE
-课程证书
+项目证书
 
 ## 🎯 参考
 
