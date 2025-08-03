@@ -9,7 +9,7 @@ This project is a collection of study notes I compiled while taking the CS336 co
 
 
 ## 📂 目录
-#### 📕 docs
+####  docs
 课程的文件,在这个[github仓库](https://github.com/stanford-cs336/assignment1-basics/tree/main)中
 - `data.py`
 - `execute_util.py`
@@ -23,14 +23,13 @@ This project is a collection of study notes I compiled while taking the CS336 co
 
 
 #### images
+这里面是图片
 
 #### other
 里面放的是其他用到的工具，教程
-- `shields.md`
-  GitHub 动态徽章大全
+- `shields.md` GitHub 动态徽章大全
 
 #### lecture_01.ipynb
-
 
 
 #### 📜 LICENSE
