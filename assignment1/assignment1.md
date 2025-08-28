@@ -257,15 +257,7 @@ BPE 分词器的训练过程主要包括三个步骤：
    > | \s+(?!\S)                # 匹配空格，但不包括非空白字符后面的空格
    > | \s+                      # 匹配一个或多个空白字符
    > ```
-   在实际构建从预 token 到计数的映射时，应使用 re.finditer 避免保存所有预分词结果。这两个函数的区别是： 
-   > | 特点       | `re.findall`          | `re.finditer`                                |
-   > | -------- | --------------------- | -------------------------------------------- |
-   > | **返回结果** | **列表**（一次性返回所有匹配的字符串） | **迭代器**（逐个返回 `Match` 对象）                  |
-   > | **内存使用** | 占用大，所有结果一次性存入内存       | 占用小，只在需要时生成一个匹配                          |
-   > | **适合场景** | 小文本，结果数量有限            | 大文本或海量匹配结果（流式处理）                            |
-   > | **速度**   | 一次性取出，速度快             | 边遍历边取，速度略慢（但更节省内存）                           |
-   > | **灵活性**  | 得到字符串，需要再做处理          | 得到 `Match` 对象，可以直接用 `.group()`、`.span()` 等信息 |
-   > | **风险**   | 大语料可能 **OOM（内存溢出）**   | 几乎不会 OOM，可处理超大文件                             |
+   在实际构建从预 token 到计数的映射时，应使用 re.finditer 避免保存所有预分词结果。关于 re.finditer 与 re.findall 的使用，在 `其他` 这一节有介绍。
 
 
 3. 计算 BPE 合并（BPE merges）
@@ -401,7 +393,6 @@ class Toyota(Car):  # 具体类：燃油车
     def fuel_type(self):
         return "Gasoline"
 
-
 # 实例化（造车）
 t1 = Tesla("Tesla Model 3")
 t2 = Toyota("Toyota Corolla")
@@ -416,3 +407,43 @@ print(t2.fuel_type())   # Gasoline
 ## 2. python 库 `collections`
 **collections** 是 Python 的一个 内置标准库。它提供了一些 比内置数据类型（list、dict、tuple、set）更高效、更专用 的数据结构。用于优化性能、代码可读性，或者解决某些特定场景的问题。
 `defaultdict` 是 dict 的子类：当用 d[key] 访问不存在的键时，不报 KeyError，而是用一个“工厂函数”自动创建默认值并写入字典。
+
+## 3. re.findall 与 re.finditer
+
+这两个函数的区别是： 
+| 特点       | `re.findall`          | `re.finditer`                                |
+| -------- | --------------------- | -------------------------------------------- |
+| **返回结果** | **列表**（一次性返回所有匹配的字符串） | **迭代器**（逐个返回 `Match` 对象）                  |
+| **内存使用** | 占用大，所有结果一次性存入内存       | 占用小，只在需要时生成一个匹配                          |
+| **适合场景** | 小文本，结果数量有限            | 大文本或海量匹配结果（流式处理）                            |
+| **速度**   | 一次性取出，速度快             | 边遍历边取，速度略慢（但更节省内存）                           |
+| **灵活性**  | 得到字符串，需要再做处理          | 得到 `Match` 对象，可以直接用 `.group()`、`.span()` 等信息 |
+| **风险**   | 大语料可能 **OOM（内存溢出）**   | 几乎不会 OOM，可处理超大文件                             |
+
+举个例子：
+```python
+import re
+import sys
+
+# 假设这是我们的"语料"
+text = "hello world! " * 1000
+
+pattern = r"\w+"  # 匹配单词
+
+# ❌ 方法1：findall（一次性把所有结果放到列表里）
+tokens_findall = re.findall(pattern, text)
+print("findall 结果数量:", len(tokens_findall))
+print("findall 占用内存大概:", sys.getsizeof(tokens_findall), "字节")
+
+# ✅ 方法2：finditer（生成器，边匹配边用）
+tokens_finditer = re.finditer(pattern, text)
+count = 0
+for match in tokens_finditer:
+    count += 1
+print("finditer 结果数量:", count)
+print("finditer 占用内存大概:", sys.getsizeof(tokens_finditer), "字节")
+```
+> findall 结果数量: 2000
+> findall 占用内存大概: 16184 字节
+> finditer 结果数量: 2000
+> finditer 占用内存大概: 48 字节

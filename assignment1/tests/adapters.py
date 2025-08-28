@@ -590,3 +590,113 @@ def run_train_bpe(
                 Merges are ordered by order of creation.
     """
     raise NotImplementedError
+
+
+def run_train_bpe(
+    input_path: str | os.PathLike,
+    vocab_size: int,
+    special_tokens: list[str],
+    **kwargs,
+) -> tuple[dict[int, bytes], list[tuple[bytes, bytes]]]:
+    """Given the path to an input corpus, run train a BPE tokenizer and
+    output its vocabulary and merges.
+
+    Args:
+        input_path (str | os.PathLike): Path to BPE tokenizer training data.
+        vocab_size (int): Total number of items in the tokenizer's vocabulary (including special tokens).
+        special_tokens (list[str]): A list of string special tokens to be added to the tokenizer vocabulary.
+            These strings will never be split into multiple tokens, and will always be
+            kept as a single token. If these special tokens occur in the `input_path`,
+            they are treated as any other string.
+
+    Returns:
+        tuple[dict[int, bytes], list[tuple[bytes, bytes]]]:
+            vocab:
+                The trained tokenizer vocabulary, a mapping from int (token ID in the vocabulary)
+                to bytes (token bytes)
+            merges:
+                BPE merges. Each list item is a tuple of bytes (<token1>, <token2>),
+                representing that <token1> was merged with <token2>.
+                Merges are ordered by order of creation.
+    """
+
+    import regex as re
+    from collections import defaultdict
+
+    # 1. 词表初始化: 256个基础词、特殊 tokens
+    # 词表 vocab 定义数据类型是 dict[int, bytes]，这里首先初始化了词表
+    vocab: dict[int, bytes] = {x: bytes([x]) for x in range(256)}  # 256个基础词，0-255
+    next_token_id = 256
+    for special_token in special_tokens:  # 特殊 tokens 
+        # 注意这里所给的特殊 tokens 为 str 格式，vocab 中的是字节形式的
+        vocab[next_token_id] = special_token.encode("utf-8")
+        next_token_id += 1
+    
+    # 2. 预分词
+    # 读取数据
+    with open(input_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    # 预分词规则：gpt2 的分词规则，特殊的 token 使用单独的正则化
+    special_pat = "|".join(re.escape(token) for token in special_tokens)
+    PAT = rf"""{special_pat}| '(?:[sdmt]|ll|ve|re)| ?\p{{L}}+| ?\p{{N}}+| ?[^\s\p{{L}}\p{{N}}]+|\s+(?!\S)|\s+"""
+    pre_token_matches = re.finditer(PAT, content)
+    
+    # 统计出现的次数
+    pre_indices = defaultdict(int)
+    for pre_token_matche in pre_token_matches:
+        pre_indices_key = tuple(map(int, pre_token_matche.group().encode('utf-8')))
+        pre_indices[pre_indices_key] += 1
+    
+    # 3. BPE 合并
+    # 合并次数为词表大小
+    num_merges = vocab_size - 256 - len(special_tokens)
+    merges: list[tuple[bytes, bytes]] = []
+    indices = pre_indices
+    
+    for i in range(num_merges):
+        counts = defaultdict(int)
+        # indice 字典中的 key
+        for index in indices:
+            # 生成相邻两个 token 的组合（index1, index2）
+            for index1, index2 in zip(index, index[1:]):
+                # indices[indice] 为合并前（index1, index2）出现的次数
+                counts[(index1, index2)] += indices[index]
+        # 找到出现次数最多的
+        # pair = max(counts, key=counts.get)
+        # 1. 先找出最大的值
+        max_val = max(counts.values())
+        # 2. 找出值等于最大值的所有键，然后max()找到字典序最大的合并
+        pair = max([k for k, v in counts.items() if v == max_val])
+        
+        # merges 更新
+        merges.append(pair)
+        index1, index2 = pair
+        
+        # 词表更新。两个字节类型的元素相加：不是数值相加，是两个字节拼接到一起
+        vocab[next_token_id] = vocab[index1] + vocab[index2]
+        
+        # 更新 indices 字典
+        new_indices = defaultdict(int)
+        for index in indices:
+            index_value = indices[index]
+            new_index = []
+            i = 0
+            while i < len(index):
+                # i + 1 < len(index) 是用来保证 i 指向的是列表中的第二个 index
+                # index[i] == pair[0] and index[i + 1] == pair[1] ：指定的 token 对 pair
+                if i + 1 < len(index) and index[i] == pair[0] and index[i + 1] == pair[1]:
+                    new_index.append(next_token_id)
+                    i += 2
+                else:
+                    # 没有被指定 pair 对的时候，将原来index中的indice直接添加到new_index
+                    new_index.append(index[i])  
+                    i += 1
+            new_indices[tuple(new_index)] = index_value
+
+        # 这里才能将 next_token_id 加一，因为在更新 indices 字典时，会用到 next_token_id
+        next_token_id += 1
+        indices = new_indices
+
+    return vocab, merges
+
