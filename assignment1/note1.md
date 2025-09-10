@@ -301,7 +301,7 @@ with open("../data/TinyStoriesV2-GPT4-valid.txt", "w", encoding="utf-8") as f:
 ```
 
 1. 并行化预分词  
-   你会发现预分词步骤是一个主要的瓶颈。可以通过使用内置库 `multiprocessing` 并行化代码来加速预分词。具体而言，我们建议在并行实现中，将语料**分块**（chunk），并确保分块边界出现在特殊 token 的开头。你可以直接使用以下链接提供的起始代码来获取分块边界，然后将工作分配到不同进程中。[pretokenization_example.py](https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_basics/pretokenization_example.py) （这个代码也本项目的在 `assignment1\cs336_basics\pretokenization_example.py` 中）
+   你会发现预分词步骤是一个主要的瓶颈。可以通过使用内置库 `multiprocessing` 并行化代码来加速预分词。具体而言，我们建议在并行实现中，将语料**分块**（chunk），并确保分块边界出现在特殊 token 的开头。你可以直接使用以下链接提供的起始代码来获取分块边界，然后将工作分配到不同进程中。[pretokenization_example.py](https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_basics/pretokenization_example.py) （这个代码也在本项目的 `assignment1\cs336_basics\pretokenization_example.py` 中）
    这种分块方式总是有效的，因为我们从不希望跨文档边界合并 token。在作业中，你可以始终采用这种方式分块。无需担心遇到非常大的语料且不包含 `<|endoftext|>` 的边缘情况。
 
 2. 在预分词前移除特殊 token　　
@@ -348,14 +348,232 @@ with open("../data/TinyStoriesV2-GPT4-valid.txt", "w", encoding="utf-8") as f:
 **可选**（这可能需要大量时间），可以使用某些系统语言（例如C++（可考虑使用cppyy）或Rust（使用PyO3）来实现训练方法的关键部分。如果这样做，请注意哪些操作需要复制，哪些可以直接从Python内存中读取，并确保提供构建说明，或确保仅使用pyproject.toml即可构建。  
 另外请注意，GPT-2的正则表达式在大多数正则表达式引擎中支持不佳，在支持的引擎中也大多速度过慢。我们已经验证Oniguruma速度合理且支持负向先行断言，但Python中的regex包甚至更快
 
- 
+---
+**解答**
+下面是包含注释且比较好看懂的版本： `run_train_bpe()` 的代码，这个是没有进行优化的，在测试中 `test_train_bpe_speed()` 测试没有通过，其它两项是可以通过的
+使用这段代码在 `TinyStoriesV2-GPT4-valid.txt` 上进行测试，词表大小设置为500，程序运行总时长33.7s，各部分函数占用时间如下图：
+![valid-500](../images\valid-500.png)
+
+```python
+import os
+import regex as re
+from collections import defaultdict
+
+def update_indices(
+    indices: dict[tuple[int, ...], int], 
+    pair: tuple[int, int], 
+) -> defaultdict[tuple[int, ...], int]:
+    '''
+    更新 indices 序列的函数
+    '''
+    new_indices = defaultdict(int)
+    for index in indices:
+        new_index = []
+        index_value = indices[index]
+        i = 0
+        while i < len(index):
+            # i + 1 < len(index) 是用来保证 i 指向的是列表中的第二个 index
+            # index[i] == pair[0] and index[i + 1] == pair[1] ：指定的 token 对 pair
+            if i + 1 < len(index) and index[i] == pair[0] and index[i + 1] == pair[1]:
+                new_index.append(pair[0] + pair[1])
+                i += 2
+            else:
+                # 没有被指定 pair 对的时候，将原来index中的indice直接添加到new_index
+                new_index.append(index[i])
+                i += 1
+        new_indices[tuple(new_index)] = index_value
+
+    return new_indices
 
 
+def pre_count_indices(
+    content: str, 
+    special_tokens: list
+    ) -> defaultdict[tuple[int, ...], int]:
+    '''
+    对文档进行预分词
+    '''
+    # 按照特殊 tokens 分割文档
+    texts = re.split("|".join(map(re.escape, special_tokens)), content)
+    # 预分词规则：gpt2 的分词规则
+    # 就这个正则化的错误让我改了一天的bug
+    # PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{{L}}+| ?\p{{N}}+| ?[^\s\p{{L}}\p{{N}}]+|\s+(?!\S)|\s+"""
+    PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+    # 对每个文档中的每个部分进行统计
+    pre_indices = defaultdict(int)
+    for text in texts:
+        # 关于 re.finditer() 的使用在 `assignment.md` 中的 `其他` 部分有介绍
+        pre_token_matches = re.finditer(PAT, text)
+        # 统计分词出现的的次数
+        for pre_token_matche in pre_token_matches:
+            pre_indices_key = tuple([bytes([x]) for x in tuple(pre_token_matche.group().encode())])
+            pre_indices[pre_indices_key] += 1
+    return pre_indices
+
+
+def max_pair(
+    indices: defaultdict[tuple[int, ...], int]
+    )-> tuple:
+    '''
+    找出出现次数最多的 pair
+    '''
+    counts = defaultdict(int)  # 用来计数的字典
+    for index in indices:
+        # 生成相邻两个 token 的组合（index1, index2）
+        for index1, index2 in zip(index, index[1:]):
+            counts[(index1, index2)] += indices[index]
+    max_val = max(counts.values())  # 出现次数最多
+    pair = max([k for k, v in counts.items() if v == max_val])  # 字典序最大
+    
+    return pair
+
+
+def run_train_bpe(
+    input_path: str | os.PathLike,
+    vocab_size: int,
+    special_tokens: list[str],
+    **kwargs,
+) -> tuple[dict[int, bytes], list[tuple[bytes, bytes]]]:
+    """
+    给定输入语料的路径，训练一个 BPE 分词器，并输出其 vocab 和 merges 。
+    参数：
+        input_path (str | os.PathLike)：BPE 分词器训练数据的路径。
+        vocab_size (int)：分词器词表的总大小（包括特殊 token）。
+        special_tokens (list[str])：一个字符串列表，表示要加入词表的特殊 token。
+            这些特殊 token 永远不会被拆分成多个 token，总是保持为一个整体。
+            如果这些特殊 token 出现在 `input_path` 中，它们会被视作普通字符串处理。
+    返回：
+        tuple[dict[int, bytes], list[tuple[bytes, bytes]]]：
+            vocab：
+                训练得到的分词器词表，字典的 key 是 int 结构（词表中的 token ID），
+                value 是 bytes（对应的 token 字节串）。
+            merges：
+                BPE 合并规则。列表中的每一项是一个 bytes 元组 (<token1>, <token2>)，
+                表示 <token1> 和 <token2> 被合并为一个新 token。合并规则按创建顺序排列。
+    """
+    
+    # 1. 初始化: 256个基础词、特殊 tokens
+    vocab: dict[int, bytes] = {x: bytes([x]) for x in range(256)}
+    merges: list[tuple[bytes, bytes]] = []
+    # 256个基础词，0-255，所以下一个是256
+    next_token_id = 256
+    # 将特殊 tokens 转换成 byte 格式并加入词表
+    for special_token in special_tokens:
+        # 注意这里所给的特殊 tokens 为 str 格式，vocab 中的是字节形式的
+        vocab[next_token_id] = special_token.encode("utf-8")
+        next_token_id += 1
+
+    # 2. 预分词
+    # 读取数据
+    with open(input_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    indices = pre_count_indices(content, special_tokens)
+
+    # 3. BPE 合并
+    # 合并次数为词表大小减去初始化的词表
+    num_merges = vocab_size - 256 - len(special_tokens)
+    for i in range(num_merges):
+        # 找出出现次数最多的 pair
+        pair = max_pair(indices)
+        # merges 更新
+        merges.append(pair)
+        # 词表更新。将两个字节相加：不是数值相加，是两个字节拼接到一起
+        vocab[next_token_id] = pair[0] + pair[1]
+        next_token_id += 1
+        # indices 序列更新
+        indices = update_indices(indices, pair)
+
+    return vocab, merges
+```
+
+接下来是优化后的代码：
+1. 预分词阶段并行化
+   进行预分词阶段并行化后，线程数设置为 4，代码的运行时长为：
+   ![valid-500-mul](../images/valid-500-multi4.png)
+   其中
+   ![valid-500-mul](../images/valid-500-multi4-multi.png)
+2. 优化合并步骤
+   对所有字节对计数进行索引，并增量更新这些计数。
+--- 
+**问题：在 TinyStories 上进行训练**
+
+**(a)** 在 TinyStories 数据集上训练一个 字节级 BPE 分词器，最大词表大小为 10,000。将生成的 vocab 和 merges 序列化保存到磁盘，以便进一步检查。
+**资源要求**：时间 ≤ 30 分钟 (使用 cpu )， 内存 ≤ 30GB   
+**回答**：训练耗费了多少时间和内存？词表中最长的 token 是什么？这个结果是否合理？  
+**提示**：如果在 预分词（pre-tokenization） 阶段使用多进程，你应该能够在 2 分钟以内完成 BPE 训练，同时利用以下两点事实：
+1. <|endoftext|> token 用来划分数据文件中的文档。
+2. <|endoftext|> token 在应用 BPE 合并之前，会作为特殊情况单独处理。
+
+**(b)** 对你的代码进行 性能分析（profiling）。在分词器训练过程中，哪一部分最耗时？
+
+**解答**
+
+
+
+---
+
+接下来，我们将尝试在 OpenWebText 数据集上训练一个字节级 BPE 分词器。和之前一样，我们建议先查看一下该数据集，以便更好地理解其中的内容。
+问题 (train_bpe_expts_owt)：在 OpenWebText 上训练 BPE（2 分）
+(a) 在 OpenWebText 数据集上训练一个字节级 BPE 分词器，最大词表大小设为 32,000。
+将训练得到的词表和合并规则序列化保存到磁盘，以便进一步检查。
+词表中最长的 token 是什么？是否合理？
+
+资源要求： ≤ 12 小时（不使用 GPU），≤ 100GB 内存
+提交内容： 一到两句话的回答。
+
+(b) 对比在 TinyStories 和 OpenWebText 上训练得到的分词器，有哪些异同？
+提交内容： 一到两句话的回答。
 
 
 
 
 # 其他
+## 0. 电脑配置信息
+下面是我的笔记本的配置信息：
+```python
+import platform
+import psutil
+import torch
+import cpuinfo
+def system_info():
+    cpu_model = cpuinfo.get_cpu_info().get("brand_raw", platform.processor())
+    freq = psutil.cpu_freq()
+    info = {
+        "操作系统": platform.platform(),
+        "系统架构": platform.machine(),
+        "CPU 型号": cpu_model,
+        "CPU 主频": f"{freq.current:.2f} MHz" if freq else "未知",
+        "CPU 物理核心数": psutil.cpu_count(logical=False),
+        "CPU 逻辑核心数": psutil.cpu_count(logical=True),
+    }
+    # GPU 信息
+    gpu_count = torch.cuda.device_count()
+    for i in range(gpu_count):
+        props = torch.cuda.get_device_properties(i)
+        info[f"GPU {i} 型号"] = torch.cuda.get_device_name(i)
+        info[f"GPU {i} 显存总量"] = f"{props.total_memory // (1024**2)} MB"
+        info[f"GPU {i} CUDA 核心数"] = props.multi_processor_count
+        info[f"GPU {i} 计算能力"] = f"{props.major}.{props.minor}"
+
+    return info
+if __name__ == "__main__":
+    info = system_info()
+    for k, v in info.items():
+        print(f"{k}: {v}")
+```
+
+> 操作系统: Windows-10-10.0.19045-SP0
+> 系统架构: AMD64
+> CPU 型号: AMD Ryzen 5 5600H with Radeon Graphics
+> CPU 主频: 3301.00 MHz
+> CPU 物理核心数: 6
+> CPU 逻辑核心数: 12
+> GPU 0 型号: NVIDIA GeForce GTX 1650
+> GPU 0 显存总量: 4095 MB
+> GPU 0 CUDA 核心数: 14
+> GPU 0 计算能力: 7.5
+
+
 ## 1. python库 `abc`
 **抽象类**：一种不能直接实例化的类，只能作为基类被继承。用来描述一类对象的共性，但不提供完整实现。特点：
 1. 不能直接创建对象。
@@ -405,7 +623,7 @@ print(t2.fuel_type())   # Gasoline
 ```
 
 ## 2. python 库 `collections`
-**collections** 是 Python 的一个 内置标准库。它提供了一些 比内置数据类型（list、dict、tuple、set）更高效、更专用 的数据结构。用于优化性能、代码可读性，或者解决某些特定场景的问题。
+**collections** 是 Python 的一个 内置标准库。它提供了一些 比内置数据类型（list、dict、tuple、set）更高效、更专用的数据结构。用于优化性能、代码可读性，或者解决某些特定场景的问题。
 `defaultdict` 是 dict 的子类：当用 d[key] 访问不存在的键时，不报 KeyError，而是用一个“工厂函数”自动创建默认值并写入字典。
 
 ## 3. re.findall 与 re.finditer

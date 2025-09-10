@@ -1,8 +1,8 @@
 import json
 import time
 
-from adapters import run_train_bpe
-from common import FIXTURES_PATH, gpt2_bytes_to_unicode
+from .adapters import run_train_bpe
+from .common import FIXTURES_PATH, gpt2_bytes_to_unicode
 
 
 def test_train_bpe_speed():
@@ -47,6 +47,7 @@ def test_train_bpe():
             )
             for merge_token_1, merge_token_2 in gpt2_reference_merges
         ]
+
     assert merges == reference_merges
 
     # Compare the vocab to the expected output vocab
