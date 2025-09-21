@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import os
-import resource
+# import resource
 import sys
 
 import psutil
@@ -16,19 +16,52 @@ VOCAB_PATH = FIXTURES_PATH / "gpt2_vocab.json"
 MERGES_PATH = FIXTURES_PATH / "gpt2_merges.txt"
 
 
+# def memory_limit(max_mem):
+#     def decorator(f):
+#         def wrapper(*args, **kwargs):
+#             process = psutil.Process(os.getpid())
+#             prev_limits = resource.getrlimit(resource.RLIMIT_AS)
+#             resource.setrlimit(resource.RLIMIT_AS, (process.memory_info().rss + max_mem, -1))
+#             try:
+#                 result = f(*args, **kwargs)
+#                 return result
+#             finally:
+#                 # Even if the function above fails (e.g., it exceeds the
+#                 # memory limit), reset the memory limit back to the
+#                 # previous limit so other tests aren't affected.
+#                 resource.setrlimit(resource.RLIMIT_AS, prev_limits)
+
+#         return wrapper
+
+#     return decorator
+
+try:
+    import resource
+except ImportError:
+    resource = None
+    
 def memory_limit(max_mem):
+    """
+    装饰器：限制函数运行时的最大内存（Linux/macOS 有效，Windows 跳过）
+
+    参数:
+        max_mem (int): 最大允许内存，单位字节。
+    """
     def decorator(f):
         def wrapper(*args, **kwargs):
+            if resource is None:
+                # Windows 下没有 resource 模块，直接运行
+                print("⚠️ Windows 不支持 resource，跳过内存限制")
+                return f(*args, **kwargs)
+
             process = psutil.Process(os.getpid())
             prev_limits = resource.getrlimit(resource.RLIMIT_AS)
+            # 设置内存限制：当前占用 + max_mem
             resource.setrlimit(resource.RLIMIT_AS, (process.memory_info().rss + max_mem, -1))
             try:
-                result = f(*args, **kwargs)
-                return result
+                return f(*args, **kwargs)
             finally:
-                # Even if the function above fails (e.g., it exceeds the
-                # memory limit), reset the memory limit back to the
-                # previous limit so other tests aren't affected.
+                # 无论是否 OOM 都要恢复原来的限制
                 resource.setrlimit(resource.RLIMIT_AS, prev_limits)
 
         return wrapper

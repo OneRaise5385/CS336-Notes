@@ -1,9 +1,61 @@
 import os
+import heapq
+import cProfile
 import regex as re
-from collections import defaultdict,Counter
+from collections import defaultdict
+from collections import Counter
 from multiprocessing import Pool
 from typing import BinaryIO
-import cProfile
+
+class PairInfo:
+    '''用来**快速**找到最大值与最小值'''
+    def __init__(self, pair_num=None, pair_position=None):
+        self.pair_num = pair_num or {}
+        self.pair_position = pair_position or {}
+        self.heap = [(-v, k) for k, v in self.pair_num.items()]
+        heapq.heapify(self.heap)
+
+    def push(self, pair, num):
+        """插入或更新一个元素"""
+        self.pair_num[pair] = num
+        heapq.heappush(self.heap, (-num, pair))
+
+    def _clean_top(self):
+        """清理堆顶过期元素"""
+        while self.heap:
+            val, key = self.heap[0]
+            if key not in self.pair_num:  # 检查pair是否存在
+                heapq.heappop(self.heap)
+                continue
+            if -val != self.pair_num[key]:  # 检查值是否一致
+                heapq.heappop(self.heap)
+                continue
+            return  # 堆顶有效
+        return None  # 如果堆被清空了，就返回 None
+
+    def max_pair(self):
+        """返回当前最大值的所有元素 (value, keys)"""
+        self._clean_top()
+        pendings = []
+        while self.heap:
+            num0, pair0 = heapq.heappop(self.heap)
+            pendings.append(pair0)
+            break
+        while self.heap:
+            num1, pair1 = heapq.heappop(self.heap)
+            if num1 == num0:
+                pendings.append(pair1)
+            else:
+                heapq.heappush(self.heap, (num1, pair1))
+                break
+        pair = max(pendings)
+        pendings.remove(pair)
+        if pendings:
+            for i in pendings:
+                heapq.heappush(self.heap, (num0, i))
+        if pair in self.pair_num:
+            self.pair_num.pop(pair)
+        return pair
 
 def find_chunk_boundaries(
     file: BinaryIO,
@@ -21,10 +73,9 @@ def find_chunk_boundaries(
     file_size = file.tell()
     file.seek(0)
 
-    chunk_size = file_size // desired_num_chunks
-
     # Initial guesses for chunk boundary locations, uniformly spaced
     # Chunks start on previous index, don't include last index
+    chunk_size = file_size // desired_num_chunks
     chunk_boundaries = [i * chunk_size for i in range(desired_num_chunks + 1)]
     chunk_boundaries[-1] = file_size
 
@@ -103,7 +154,6 @@ def multi_pre_token(input_path, num_processes, special_tokens):
         indices.update(d)
     indices = dict(indices)
     
-    # 构造 pair_to_indices
     # 首先将 indices_key 和 indices_value 分段
     chunks = []
     indices_key = [list(k) for k in indices.keys()]
@@ -114,8 +164,7 @@ def multi_pre_token(input_path, num_processes, special_tokens):
     chunks[-1][-1] = len(indices_key)
     # 并行处理
     with Pool() as pool2:
-        dicts = pool2.starmap(
-            generate_pair_num_position, 
+        dicts = pool2.starmap(generate_pair_num_position, 
             [(indices_key, indices_value, chunk) for chunk in chunks])
     # 合并结果
     # 出现的次数
@@ -129,112 +178,78 @@ def multi_pre_token(input_path, num_processes, special_tokens):
         for k, v in d[1].items():
             pair_position[k].update(v)
     pair_position = dict(pair_position)
-    # 最终合并
-    # pair_to_indices = {k: [pair_num[k], pair_position[k]] for k in pair_num}
-    pair_to_indices = defaultdict(lambda: [0, set()])
-    for k in pair_num:
-        pair_to_indices[k][0] = pair_num[k]       # 次数
-        pair_to_indices[k][1] = pair_position[k]  # 位置集合
-    return pair_to_indices, indices_key, indices_value
+    
+    pair_info = PairInfo(pair_num, pair_position)
 
-def update_pair_to_indices(
-    pair_to_indices: defaultdict[tuple[bytes], list], pair_changes, 
-    indices_value, index, pair, i, j, loc: str = "right")-> defaultdict:
-    '''更新 pair_to_indices 的值，包括修改、添加'''
+    return pair_info, indices_key, indices_value
+
+def update_pair_info(
+    pair_info: PairInfo, pair, index_key, index_value, 
+    i, p, loc: str = "right"):
+    '''
+    更新 pair_to_indices 的值，包括修改、添加 \n
+    loc : {"left", "right"}
+        用于指定要更新 pair 的位置：
+        - "right": 当 pair 右侧存在相邻元素时。
+        - "left":  当 pair 左侧存在相邻元素时。
+    '''
     # pair 右侧有未匹配的元素时
     if loc == 'right':
-        prev_pair = (pair[1], index[j + 2])
-        new_pair = (pair[0] + pair[1], index[j + 2])
+        prev_pair = (pair[1], index_key[i + 2])
+        new_pair = (pair[0] + pair[1], index_key[i + 2])
     # pair 左侧有未匹配的元素时
     elif loc == 'left':
-        prev_pair = (index[j - 1], pair[0])
-        new_pair = (index[j - 1], pair[0] + pair[1])
-
-    # 修改
-    # pair 个数
-    print('prev_pair:',prev_pair)
-    print('num:',pair_to_indices[prev_pair][0])
-    print('indices_value[i]:',indices_value[i])
-    n_pair = pair_to_indices[prev_pair][0] - indices_value[i]
-
-    # pair 位置
-    if pair_to_indices[prev_pair][1] == None:
-        pair_to_indices[prev_pair][1] = set()
-    if i in pair_to_indices[prev_pair][1]:
-        p_pair = pair_to_indices[prev_pair][1].remove(i)
-    else:
-        p_pair = pair_to_indices[prev_pair][1]
-    pair_changes[prev_pair] = [n_pair, p_pair]
-
+        prev_pair = (index_key[i - 1], pair[0])
+        new_pair = (index_key[i - 1], pair[0] + pair[1])
+    # 修改 pair_num, pair_position
+    if prev_pair not in pair_info.pair_num:
+        pair_info.pair_num[prev_pair] = -1
+        pair_info.pair_position[prev_pair] = set()
+    pair_info.push(prev_pair, pair_info.pair_num[prev_pair] - index_value)
+    if p in pair_info.pair_position[prev_pair]:
+        pair_info.pair_position[prev_pair].remove(p)
+        
     # 添加
-    n_pair = pair_to_indices[new_pair][0] + indices_value[i]
-    p_pair = pair_to_indices[new_pair][1].add(i)
-    pair_changes[prev_pair] = [n_pair, p_pair]
-    
-    return pair_changes
+    if new_pair in pair_info.pair_num:
+        pair_info.push(new_pair, pair_info.pair_num[new_pair] + index_value)
+        pair_info.pair_position[new_pair].add(p)
+    else:
+        pair_info.push(new_pair, index_value)
+        pair_info.pair_position[new_pair] = set([p])
+    return pair_info
 
-
-def merge(
-    pair_to_indices, indices_key, indices_value, 
-    vocab_size, special_tokens, next_token_id,
-    vocab, merges
-    )-> tuple:
+def merge(pair_info: PairInfo, indices_key, indices_value)-> tuple:
     '''合并的步骤，生成 pair 对'''
-
-    # 开始合并
-    num_merges = vocab_size - 256 - len(special_tokens)
-    for _ in range(num_merges):
-        # 找到出现次数最多的 pair
-        max_val = 0
-        for i in pair_to_indices.values():
-            if i[0] > max_val:
-                max_val = i[0]
-        pair = max([k for k, v in pair_to_indices.items() if v[0] == max_val])
-        # 修改 pair_to_indices
-        pair_changes = defaultdict(list)
-        for i in pair_to_indices[pair][1]:
-            index = indices_key[i].copy()
-            modify_position = []
-            for j in range(len(index) - 1):
-                if index[j] == pair[0] and index[j + 1] == pair[1]:
-                    # index 中只存在 pair 而没有别的时
-                    if len(index) == 2:
-                        continue
-                    elif j == 0:  # pair 在开头
-                        pair_changes = update_pair_to_indices(
-                            pair_to_indices, pair_changes, indices_value, index, pair, i, j, 'right')
-                    elif j == len(index) - 2:  # pair 在结尾
-                        pair_changes = update_pair_to_indices(
-                            pair_to_indices, pair_changes, indices_value, index, pair, i, j, 'left')
-                    else:  # pair 在中间
-                        pair_changes = update_pair_to_indices(
-                            pair_to_indices, pair_changes, indices_value, index, pair, i, j, 'right')
-                        pair_changes = update_pair_to_indices(
-                            pair_to_indices, pair_changes, indices_value, index, pair, i, j, 'left')
-                        
-                    # 修改 indices_key
-                    indices_key[i][j] = pair[0] + pair[1]
-                    modify_position.append(j + 1)  # 记录下需要删除的元素的位置
-            # 修改 indices_key
-            for pos in sorted(modify_position, reverse=True):
-                indices_key[i].pop(pos)
-        # 修改 pair_to_indices 有改变的地方
-        for i in pair_changes:
-            pair_to_indices[i] = pair_changes[i]
-        # 删除 pair_to_indices 中已经合并的 pair
-        pair_to_indices.pop(pair)
-        
-        # merges 更新
-        merges.append(pair)
-        
-        # 词表更新
-        vocab[next_token_id] = pair[0] + pair[1]
-        next_token_id += 1
-        
-        print(merges)
-        print(pair)
-        print(pair_to_indices)
-    return vocab, merges
+    # 找到出现次数最多的 pair
+    pair = pair_info.max_pair()
+    for p in pair_info.pair_position[pair]:
+        idx_k = indices_key[p]
+        idx_v = indices_value[p]
+        modify_position = []
+        for i in range(len(idx_k) - 1):
+            if idx_k[i] == pair[0] and idx_k[i + 1] == pair[1]:
+                # index 中只存在 pair 而没有别的时
+                if len(idx_k) == 2:
+                    continue
+                # pair 在开头
+                elif i == 0:
+                    pair_info = update_pair_info(pair_info, pair, idx_k, idx_v, i, p, 'right')
+                # pair 在结尾 
+                elif i == len(idx_k) - 2:
+                    pair_info = update_pair_info(pair_info, pair, idx_k, idx_v, i, p, 'left')
+                # pair 在中间
+                else:
+                    pair_info = update_pair_info(pair_info, pair, idx_k, idx_v, i, p, 'right')
+                    pair_info = update_pair_info(pair_info, pair, idx_k, idx_v, i, p, 'left')
+                # 修改 indices_key
+                indices_key[p][i] = pair[0] + pair[1]
+                modify_position.append(i + 1)  # 记录下需要删除的元素的位置
+            
+        # 修改 indices_key
+        for pos in sorted(modify_position, reverse=True):
+            indices_key[p].pop(pos)
+    
+    return pair
 
 def run_train_bpe(
     input_path: str | os.PathLike,
@@ -259,7 +274,6 @@ def run_train_bpe(
                 BPE 合并规则。列表中的每一项是一个 bytes 元组 (<token1>, <token2>)，
                 表示 <token1> 和 <token2> 被合并为一个新 token。合并规则按创建顺序排列。
     """
-    
     # 1. 初始化: 256个基础词、特殊 tokens
     vocab: dict[int, bytes] = {x: bytes([x]) for x in range(256)}
     merges: list[tuple[bytes, bytes]] = []
@@ -270,17 +284,24 @@ def run_train_bpe(
         next_token_id += 1
 
     # 2. 预分词
-    pair_to_indices, indices_key, indices_value = multi_pre_token(input_path, 4, special_tokens)
+    pair_info, indices_key, indices_value = multi_pre_token(input_path, 8, special_tokens)
 
     # 3. BPE 合并
-    vocab, merges = merge(pair_to_indices, indices_key, indices_value, 
-                          vocab_size, special_tokens, 
-                          next_token_id, vocab, merges)
+    num_merges = vocab_size - 256 - len(special_tokens)
+    for _ in range(num_merges):
+        # 需要合并的 pair
+        pair = merge(pair_info, indices_key, indices_value)
+        
+        # merges 更新
+        merges.append(pair)
+        
+        # 词表更新
+        vocab[next_token_id] = pair[0] + pair[1]
+        next_token_id += 1
     
     return vocab, merges
 
 if __name__ == '__main__':
-    # run_train_bpe('../data/TinyStoriesV2-GPT4-valid.txt', 500, ['<|endoftext|>'])
     run_str = "run_train_bpe('../data/TinyStoriesV2-GPT4-valid.txt', 500, ['<|endoftext|>'])"
-    run_str = "run_train_bpe('../data/text_example.txt', 270, ['<|endoftext|>'])"
-    cProfile.run(run_str, "valid-500-multi4-optimize.prof")
+    # run_str = "run_train_bpe('../data/text_example.txt', 270, ['<|endoftext|>'])"
+    cProfile.run(run_str, "valid-500-multi8-optimize2.prof")

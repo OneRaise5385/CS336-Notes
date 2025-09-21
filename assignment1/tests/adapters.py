@@ -539,6 +539,107 @@ def run_load_checkpoint(
     raise NotImplementedError
 
 
+# def get_tokenizer(
+#     vocab: dict[int, bytes],
+#     merges: list[tuple[bytes, bytes]],
+#     special_tokens: list[str] | None = None,
+# ) -> Any:
+#     """Given a vocabulary, a list of merges, and a list of special tokens,
+#     return a BPE tokenizer that uses the provided vocab, merges, and special tokens.
+
+#     Args:
+#         vocab (dict[int, bytes]): The tokenizer vocabulary, a mapping from int (token ID in the vocabulary)
+#             to bytes (token bytes)
+#         merges (list[tuple[bytes, bytes]]): BPE merges. Each list item is a tuple of bytes (<token1>, <token2>),
+#             representing that <token1> was merged with <token2>.
+#             Merges are ordered by order of creation.
+#         special_tokens (list[str] | None): A list of string special tokens for the tokenizer. These strings will never
+#             be split into multiple tokens, and will always be kept as a single token.
+
+#     Returns:
+#         A BPE tokenizer that uses the provided vocab, merges, and special tokens.
+#     """
+#     raise NotImplementedError
+
+
+import regex as re
+import pickle
+import ast
+from typing import Iterable, Iterator
+
+class Tokenizer:
+    def __init__(
+        self, vocab: dict[int, bytes], 
+        merges: list[tuple[bytes, bytes]], 
+        special_tokens: list[str] | None = None
+        ):
+        '''从给定的词表、合并规则和（可选的）特殊 tokens 构造一个分词器'''
+        self.vocab = vocab
+        self.vocab_inverse = {v: k for k, v in vocab.items()}
+        self.merges = merges
+        self.merges_ranked = {k: v for v, k in enumerate(merges)}
+        self.special_tokens = special_tokens
+    
+    @classmethod
+    def from_files(cls, vocab_filepath: str, 
+                   merges_filepath: str, 
+                   special_tokens: list[str] | None = None):
+        '''从序列化的 vocab 和 merges 文件构造一个 Tokenizer'''
+        
+        with open(vocab_filepath, 'rb') as f:
+            vocab = pickle.load(f)
+        with open(merges_filepath, 'r') as f:
+            merges = [ast.literal_eval(line.strip()) for line in f]
+            
+        return cls(vocab, merges, special_tokens)
+    
+    def encode(self, text: str) -> list[int]:
+        '''将输入文本编码为 token ID 序列'''
+        PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+        pre_tokens = re.findall(PAT, text)
+
+        idx = []
+        for pre_token in pre_tokens:
+            pre_token = [i.encode('utf-8') for i in pre_token]
+            while True:
+                new_pre_token = []
+                to_merge = dict()
+                for index1, index2 in zip(pre_token, pre_token[1:]):
+                    pair = (index1, index2)
+                    if pair in self.merges_ranked:
+                        to_merge[pair] = self.merges_ranked[pair]
+                if len(to_merge) == 0:
+                    break
+                # 找到合并优先级最高的
+                best_pair = min(to_merge, key=to_merge.get)
+                # 合并
+                i = 0
+                while i < len(pre_token):
+                    if i + 1 < len(pre_token) and pre_token[i] == best_pair[0] and pre_token[i + 1] == best_pair[1]:
+                        new_pre_token.append(best_pair[0] + best_pair[1])
+                        i += 2
+                    else:
+                        new_pre_token.append(pre_token[i])
+                        i += 1
+                pre_token = new_pre_token.copy()
+            for i in pre_token:
+                idx.append(i)
+        idx = [self.vocab_inverse[i] for i in idx]
+        
+        return idx
+        
+    def encode_iterable(self, iterable: Iterable[str]) -> Iterator[int]:
+        '''给定字符串的可迭代对象（如文件句柄），惰性地产生 token IDs'''
+        for text in iterable:
+            for tid in self.encode(text):
+                yield tid
+        
+    def decode(self, ids: list[int]) -> str:
+        '''将 token ID 序列解码回原始文本'''
+        byte_sequence = b"".join(self.vocab[i] if i in self.vocab else bytes([i]) for i in ids)
+        # 使用 errors="replace" 保证非法字节能被替换成 �
+        return byte_sequence.decode("utf-8", errors="replace")
+
 def get_tokenizer(
     vocab: dict[int, bytes],
     merges: list[tuple[bytes, bytes]],
@@ -559,8 +660,9 @@ def get_tokenizer(
     Returns:
         A BPE tokenizer that uses the provided vocab, merges, and special tokens.
     """
-    raise NotImplementedError
-
+    tokenizer = Tokenizer(vocab, merges, special_tokens)
+    
+    return tokenizer
 
 # def run_train_bpe(
 #     input_path: str | os.PathLike,
@@ -597,6 +699,8 @@ import regex as re
 from collections import defaultdict,Counter
 from multiprocessing import Pool
 from typing import BinaryIO
+
+
 def find_chunk_boundaries(
     file: BinaryIO,
     desired_num_chunks: int,
@@ -780,7 +884,6 @@ def merge(
             if i[0] > max_val:
                 max_val = i[0]
         pair = max([k for k, v in pair_to_indices.items() if v[0] == max_val])
-        
         # 修改 pair_to_indices
         for i in pair_to_indices[pair][1:]:
             index = indices_key[i].copy()
@@ -859,7 +962,7 @@ def run_train_bpe(
         next_token_id += 1
 
     # 2. 预分词
-    indices = multi_process_pre_token(input_path, 1, special_tokens)
+    indices = multi_process_pre_token(input_path, 4, special_tokens)
 
     # 3. BPE 合并
     vocab, merges = merge(indices, vocab_size, special_tokens, 

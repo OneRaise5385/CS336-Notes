@@ -493,12 +493,346 @@ def run_train_bpe(
    其中
    ![valid-500-mul](../images/valid-500-multi4-multi.png)
 2. 优化合并步骤
-   对所有字节对计数进行索引，并增量更新这些计数。
+   对所有字节对计数进行索引，并增量更新这些计数。线程数设置为 4，代码的运行时长为：
+   ![valid-500-multi4-optimize](../images/valid-500-multi4-multi-optimize1.png)
+   其中
+   ![valid-500-multi4-optimize](../images/valid-500-multi4-multi-optimize1-1.png)
+
+```python
+
+import os
+import regex as re
+from collections import defaultdict,Counter
+from multiprocessing import Pool
+from typing import BinaryIO
+import cProfile
+
+def find_chunk_boundaries(
+    file: BinaryIO,
+    desired_num_chunks: int,
+    split_special_token: bytes,
+) -> list[int]:
+    """
+    Chunk the file into parts that can be counted independently.
+    May return fewer chunks if the boundaries end up overlapping.
+    """
+    assert isinstance(split_special_token, bytes), "Must represent special token as a bytestring"
+
+    # Get total file size in bytes
+    file.seek(0, os.SEEK_END)
+    file_size = file.tell()
+    file.seek(0)
+
+    chunk_size = file_size // desired_num_chunks
+
+    # Initial guesses for chunk boundary locations, uniformly spaced
+    # Chunks start on previous index, don't include last index
+    chunk_boundaries = [i * chunk_size for i in range(desired_num_chunks + 1)]
+    chunk_boundaries[-1] = file_size
+
+    mini_chunk_size = 4096  # Read ahead by 4k bytes at a time
+
+    for bi in range(1, len(chunk_boundaries) - 1):
+        initial_position = chunk_boundaries[bi]
+        file.seek(initial_position)  # Start at boundary guess
+        while True:
+            mini_chunk = file.read(mini_chunk_size)  # Read a mini chunk
+
+            # If EOF, this boundary should be at the end of the file
+            if mini_chunk == b"":
+                chunk_boundaries[bi] = file_size
+                break
+
+            # Find the special token in the mini chunk
+            found_at = mini_chunk.find(split_special_token)
+            if found_at != -1:
+                chunk_boundaries[bi] = initial_position + found_at
+                break
+            initial_position += mini_chunk_size
+
+    # Make sure all boundaries are unique, but might be fewer than desired_num_chunks
+    return sorted(set(chunk_boundaries))
+
+def pre_count_indices(
+    content: str, 
+    special_tokens: list
+    ) -> defaultdict[tuple[int, ...], int]:
+    '''
+    对输入的文档进行预分词
+    '''
+    # 按照特殊 tokens 分割文档
+    texts = re.split("|".join(map(re.escape, special_tokens)), content)
+    PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+    # 对每个文档中的每个部分进行统计
+    pre_indices = defaultdict(int)
+    for text in texts:
+        # 关于 re.finditer() 的使用在 `assignment.md` 中的 `其他` 部分有介绍
+        pre_token_matches = re.finditer(PAT, text)
+        # 统计分词出现的的次数
+        for pre_token_matche in pre_token_matches:
+            pre_indices_key = tuple([bytes([x]) for x in tuple(pre_token_matche.group().encode())])
+            pre_indices[pre_indices_key] += 1
+    
+    
+    return pre_indices
+
+def multi_process_pre_token(input_path, num_processes, special_tokens):
+    '''
+    并行化预分词阶段
+    '''
+    # 首先将文本分段
+    chunks = []
+    with open(input_path, "rb") as f:
+        boundaries = find_chunk_boundaries(f, num_processes, b"<|endoftext|>")
+        for start, end in zip(boundaries[:-1], boundaries[1:]):
+            f.seek(start)
+            chunk = f.read(end - start).decode("utf-8", errors="ignore").replace("\r\n", "\n")
+            chunks.append(chunk)
+            
+    # 使用进程池并行处理
+    with Pool() as pool:
+        dicts = pool.starmap(pre_count_indices, [(chunk, special_tokens) for chunk in chunks])
+    
+    # 合并结果
+    indices = Counter()
+    for d in dicts:
+        indices.update(d)
+    # 转回普通字典
+    indices = dict(indices)
+
+    return indices
+
+def modify_pair_to_indices(
+    pair_to_indices: defaultdict[tuple[bytes], list[int]], 
+    prev_pair, indices_value, i
+    ) -> defaultdict[tuple[bytes], list[int]]:
+    '''修改 pair_to_indices'''
+    # 修改 pair 的个数
+    if not pair_to_indices[prev_pair]:
+        pair_to_indices[prev_pair].append(0)
+    pair_to_indices[prev_pair][0] -= indices_value[i]
+    # 修改 pair_to_indices 值中的索引
+    if i in pair_to_indices[prev_pair][1:]:
+        pair_to_indices[prev_pair].reverse()
+        pair_to_indices[prev_pair].remove(i)
+        pair_to_indices[prev_pair].reverse()
+    return pair_to_indices
+
+def add_pair_to_indices(
+    pair_to_indices: defaultdict[tuple[bytes], list[int]], 
+    new_pair, indices_value, i
+    ) -> defaultdict[tuple[bytes], list[int]]:
+    '''向 pair_to_indices 中添加新值'''
+    if not pair_to_indices[new_pair]:
+        pair_to_indices[new_pair] = [indices_value[i]]
+    else:
+        pair_to_indices[new_pair][0] += indices_value[i]
+    pair_to_indices[new_pair].append(i)
+    return pair_to_indices
+
+def update_pair_to_indices(
+    pair_to_indices: defaultdict[tuple[bytes], list[int]], 
+    indices_value, index, pair, i, j, 
+    loc: str = "right"
+    )-> defaultdict[tuple[bytes], list[int]]:
+    '''
+    更新 pair_to_indices 的值，包括修改、添加 \n
+    loc : {"left", "right"}
+        用于指定要更新 pair 的位置：
+        - "right": 当 pair 右侧存在相邻元素时。
+        - "left":  当 pair 左侧存在相邻元素时。
+    '''
+    # pair 右侧有未匹配的元素时
+    if loc == 'right':
+        prev_pair = (pair[1], index[j + 2])
+        new_pair = (pair[0] + pair[1], index[j + 2])
+    # pair 左侧有未匹配的元素时
+    elif loc == 'left':
+        prev_pair = (index[j - 1], pair[0])
+        new_pair = (index[j - 1], pair[0] + pair[1])
+    # 修改
+    pair_to_indices = modify_pair_to_indices(
+        pair_to_indices, prev_pair, indices_value, i)
+    # 添加
+    pair_to_indices = add_pair_to_indices(
+        pair_to_indices, new_pair, indices_value, i)
+    return pair_to_indices
+
+def generate_pair_to_indices(indices):
+    # 构造 pair_to_indices
+    indices_key = [list(k) for k in indices.keys()]
+    indices_value = list(indices.values())
+    pair_to_indices = defaultdict(list)
+    for i in range(len(indices_key)):
+        index = indices_key[i]
+        for index1, index2 in zip(index, index[1:]):
+            if pair_to_indices[(index1, index2)]:
+                pair_to_indices[(index1, index2)][0] += indices_value[i]
+            else:
+                pair_to_indices[(index1, index2)].append(indices_value[i])
+            pair_to_indices[(index1, index2)].append(i)
+    return pair_to_indices, indices_key, indices_value
+
+def merge(
+    indices: defaultdict[tuple[bytes, ...], int],
+    vocab_size, special_tokens, next_token_id,
+    vocab, merges
+    )-> tuple:
+    '''合并的步骤，生成 pair 对'''
+    # 构造 pair_to_indices
+    pair_to_indices, indices_key, indices_value = generate_pair_to_indices(indices)
+    # 开始合并
+    num_merges = vocab_size - 256 - len(special_tokens)
+    for _ in range(num_merges):
+        # 找到出现次数最多的 pair
+        max_val = 0
+        for i in pair_to_indices.values():
+            if i[0] > max_val:
+                max_val = i[0]
+        pair = max([k for k, v in pair_to_indices.items() if v[0] == max_val])
+        # 修改 pair_to_indices
+        for i in pair_to_indices[pair][1:]:
+            index = indices_key[i].copy()
+            modify_position = []
+            for j in range(len(index) - 1):
+                if index[j] == pair[0] and index[j + 1] == pair[1]:
+                    # index 中只存在 pair 而没有别的时
+                    if len(index) == 2:
+                        # pair_to_indices.pop(pair)
+                        continue
+                    # pair 在开头
+                    elif j == 0:
+                        pair_to_indices = update_pair_to_indices(
+                            pair_to_indices, indices_value, index, pair, i, j, 'right')
+                    # pair 在结尾 
+                    elif j == len(index) - 2:
+                        pair_to_indices = update_pair_to_indices(
+                            pair_to_indices, indices_value, index, pair, i, j, 'left')
+                    # pair 在中间
+                    else:
+                        pair_to_indices = update_pair_to_indices(
+                            pair_to_indices, indices_value, index, pair, i, j, 'right')
+                        pair_to_indices = update_pair_to_indices(
+                            pair_to_indices, indices_value, index, pair, i, j, 'left')
+                        
+                    # 修改 indices_key
+                    indices_key[i][j] = pair[0] + pair[1]
+                    modify_position.append(j + 1)  # 记录下需要删除的元素的位置
+            # 修改 indices_key
+            for pos in sorted(modify_position, reverse=True):
+                indices_key[i].pop(pos)
+                
+        # 删除 pair_to_indices 中已经合并的 pair
+        pair_to_indices.pop(pair)
+        
+        # merges 更新
+        merges.append(pair)
+        
+        # 词表更新
+        vocab[next_token_id] = pair[0] + pair[1]
+        next_token_id += 1
+    
+    return vocab, merges
+
+def run_train_bpe(
+    input_path: str | os.PathLike,
+    vocab_size: int,
+    special_tokens: list[str],
+    **kwargs,
+) -> tuple[dict[int, bytes], list[tuple[bytes, bytes]]]:
+    """
+    给定输入语料的路径，训练一个 BPE 分词器，并输出其 vocab 和 merges 。
+    参数：
+        input_path (str | os.PathLike)：BPE 分词器训练数据的路径。
+        vocab_size (int)：分词器词表的总大小（包括特殊 token）。
+        special_tokens (list[str])：一个字符串列表，表示要加入词表的特殊 token。
+            这些特殊 token 永远不会被拆分成多个 token，总是保持为一个整体。
+            如果这些特殊 token 出现在 `input_path` 中，它们会被视作普通字符串处理。
+    返回：
+        tuple[dict[int, bytes], list[tuple[bytes, bytes]]]：
+            vocab：
+                训练得到的分词器词表，字典的 key 是 int 结构（词表中的 token ID），
+                value 是 bytes（对应的 token 字节串）。
+            merges：
+                BPE 合并规则。列表中的每一项是一个 bytes 元组 (<token1>, <token2>)，
+                表示 <token1> 和 <token2> 被合并为一个新 token。合并规则按创建顺序排列。
+    """
+    
+    # 1. 初始化: 256个基础词、特殊 tokens
+    vocab: dict[int, bytes] = {x: bytes([x]) for x in range(256)}
+    merges: list[tuple[bytes, bytes]] = []
+    next_token_id = 256
+    # 将特殊 tokens 转换成 byte 格式并加入词表
+    for special_token in special_tokens:
+        vocab[next_token_id] = special_token.encode("utf-8")
+        next_token_id += 1
+
+    # 2. 预分词
+    indices = multi_process_pre_token(input_path, 4, special_tokens)
+
+    # 3. BPE 合并
+    vocab, merges = merge(indices, vocab_size, special_tokens, 
+                          next_token_id, vocab, merges)
+    
+    return vocab, merges
+
+```
+**注**
+到这里，程序运行时间已经大幅度减少，但是在 `test_train_bpe_speed()` 测试中依旧没有通过，通过修改线程数，发现运行时间并没有怎么改变。
+```python
+# 1线程
+print(1758169195.181771 - 1758169192.6195068)
+print(1758169224.4595006 - 1758169221.9900694)
+print(1758169245.134073 - 1758169243.0435488)
+print(1758169268.487374 - 1758169266.051931)
+
+# 4线程
+print(1758169097.0269823 - 1758169094.893354)
+print(1758169116.481045 - 1758169114.3645082)
+print(1758169136.9662333 - 1758169134.873007)
+print(1758169157.8195953 - 1758169155.7261586)
+
+# 8线程
+print(1758168978.9890404 - 1758168976.843495)
+print(1758169002.6651592 - 1758169000.5919244)
+print(1758169024.8803248 - 1758169022.7954376)
+print(1758169046.7375734 - 1758169044.6180797)
+
+# 16线程
+print(1758168812.5748842 - 1758168810.3089461)
+print(1758168836.9444673 - 1758168834.8330061)
+print(1758168877.8943124 - 1758168875.8067193)
+print(1758168905.587005 - 1758168903.4456933)
+```
+> 1线程
+> 2.5622642040252686
+> 2.469431161880493
+> 2.090524196624756
+> 2.435443162918091
+> 4线程
+> 2.1336283683776855
+> 2.116536855697632
+> 2.093226194381714
+> 2.0934367179870605
+> 8线程
+> 2.145545482635498
+> 2.073234796524048
+> 2.0848872661590576
+> 2.1194937229156494
+> 16线程
+> 2.2659380435943604
+> 2.1114611625671387
+> 2.0875930786132812
+> 2.1413116455078125
+
+但如果在测试中给定的文本上进行单独训练（不使用`uv run pytest -v tests/test_train_bpe.py`）只用了0.656s，这里推测可能是`test_train_bpe.py` 存在 bug。
+![corpus-result](../images/corpus-500-multi4-optimize1.png)
+
+
 --- 
 **问题：在 TinyStories 上进行训练**
 
-**(a)** 在 TinyStories 数据集上训练一个 字节级 BPE 分词器，最大词表大小为 10,000。将生成的 vocab 和 merges 序列化保存到磁盘，以便进一步检查。
-**资源要求**：时间 ≤ 30 分钟 (使用 cpu )， 内存 ≤ 30GB   
+**(a)** 在 TinyStories 数据集上训练一个 字节级 BPE 分词器，最大词表大小为 10,000。将生成的 vocab 和 merges 序列化保存到磁盘，以便进一步检查。**资源要求**：时间 ≤ 30 分钟 (使用 cpu )， 内存 ≤ 30GB
 **回答**：训练耗费了多少时间和内存？词表中最长的 token 是什么？这个结果是否合理？  
 **提示**：如果在 预分词（pre-tokenization） 阶段使用多进程，你应该能够在 2 分钟以内完成 BPE 训练，同时利用以下两点事实：
 1. <|endoftext|> token 用来划分数据文件中的文档。
@@ -507,23 +841,103 @@ def run_train_bpe(
 **(b)** 对你的代码进行 性能分析（profiling）。在分词器训练过程中，哪一部分最耗时？
 
 **解答**
+**(a)** 训练耗费了多少时间和内存？词表中最长的 token 是什么？这个结果是否合理？
+训练用了293s，词表中最长的 token 是这几个：[b' accomplishment', b' responsibility', b' disappointment', b' recommendation']，这个结果还算合理。
 
+**(b)** 最耗时的是预分词和合并阶段
+![result](../images/image.png)
 
 ---
 
-接下来，我们将尝试在 OpenWebText 数据集上训练一个字节级 BPE 分词器。和之前一样，我们建议先查看一下该数据集，以便更好地理解其中的内容。
-问题 (train_bpe_expts_owt)：在 OpenWebText 上训练 BPE（2 分）
-(a) 在 OpenWebText 数据集上训练一个字节级 BPE 分词器，最大词表大小设为 32,000。
-将训练得到的词表和合并规则序列化保存到磁盘，以便进一步检查。
+**问题**：接下来，我们将尝试在 OpenWebText 数据集上训练一个字节级 BPE 分词器。和之前一样，我们建议先查看一下该数据集，以便更好地理解其中的内容。
+**(a)** 在 OpenWebText 数据集上训练一个字节级 BPE 分词器，最大词表大小设为 32,000。将训练得到的词表和合并规则序列化保存到磁盘，以便进一步检查。资源要求： ≤ 12 小时（不使用 GPU），≤ 100GB 内存。
 词表中最长的 token 是什么？是否合理？
+**(b)** 对比在 TinyStories 和 OpenWebText 上训练得到的分词器，有哪些异同？提交内容： 一到两句话的回答。
+**这道题没有做，电脑内存不太够**
 
-资源要求： ≤ 12 小时（不使用 GPU），≤ 100GB 内存
-提交内容： 一到两句话的回答。
+---
 
-(b) 对比在 TinyStories 和 OpenWebText 上训练得到的分词器，有哪些异同？
-提交内容： 一到两句话的回答。
+## 2.6 BPE 分词器：编码与解码
+
+在作业的前一部分里，我们已经实现了一个函数，用来在输入文本上训练 BPE 分词器，从而得到一个 **分词器的词表（vocab）** 和一系列 **BPE 合并规则（merges）**。我们将实现一个 BPE 分词器，它可以加载已经提供好的词表和合并规则，并使用它们来对文本进行 编码 和 解码。
+
+### 2.6.1 文本编码
+BPE 编码文本的过程和训练 BPE 词表的过程是相对应的，主要包括以下几个步骤：
+1. 预分词
+首先对序列进行预分词（pre-tokenize），并将每个预 token 表示为 UTF-8 字节序列。之后，在每个预 token 内部对字节进行合并，形成词表中的元素。需要注意的是：合并只会在单个预 token 内部进行，不会跨越预 token 的边界。
+2. 应用合并规则
+使用 BPE 训练过程中生成的合并规则序列（merges），按照它们被创建的顺序，依次应用到预 token 上。
+
+**example**
+假设我们的输入字符串是 'the cat ate'，vocab、merges 为：
+vocab = {0: b' ', 1: b'a', 2: b'c', 3: b'e', 4: b'h', 5: b't', 6: b'th', 7: b' c', 8: b' a', 9: b'the', 10: b'at'}
+merges = [(b't', b'h'), (b' ', b'c'), (b' ', b'a'), (b'th', b'e'), (b' a', b't')]
+1. 预分词
+将输入字符串切分成：['the', ' cat', ' ate']
+
+2. 对每个预 token 应用 BPE 合并
+   1. 'the' 表示为 [b't', b'h', b'e']。
+      - 应用 (b't', b'h') → [b'th', b'e']
+      - 应用 (b'th', b'e') → [b'the']
+      - 没有更多可合并的规则。查 vocab 得整数序列：[9]
+   2. ' cat' 表示为 [b' ', b'c', b'a', b't']。
+      - 应用 (b' ', b'c') → [b' c', b'a', b't']
+      - 没有更多可合并的规则。得到整数序列：[7, 1, 5]
+   3. ' ate' 表示为 [b' ', b'a', b't', b'e']。
+      - 应用 (b' ', b'a') → [b' a', b't', b'e']
+      - 应用 (b' a', b't') → [b' at', b'e']
+      - 没有更多可合并的规则。得到整数序列：[10, 3]
+3. 最终将所有预 token 的编码拼接起来得到：
+[9, 7, 1, 5, 10, 3]
+
+**注意**：
+- 特殊 tokens：
+当对文本进行编码时，你的分词器应该能够正确处理用户自定义的特殊 tokens（这些 tokens 会在构建分词器时提供）。
+- 内存考虑：
+假设我们要对一个无法完全加载到内存中的大型文本文件进行分词。为了高效地对这个大文件（或其他数据流）进行分词，我们需要将它拆分成可管理的小块，并逐块处理。这样，内存复杂度就能保持为常数，而不是随着文本大小线性增长。在这样做时，我们必须确保 一个 token 不会跨越块的边界，否则得到的分词结果就会和直接在内存中一次性分词的结果不同。
+
+### 2.6.2 文本解码
+要将一系列整数 token ID 解码回原始文本，我们只需：
+1. 查找每个 ID 在词表（vocabulary）中对应的条目（一个字节序列）。
+2. 将这些字节序列拼接在一起。
+3. 将拼接后的字节序列解码为 Unicode 字符串。
+
+需要注意的是，输入的 token ID 不一定能保证映射为有效的 Unicode 字符串（因为用户可能会输入任意的整数 ID 序列）。如果输入的 token ID 无法生成合法的 Unicode 字符串，则应将这些无效字节替换为 Unicode 官方替代字符 U+FFFD。
+在 Python 中，bytes.decode 方法的 errors 参数用于控制 Unicode 解码错误的处理方式。使用 errors='replace' 时，会自动将无效的数据替换为替代符号 �（U+FFFD）。
+
+--- 
+
+**问题:** 实现分词器 (15 分)
+任务要求：实现一个 Tokenizer 类，该类在给定 词表 (vocaby) 和 合并规则 (merges) 的情况下，能够：
+1. 编码 (encode)：将文本转换为整数 ID 序列。
+2. 解码 (decode)：将整数 ID 序列转换回文本。
+3. 支持用户自定义特殊 token：如果特殊 token 不在已有词表中，应将它们追加到词表中。
+
+要测试你实现的 Tokenizer 是否能通过我们提供的测试用例，你需要首先在 [adapters.get_tokenizer] 中实现测试适配器。
+然后运行命令：`uv run pytest tests/test_tokenizer.py`
+
+```python
 
 
+
+```
+---
+
+## 2.7 实验
+
+问题 (tokenizer_experiments)：分词器实验（4 分）
+
+(a) 从 TinyStories 和 OpenWebText 数据集中各抽取 10 篇文档。使用你之前训练好的 TinyStories 分词器（10K 词表大小） 和 OpenWebText 分词器（32K 词表大小），将这些采样的文档编码为整数 ID。分别计算每个分词器的 压缩率（bytes/token）。
+提交内容： 用 1–2 句话回答。
+
+(b) 如果你使用 TinyStories 分词器 来对 OpenWebText 的样本进行分词，会发生什么？比较压缩率，或者给出定性的描述。
+提交内容： 用 1–2 句话回答。
+
+(c) 估算你的分词器的 吞吐率（例如，以 bytes/second 表示）。那么，处理 Pile 数据集（825GB 文本） 需要多长时间？
+提交内容： 用 1–2 句话回答。
+
+(d) 使用你的 TinyStories 分词器 和 OpenWebText 分词器，分别将对应的 训练集和开发集 编码为整数 token ID 序列。之后我们会用这些序列来训练语言模型。我们建议将 token IDs 序列化保存为 NumPy 的 uint16 类型数组。
+为什么 uint16 是合适的选择？
 
 
 # 其他
@@ -664,3 +1078,35 @@ print("finditer 占用内存大概:", sys.getsizeof(tokens_finditer), "字节")
 > findall 占用内存大概: 16184 字节
 > finditer 结果数量: 2000
 > finditer 占用内存大概: 48 字节
+
+## 4. 类方法与普通方法
+**普通方法** (`def func(self, ...)`)
+第一个参数是 self，表示 某个类的实例对象。
+调用时：obj.func(...)
+
+**类方法** (`@classmethod def func(cls, ...)`)
+第一个参数是 cls，表示 类本身。
+调用时：MyClass.func(...)，返回的结果通常是**一个类的实例**。
+
+`@classmethod` 是 Python 的装饰器。
+它告诉 Python：这是一个 类方法，不是对象方法。
+作用通常是提供一种 工厂方法 (factory method) ——也就是一种特殊的构造函数。
+
+举个例子：
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def from_full_name(cls, full_name: str):
+        first, last = full_name.split(" ")
+        return cls(first)  # 相当于调用 Person(first)
+
+# 普通方式：
+p1 = Person("Alice")
+
+# 用 class method 来构造：
+p2 = Person.from_full_name("Alice Smith")
+```
+

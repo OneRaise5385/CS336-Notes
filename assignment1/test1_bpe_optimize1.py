@@ -1,9 +1,12 @@
 import os
+import psutil
 import regex as re
 from collections import defaultdict,Counter
 from multiprocessing import Pool
 from typing import BinaryIO
 import cProfile
+import json
+import pickle
 
 def find_chunk_boundaries(
     file: BinaryIO,
@@ -188,7 +191,6 @@ def merge(
             if i[0] > max_val:
                 max_val = i[0]
         pair = max([k for k, v in pair_to_indices.items() if v[0] == max_val])
-        
         # 修改 pair_to_indices
         for i in pair_to_indices[pair][1:]:
             index = indices_key[i].copy()
@@ -267,7 +269,7 @@ def run_train_bpe(
         next_token_id += 1
 
     # 2. 预分词
-    indices = multi_process_pre_token(input_path, 16, special_tokens)
+    indices = multi_process_pre_token(input_path, 12, special_tokens)
 
     # 3. BPE 合并
     vocab, merges = merge(indices, vocab_size, special_tokens, 
@@ -276,7 +278,34 @@ def run_train_bpe(
     return vocab, merges
 
 if __name__ == '__main__':
-    run_str = "run_train_bpe('../data/TinyStoriesV2-GPT4-valid.txt', 500, ['<|endoftext|>'])"
-    run_str = "run_train_bpe('../data/TinyStoriesV2-GPT4-train.txt', 500, ['<|endoftext|>'])"
+    # run_str = "run_train_bpe('tests/fixtures/corpus.en', 500, ['<|endoftext|>'])"
+    # run_str = "run_train_bpe('../data/TinyStoriesV2-GPT4-valid.txt', 500, ['<|endoftext|>'])"
     # run_str = "run_train_bpe('../data/text_example.txt', 270, ['<|endoftext|>'])"
-    cProfile.run(run_str, "train-500-multi16-optimize.prof")
+    
+    # run_str = "run_train_bpe('../data/TinyStoriesV2-GPT4-train.txt', 10000, ['<|endoftext|>'])"
+    # cProfile.run(run_str, "performance/train-10000-multi12-optimize1.prof")
+    
+    # TinyStoriesV2
+    vocab, merges = run_train_bpe('../data/TinyStoriesV2-GPT4-train.txt', 10000, ['<|endoftext|>'])
+    
+    process = psutil.Process(os.getpid())
+    print(f"内存占用: {process.memory_info().rss / 1024 ** 2:.2f} MB")
+    with open('result/TinyStories_vocab.pkl', 'wb') as f:
+        pickle.dump(vocab, f)
+    with open("result/TinyStories_merges.txt", "w") as f:
+        for item in merges:
+            f.write(str(item) + "\n")
+    print("保存完成！")
+    
+    # OpenWebText
+    # vocab, merges = run_train_bpe('../data/owt_train.txt', 32000, ['<|endoftext|>'])
+    
+    # with open('result/owt_train_vocab.pkl', 'wb') as f:
+    #     pickle.dump(vocab, f)
+    # with open("result/owt_train_merges.txt", "w") as f:
+    #     for item in merges:
+    #         f.write(str(item) + "\n")
+    # print("保存完成！")
+    
+    # process = psutil.Process(os.getpid())
+    # print(f"内存占用: {process.memory_info().rss / 1024 ** 2:.2f} MB")
