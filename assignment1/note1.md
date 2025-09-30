@@ -276,7 +276,7 @@ BPE 分词器的训练过程主要包括三个步骤：
 4. 特殊 token
    有些字符串（如 <|endoftext|>）用于编码元数据（如文档边界），通常希望这些字符串 **不被拆分**，保持为单个 token。因此需要将它们加入词表，并分配固定 ID。
 
-举个例子： 
+**举个例子**： 
 ![BPEeg](..\images\BPE_eg.jpg)
 
 ## 2.5 BPE Tokenizer 训练
@@ -498,8 +498,8 @@ def run_train_bpe(
    其中
    ![valid-500-multi4-optimize](../images/valid-500-multi4-multi-optimize1-1.png)
 
+这部分的代码在 `test1_bpe_optimize1.py` 文件中
 ```python
-
 import os
 import regex as re
 from collections import defaultdict,Counter
@@ -777,7 +777,7 @@ def run_train_bpe(
     return vocab, merges
 
 ```
-**注**
+**注1：**
 到这里，程序运行时间已经大幅度减少，但是在 `test_train_bpe_speed()` 测试中依旧没有通过，通过修改线程数，发现运行时间并没有怎么改变。
 ```python
 # 1线程
@@ -828,12 +828,14 @@ print(1758168905.587005 - 1758168903.4456933)
 但如果在测试中给定的文本上进行单独训练（不使用`uv run pytest -v tests/test_train_bpe.py`）只用了0.656s，这里推测可能是`test_train_bpe.py` 存在 bug。
 ![corpus-result](../images/corpus-500-multi4-optimize1.png)
 
+**注2：**
+优化后的代码相比之前有大幅度的提升，但是依旧有很多可以优化的地方，例如寻找 `max_pair` 时相对来说比较耗时，可以使用**堆**这种数据结构来进行优化，文件 `test1-bpe-optimize2.py` 中尝试使用堆，但是没有 debug 完，还运行不通。
 
 --- 
 **问题：在 TinyStories 上进行训练**
 
 **(a)** 在 TinyStories 数据集上训练一个 字节级 BPE 分词器，最大词表大小为 10,000。将生成的 vocab 和 merges 序列化保存到磁盘，以便进一步检查。**资源要求**：时间 ≤ 30 分钟 (使用 cpu )， 内存 ≤ 30GB
-**回答**：训练耗费了多少时间和内存？词表中最长的 token 是什么？这个结果是否合理？  
+**问题**：训练耗费了多少时间和内存？词表中最长的 token 是什么？这个结果是否合理？  
 **提示**：如果在 预分词（pre-tokenization） 阶段使用多进程，你应该能够在 2 分钟以内完成 BPE 训练，同时利用以下两点事实：
 1. <|endoftext|> token 用来划分数据文件中的文档。
 2. <|endoftext|> token 在应用 BPE 合并之前，会作为特殊情况单独处理。
@@ -853,7 +855,7 @@ print(1758168905.587005 - 1758168903.4456933)
 **(a)** 在 OpenWebText 数据集上训练一个字节级 BPE 分词器，最大词表大小设为 32,000。将训练得到的词表和合并规则序列化保存到磁盘，以便进一步检查。资源要求： ≤ 12 小时（不使用 GPU），≤ 100GB 内存。
 词表中最长的 token 是什么？是否合理？
 **(b)** 对比在 TinyStories 和 OpenWebText 上训练得到的分词器，有哪些异同？提交内容： 一到两句话的回答。
-**这道题没有做，电脑内存不太够**
+**"这道题没有做，电脑内存不太够"**
 
 ---
 
@@ -918,6 +920,118 @@ merges = [(b't', b'h'), (b' ', b'c'), (b' ', b'a'), (b'th', b'e'), (b' a', b't')
 
 ```python
 
+import regex
+import json
+from typing import Iterable, Iterator
+
+class Tokenizer:
+    def __init__(
+        self, vocab: dict[int, bytes], 
+        merges: list[tuple[bytes, bytes]], 
+        special_tokens: list[str] | None = None
+        ):
+        '''从给定的词表、合并规则和（可选的）特殊 tokens 构造一个分词器'''
+        self.vocab = vocab
+        self.merges = merges
+        self.vocab_inverse = {v: k for k, v in vocab.items()}
+        self.merges_ranked = {(k[0], k[1]): v for v, k in enumerate(merges)}
+        self.special_tokens = special_tokens
+        
+        # 将词典中没有的特殊token添加到词典中
+        if self.special_tokens:
+            for n, t in enumerate(self.special_tokens):
+                if t.encode() not in self.vocab_inverse:
+                    new_idx = len(self.vocab) + 1 + n
+                    self.vocab_inverse[t] = new_idx
+                    self.vocab[new_idx] = t.encode()
+
+    @classmethod
+    def from_files(cls, vocab_filepath: str, 
+                   merges_filepath: str, 
+                   special_tokens: list[str] | None = None):
+        '''从序列化的 vocab 和 merges 文件构造一个 Tokenizer'''
+        # 读取vocab
+        with open(vocab_filepath, 'rb') as f:
+            vocab = json.load(f)
+        # 读取merges
+        merges = []
+        with open(merges_filepath) as f:
+            for line in f:
+                cleaned_line = line.rstrip()
+                if cleaned_line and len(cleaned_line.split(" ")) == 2:
+                    merges.append(tuple(cleaned_line.split(" ")))
+            return cls(vocab, merges, special_tokens)
+    
+    def encode(self, text: str) -> list[int]:
+        '''将输入文本编码为 token ID 序列'''
+        # 0. 按照特殊token对文本进行分段
+        if self.special_tokens:
+            # 这里主要是解决同时出现<|endoftext|><|endoftext|>的情况
+            sorted_special_tokens = sorted(self.special_tokens, key=len, reverse=True)
+            special_token_pattern = '|'.join(map(regex.escape, sorted_special_tokens))
+            chunks = regex.split(f'({special_token_pattern})', text)
+        else:
+            chunks = [text]
+        idx = []
+        
+        # 对于每一段文本
+        for chunk in chunks:
+            if not chunk: continue
+            if self.special_tokens is not None and chunk in self.special_tokens:
+                idx.append(self.vocab_inverse[chunk.encode()])
+            else:
+                # 1. 预分词
+                PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+                pre_tokens = regex.findall(PAT, chunk)
+                # 2. 对每个token应用BPE合并
+                for pre_token in pre_tokens:
+                    # 将 pre_token 的内容进行 utf-8 编码
+                    pre_token = [bytes([i]) for i in pre_token.encode()]
+                    while True:
+                        new_pre_token = []
+                        to_merge = dict()
+                        for index1, index2 in zip(pre_token, pre_token[1:]):
+                            if (index1, index2) in self.merges_ranked:
+                                to_merge[(index1, index2)] = self.merges_ranked[(index1, index2)]
+                        if len(to_merge) == 0:
+                            break
+                        # 找到合并优先级最高的
+                        pair = min(to_merge, key=to_merge.get)
+                        # 合并
+                        i = 0
+                        while i < len(pre_token):
+                            if i + 1 < len(pre_token) and (pre_token[i], pre_token[i + 1]) == pair:
+                                new_pre_token.append(pair[0] + pair[1])
+                                i += 2
+                            else:
+                                new_pre_token.append(pre_token[i])
+                                i += 1
+                        pre_token = new_pre_token.copy()
+                    for i in pre_token:
+                        if i in self.vocab_inverse:
+                            idx.append(self.vocab_inverse[i])
+                        else:
+                            idx.append(ord(i))
+        return idx
+
+    def encode_iterable(self, iterable: Iterable[str]) -> Iterator[int]:
+        '''给定字符串的可迭代对象（如文件句柄），惰性地产生 token IDs'''
+        for text in iterable:
+            for tid in self.encode(text):
+                yield tid
+        
+    def decode(self, ids: list[int]) -> str:
+        '''将 token ID 序列解码回原始文本'''
+        byte_sequence = b''
+        for i in ids:
+            if i in self.vocab:
+                print('self.vocab[i]: ', self.vocab[i])
+                byte_sequence += self.vocab[i]
+                print('byte_sequence:', byte_sequence)
+            else:
+                byte_sequence += b'\xff'
+        # 使用 errors="replace" 保证非法字节能被替换成 �
+        return byte_sequence.decode("utf-8", errors="replace")
 
 
 ```
@@ -925,22 +1039,135 @@ merges = [(b't', b'h'), (b' ', b'c'), (b' ', b'a'), (b'th', b'e'), (b' a', b't')
 
 ## 2.7 实验
 
-问题 (tokenizer_experiments)：分词器实验（4 分）
+**问题：分词器实验**
+**(a)** 从 TinyStories 和 OpenWebText 数据集中各抽取 10 篇文档。使用你之前训练好的 TinyStories 分词器（10K 词表大小） 和 OpenWebText 分词器（32K 词表大小），将这些采样的文档编码为整数 ID。分别计算每个分词器的 压缩率（bytes/token）。
 
-(a) 从 TinyStories 和 OpenWebText 数据集中各抽取 10 篇文档。使用你之前训练好的 TinyStories 分词器（10K 词表大小） 和 OpenWebText 分词器（32K 词表大小），将这些采样的文档编码为整数 ID。分别计算每个分词器的 压缩率（bytes/token）。
-提交内容： 用 1–2 句话回答。
+```python
+# 读取10行文本
+data_path = Path("../data/TinyStoriesV2-GPT4-valid.txt")
+delimiter = "<|endoftext|>"
+stories = []
+with data_path.open("r", encoding="utf-8") as f:
+    buffer = []
+    for line in f:
+        if line.strip() == delimiter:
+            story = "".join(buffer).strip()
+            if story:
+                stories.append(story)
+            buffer = []
+            if len(stories) == 10:
+                break
+        else:
+            buffer.append(line)
 
-(b) 如果你使用 TinyStories 分词器 来对 OpenWebText 的样本进行分词，会发生什么？比较压缩率，或者给出定性的描述。
-提交内容： 用 1–2 句话回答。
+# 读取 vocab 和 merges
+vocab_path = Path("result/TinyStories_vocab.pkl")
+with vocab_path.open("rb") as f:
+    vocab = pickle.load(f)
 
-(c) 估算你的分词器的 吞吐率（例如，以 bytes/second 表示）。那么，处理 Pile 数据集（825GB 文本） 需要多长时间？
-提交内容： 用 1–2 句话回答。
+merges_path = Path("result/TinyStories_merges.txt")
+merges = []
+with merges_path.open("r", encoding="utf-8") as f:
+    for line in f:
+        raw = line.strip()
+        if not raw or raw.startswith("#"):
+            continue
+        pair = ast.literal_eval(raw)  # yields (b'h', b'e')
+        if not isinstance(pair, tuple) or len(pair) != 2:
+            raise ValueError(f"Unexpected merge line: {raw}")
+        merges.append(pair)
 
-(d) 使用你的 TinyStories 分词器 和 OpenWebText 分词器，分别将对应的 训练集和开发集 编码为整数 token ID 序列。之后我们会用这些序列来训练语言模型。我们建议将 token IDs 序列化保存为 NumPy 的 uint16 类型数组。
-为什么 uint16 是合适的选择？
+# Tokenizer 实例化
+tokenizer_TS = Tokenizer(vocab=vocab, merges=merges)
+
+# 计算压缩率
+result_bytes = b''
+result_token = []
+for i in stories:
+    token_story = tokenizer_TS.encode(i)
+    bytes_story = i.encode()
+    result_bytes += bytes_story
+    result_token += token_story
+print(len(result_bytes) / len(result_token))
+```
+> 4.034077555816686
 
 
-# 其他
+**(b)** 如果你使用 TinyStories 分词器 来对 OpenWebText 的样本进行分词，会发生什么？比较压缩率，或者给出定性的描述。
+**因为之前的 OpenWebText 没训，所以这道题没写**
+
+**(c)** 估算你的分词器的 吞吐率（例如，以 bytes/second 表示）。那么，处理 Pile 数据集（825GB 文本） 需要多长时间？
+```python
+import time
+# 读取一个G大小的文本进来
+with open("../data/TinyStoriesV2-GPT4-valid.txt", "rb") as f:
+    first_gig = f.read(1024 ** 3)
+text_part = first_gig.decode("utf-8", errors="ignore")
+
+# 开始计时
+time_start = time.time()
+tokenizer_TS.encode(text_part)
+time_end = time.time()
+
+times = time_end - time_start
+times
+```
+> 一次读取的一个G的数据，编码所需要的时间为
+> 47.66094088554382
+
+```python
+print(times * 825)
+print(times * 825 / 60 / 60)
+```
+> Pile 数据集大约需要
+> 39320.276230573654
+> 换算成小时，大约11个小时
+> 10.922298952937126
+
+**(d)** 使用你的 TinyStories 分词器 和 OpenWebText 分词器，分别将对应的 训练集和开发集 编码为整数 token ID 序列。之后我们会用这些序列来训练语言模型。我们建议将 token IDs 序列化保存为 NumPy 的 uint16 类型数组。为什么 uint16 是合适的选择？
+```python
+import numpy as np
+import sys 
+
+# 测试集编码
+with open('../data/TinyStoriesV2-GPT4-valid.txt', 'r') as f:
+    TS_valid = f.read()
+TS_valid_token = tokenizer_TS.encode(TS_valid)
+# 保存
+arr = np.array(TS_valid_token, dtype=np.uint16)
+np.save("result/TS_valid_token.npy", arr)
+
+# 训练集编码
+with open('../data/TinyStoriesV2-GPT4-train.txt', 'r') as f:
+    TS_train = f.read()
+TS_train_token = tokenizer_TS.encode(TS_train)
+# 保存
+arr = np.array(TS_train_token, dtype=np.uint16)
+np.save("result/TS_train_token.npy", arr)
+
+print('列表大小：',sys.getsizeof(TS_train_token) / 1024 / 1024)
+loaded = np.load("result/TS_train_token.npy")
+print('用uint16存储大小：',sys.getsizeof(loaded) / 1024 / 1024)
+```
+
+1. 范围合适
+uint16 的取值范围是 0 ~ 65535，分词器的词表大小小于 65535。所以一个 token ID 可以安全地用 uint16 表示，不会溢出。
+1. 节省内存
+如果用 int32 或 int64，会浪费很多存储空间。uint16 每个 token 占 2 字节，比 int32（4 字节）或 int64（8 字节）节省一半甚至四分之三的空间。在处理大规模数据集时，这种节省非常重要。
+1. 高效 I/O
+更小的数据类型意味着更少的磁盘读写和内存占用，提升训练前的数据加载速度。
+
+## 2.8 总结
+**总结**：  
+这一节实现了训练了 BPT 分词器，得到了 TinyStories 上的 merges 和 vocab，实现了 BPE Tokenizer 的编解码功能。总的来说还是比较麻烦的，训练 merges 和 vocab 的时候很快就写完了第一个版本，但是耗时巨长，第一次优化后时间大幅度减少。但是还有需要优化的地方，想使用堆实现 pair 的查找，写了好久依旧有 bug。实现 BPE Tokenizer 的编解码功能时候还是有很多关注到的细节的，这里面有好多的测试都需要通过还是要完善很多的细节的。
+
+**需要优化的地方**：
+1. 在分词器训练的时候，使用堆实现 pair 的查找，修改耗时的地方
+2. merges 和 vocab 文件的保存格式可以优化一下
+3. 在 Tokenizer 类中，因为用的windows系统，所以没有对其中两个测试内存的部分进行测试
+
+
+# 其他的一些笔记
 ## 0. 电脑配置信息
 下面是我的笔记本的配置信息：
 ```python

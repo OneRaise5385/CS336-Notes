@@ -561,11 +561,12 @@ def run_load_checkpoint(
 #     """
 #     raise NotImplementedError
 
-
-import regex as re
+import regex
 import pickle
 import ast
-from typing import Iterable, Iterator
+import json
+from typing import Iterable
+from typing import Iterator
 
 class Tokenizer:
     def __init__(
@@ -575,59 +576,88 @@ class Tokenizer:
         ):
         '''从给定的词表、合并规则和（可选的）特殊 tokens 构造一个分词器'''
         self.vocab = vocab
-        self.vocab_inverse = {v: k for k, v in vocab.items()}
         self.merges = merges
-        self.merges_ranked = {k: v for v, k in enumerate(merges)}
+        self.vocab_inverse = {v: k for k, v in vocab.items()}
+        self.merges_ranked = {(k[0], k[1]): v for v, k in enumerate(merges)}
         self.special_tokens = special_tokens
-    
+        
+        # 将词典中没有的特殊token添加到词典中
+        if self.special_tokens:
+            for n, t in enumerate(self.special_tokens):
+                if t.encode() not in self.vocab_inverse:
+                    new_idx = len(self.vocab) + 1 + n
+                    self.vocab_inverse[t] = new_idx
+                    self.vocab[new_idx] = t.encode()
+
     @classmethod
     def from_files(cls, vocab_filepath: str, 
                    merges_filepath: str, 
                    special_tokens: list[str] | None = None):
         '''从序列化的 vocab 和 merges 文件构造一个 Tokenizer'''
-        
+        # 读取vocab
         with open(vocab_filepath, 'rb') as f:
-            vocab = pickle.load(f)
-        with open(merges_filepath, 'r') as f:
-            merges = [ast.literal_eval(line.strip()) for line in f]
-            
-        return cls(vocab, merges, special_tokens)
+            vocab = json.load(f)
+        # 读取merges
+        merges = []
+        with open(merges_filepath) as f:
+            for line in f:
+                cleaned_line = line.rstrip()
+                if cleaned_line and len(cleaned_line.split(" ")) == 2:
+                    merges.append(tuple(cleaned_line.split(" ")))
+            return cls(vocab, merges, special_tokens)
     
     def encode(self, text: str) -> list[int]:
         '''将输入文本编码为 token ID 序列'''
-        PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
-        pre_tokens = re.findall(PAT, text)
-
+        # 0. 按照特殊token对文本进行分段
+        if self.special_tokens:
+            # 这里主要是解决同时出现<|endoftext|><|endoftext|>的情况
+            sorted_special_tokens = sorted(self.special_tokens, key=len, reverse=True)
+            special_token_pattern = '|'.join(map(regex.escape, sorted_special_tokens))
+            chunks = regex.split(f'({special_token_pattern})', text)
+        else:
+            chunks = [text]
         idx = []
-        for pre_token in pre_tokens:
-            pre_token = [i.encode('utf-8') for i in pre_token]
-            while True:
-                new_pre_token = []
-                to_merge = dict()
-                for index1, index2 in zip(pre_token, pre_token[1:]):
-                    pair = (index1, index2)
-                    if pair in self.merges_ranked:
-                        to_merge[pair] = self.merges_ranked[pair]
-                if len(to_merge) == 0:
-                    break
-                # 找到合并优先级最高的
-                best_pair = min(to_merge, key=to_merge.get)
-                # 合并
-                i = 0
-                while i < len(pre_token):
-                    if i + 1 < len(pre_token) and pre_token[i] == best_pair[0] and pre_token[i + 1] == best_pair[1]:
-                        new_pre_token.append(best_pair[0] + best_pair[1])
-                        i += 2
-                    else:
-                        new_pre_token.append(pre_token[i])
-                        i += 1
-                pre_token = new_pre_token.copy()
-            for i in pre_token:
-                idx.append(i)
-        idx = [self.vocab_inverse[i] for i in idx]
         
+        # 对于每一段文本
+        for chunk in chunks:
+            if not chunk: continue
+            if self.special_tokens is not None and chunk in self.special_tokens:
+                idx.append(self.vocab_inverse[chunk.encode()])
+            else:
+                # 1. 预分词
+                PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
+                pre_tokens = regex.findall(PAT, chunk)
+                # 2. 对每个token应用BPE合并
+                for pre_token in pre_tokens:
+                    # 将 pre_token 的内容进行 utf-8 编码
+                    pre_token = [bytes([i]) for i in pre_token.encode()]
+                    while True:
+                        new_pre_token = []
+                        to_merge = dict()
+                        for index1, index2 in zip(pre_token, pre_token[1:]):
+                            if (index1, index2) in self.merges_ranked:
+                                to_merge[(index1, index2)] = self.merges_ranked[(index1, index2)]
+                        if len(to_merge) == 0:
+                            break
+                        # 找到合并优先级最高的
+                        pair = min(to_merge, key=to_merge.get)
+                        # 合并
+                        i = 0
+                        while i < len(pre_token):
+                            if i + 1 < len(pre_token) and (pre_token[i], pre_token[i + 1]) == pair:
+                                new_pre_token.append(pair[0] + pair[1])
+                                i += 2
+                            else:
+                                new_pre_token.append(pre_token[i])
+                                i += 1
+                        pre_token = new_pre_token.copy()
+                    for i in pre_token:
+                        if i in self.vocab_inverse:
+                            idx.append(self.vocab_inverse[i])
+                        else:
+                            idx.append(ord(i))
         return idx
-        
+
     def encode_iterable(self, iterable: Iterable[str]) -> Iterator[int]:
         '''给定字符串的可迭代对象（如文件句柄），惰性地产生 token IDs'''
         for text in iterable:
@@ -636,10 +666,18 @@ class Tokenizer:
         
     def decode(self, ids: list[int]) -> str:
         '''将 token ID 序列解码回原始文本'''
-        byte_sequence = b"".join(self.vocab[i] if i in self.vocab else bytes([i]) for i in ids)
+        byte_sequence = b''
+        for i in ids:
+            if i in self.vocab:
+                print('self.vocab[i]: ', self.vocab[i])
+                byte_sequence += self.vocab[i]
+                print('byte_sequence:', byte_sequence)
+            else:
+                byte_sequence += b'\xff'
         # 使用 errors="replace" 保证非法字节能被替换成 �
         return byte_sequence.decode("utf-8", errors="replace")
 
+    
 def get_tokenizer(
     vocab: dict[int, bytes],
     merges: list[tuple[bytes, bytes]],
@@ -766,8 +804,7 @@ def pre_count_indices(
         for pre_token_matche in pre_token_matches:
             pre_indices_key = tuple([bytes([x]) for x in tuple(pre_token_matche.group().encode())])
             pre_indices[pre_indices_key] += 1
-    
-    
+
     return pre_indices
 
 def multi_process_pre_token(input_path, num_processes, special_tokens):
