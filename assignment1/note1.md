@@ -1166,6 +1166,86 @@ uint16 的取值范围是 0 ~ 65535，分词器的词表大小小于 65535。所
 2. merges 和 vocab 文件的保存格式可以优化一下
 3. 在 Tokenizer 类中，因为用的windows系统，所以没有对其中两个测试内存的部分进行测试
 
+# 3. Transformer
+语言模型的输入是一个批量的整数 token ID 序列，即形状为 `(batch_size, sequence_length)` 的 `torch.Tensor`，输出是一个（批量的）在词表上的归一化概率分布，即形状为 `(batch_size, sequence_length, vocab_size)` 的 PyTorch 张量，其中预测的分布表示每个输入 token 的下一个词。在训练语言模型时，我们使用这些“下一个词”的预测结果，与真实的下一个词进行交叉熵损失计算。在推理阶段从语言模型生成文本时，我们取最后一个时间步（即序列中的最后一个 token）的预测分布来生成下一个 token（例如：取概率最高的 token，或从分布中进行采样），然后把生成的 token 添加到输入序列中，并重复这个过程。本部分作业将从零开始构建这个 Transformer 语言模型。
+
+## 3.1 Transformer LM
+给定一串 token ID，Transformer 语言模型首先通过输入嵌入（input embedding）将这些 token ID 转换为稠密向量，然后将嵌入后的 token 依次传入 num_layers 个 Transformer 块，最后通过一个可学习的线性投影（即“输出嵌入”或“LM head”）来生成预测的下一个 token 的 logits。示意图见 `figure 1`。
+![figure1 and figure2](../images/transformer-figure1-and-figure2.png)
+
+### 3.1.1 Token Embeddings
+在第一步，Transformer 会将（批量的）token ID 序列嵌入为一串向量，这些向量包含 token 身份的信息（图 1 中的红色模块）。更具体地说，给定一个 token ID 序列，Transformer 语言模型使用 **token embedding 层** 来生成一串向量。每个 embedding 层的输入是一个形状为 (batch_size, sequence_length) 的整数张量，输出则是形状为 (batch_size, sequence_length, d_model) 的向量序列。
+
+### 3.1.2 Pre-norm Transformer Block
+在嵌入之后，这些激活会被一系列结构相同的神经网络层处理。一个标准的仅解码器（decoder-only）Transformer 语言模型由 num_layers 个相同的层组成（通常称为 Transformer “block”）。每个 Transformer block 的输入形状为 (batch_size, sequence_length, d_model)，输出形状也是 (batch_size, sequence_length, d_model)。每个 block 会在序列上聚合信息（通过 self-attention），并对其进行非线性变换（通过feed-forward layers）
+
+## 3.2 Output Normalization and Embedding
+
+在经过 num_layers 个 Transformer block 之后，我们会将最终的激活结果转换为一个在词表上的分布。我们将实现 “pre-norm” Transformer block，它还要求在最后一个 Transformer block 之后使用 层归一化（layer normalization），以确保输出被正确缩放。在这个归一化步骤之后，我们会使用一个标准的、可学习的线性变换，将 Transformer block 的输出转换为预测的下一个 token 的 logits（参见例如 Radford 等人 [2018] 的公式 (2)）。
+
+> **公式（2）** 是以下内容：
+> 在实验中使用一个 **多层 Transformer 解码器** 作为语言模型，它是 Transformer 的一个变体。 该模型对输入的上下文 tokens 进行多头自注意力操作，然后通过逐位置的前馈层，最终得到目标 tokens 的输出分布:  
+> \[
+> h_0 = U W_e + W_p
+> \]
+> - \(U\)：输入的上下文 token 序列（例如 \((u_{-k}, \ldots, u_{-1})\)）。
+> - \(W_e\)：token embedding 矩阵，将离散的 token ID 转换为稠密向量。
+> - \(W_p\)：位置 embedding 矩阵，为序列中的不同位置添加位置信息。
+> **解释**：这一步是把输入的 tokens 转换成向量表示。最终的表示 \(h_0\) 同时包含了 词语信息\(W_e\) 和 位置信息\(W_p\)。
+> \[
+> h_l = \text{transformer\_block}(h_{l-1}), \quad \forall i \in [1, n]
+> \]
+> - \(h_{l-1}\)：第 \(l-1\) 层的输出。
+> - \(h_l\)：第 \(l\) 层的输出。
+> - \(n\)：总共有 \(n\) 层。
+> - \(\text{transformer\_block}\)：一个 Transformer 解码器层（包含多头自注意力、前馈网络、残差连接、LayerNorm 等）。
+> **解释**：输入经过多层 Transformer block ，每一层都会聚合上下文信息（通过 自注意力）并进行非线性变换（通过 前馈网络），得到逐步更抽象的表示。
+> \[
+> P(u) = \text{softmax}(h_n W_e^T)
+> \]
+> - \(h_n\)：经过 \(n\) 层 Transformer 之后的最终输出。
+> - \(W_e^T\)：token embedding 矩阵的转置，用作输出层（通常称为 weight tying，即输入和输出 embedding 共享参数）。
+> - softmax：将 logits 转换为概率分布。
+> **解释**：最后一步，把隐藏状态 \(h_n\) 投影到词表大小的维度，然后用 softmax 得到每个词的概率分布，从而预测下一个 token。
+
+## 3.3 批处理、Einsum 与高效计算
+
+在 Transformer 中，我们会对许多类似批处理的输入执行相同的计算。以下是一些例子：  
+
+- **批次中的元素**：对每个 batch 中的元素应用相同的 Transformer 前向计算。  
+- **序列长度**：像 RMSNorm 和前馈网络这样的“逐位置”操作，会在序列的每个位置上以相同方式执行。  
+- **注意力头**：在“多头注意力”操作中，注意力机制会在不同的注意力头之间并行批处理。  
+
+因此，我们需要一种更方便的方式来执行这类操作，既能充分利用 GPU，又易于阅读和理解。在 PyTorch 中，许多操作都可以在张量开头附加额外的“类似批次”的维度，并在这些维度上高效地重复/广播运算。
+例如，假设我们在做一个逐位置的批处理操作：  
+- 有一个“数据张量” \(D\)，形状为 `(batch_size, sequence_length, d_model)`  
+- 需要与一个矩阵 \(A\)，形状为 `(d_model, d_model)`，进行批量向量-矩阵乘法  
+
+此时，`D @ A` 就会进行批量矩阵乘法，这是 PyTorch 的高效基础运算，其中 `(batch_size, sequence_length)` 维度会被视为批次维度。  
+
+因此，在实现函数时，最好假设输入可能包含额外的“批次样”维度，并且让这些维度位于张量形状的开头。  
+为了把张量组织成可批处理的形式，可能需要多次使用 `view`、`reshape` 和 `transpose`。  这样虽然可行，但会让代码可读性变差，难以理解张量的具体形状。  
+
+一种更简洁的方法是使用 **einsum 符号**（通过 `torch.einsum`），或者使用 **与框架无关的库**（如 `einops` 或 `einx`）。  
+
+- **einsum**：可以在任意维度上执行张量缩并（tensor contraction）。  
+- **rearrange**：可以在任意维度上进行重排、拼接和拆分。  
+
+实际上，机器学习中的大多数操作都可以看作是 **维度变换 + 张量缩并 + 非线性函数（通常是逐点操作）** 的组合。  
+因此，使用 einsum 符号可以让你的代码更 **易读** 和 **灵活**。  
+
+我们强烈推荐在课程中学习和使用 **einsum 符号**。  
+- 对 **没有接触过 einsum** 的同学，建议先使用 `einops`（请先阅读其文档）。  
+- 对 **已经熟悉 einops** 的同学，建议学习更通用的 `einx`。  
+
+这两个库都已经安装在课程提供的环境中。  
+
+最后，我们会提供一些使用 **einsum 符号** 的例子，作为对 `einops` 文档的补充。  
+
+
+
+
+
 
 # 其他的一些笔记
 ## 0. 电脑配置信息

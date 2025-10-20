@@ -1,5 +1,5 @@
 # CS336: Language Modeling from Scratch
-# 从零开始构建语言模型
+# 一、从零开始构建语言模型
 
 ## 1. 关于这门课程
 ### 1.1 课程简介: 
@@ -9,7 +9,7 @@
   > 指利用已经训练好的语言模型在具体应用场景中执行的各种自然语言处理任务。例如文本分类、命名实体识别（NER，例如识别人名、地名、组织名等）、问答系统（如基于知识库或文档的问答）、文本生成（如对话生成、文章续写、代码生成、文本摘要（生成文章或文档的简要版本）、机器翻译（如英文翻译成中文）、语义相似度判断（判断两段文本是否语义相近）、文本纠错与语法改进等
 - **先决条件**：python，深度学习与系统优化，微积分与线性代数，概率与统计，机器学习基础
 - **课程内容**及**作业安排**。课程一共包含5个部分：basics、systems、scaling laws、data、alignment。每个部分对应一次作业，没有代码框架（scaffolding），但会提供单元测试与接口适配器帮助你检查功能是否正确。在本地实现和测试，通过后再提交至集群运行以进行准确率与速度评估。部分作业会设有排行榜。**尽量不使用AI编程工具**。
-![design](images\design-decisions.png)
+![design](..\images\design-decisions.png)
 
 ### 1.2 模型更大的时候会有所不同
 前沿的模型对我们来说遥不可及，本课程中构建的小语言模型无法完全代表大预言模型的真实特征。
@@ -106,11 +106,11 @@ GPT-4 拥有 1.8 万亿个参数，训练成本高达 1 亿美金；xAI 使用 2
 
 ## 3. 章节简介
 ### 3.1 basics
-![mindmap](images\mindmap-01.png)
+![mindmap](..\images\mindmap-01.png)
 1. Tokenization
    本课程使用的是**字节对编码分词器**（Byte-Pair Encoding, **BPE**）
    **分词器**（tokenizer）:负责将字符串和**整数序列**（strings and sequences of integers）(**token**)相互转换，如下图：
-   ![tokenizer](images\tokenized-example.png)
+   ![tokenizer](..\images\tokenized-example.png)
    **无分词器（Tokenizer-free）方法**：直接使用字节（bytes）作为输入，思路有前景，但目前尚未在前沿大模型规模上验证。
 2. 模型架构（Architecture）
    起点：原始 Transformer [Vaswani+ 2017]
@@ -139,16 +139,16 @@ GPT-4 拥有 1.8 万亿个参数，训练成本高达 1 亿美金；xAI 使用 2
 
 ### 3.2 systems
 充分发挥硬件的性能
-![mindmap](images\mindmap-02.png)
+![mindmap](..\images\mindmap-02.png)
 1. 核函数（Kernels）
 本节通过最小化数据移动来组织计算，从而最大化 GPU 利用率，编写核函数的工具：CUDA / Triton / CUTLASS / ThunderKittens
 计算都发生在 GPU 上面，GPU 长下面这样
-![A100](images\A100.png)
+![A100](..\images\A100.png)
 DRAM，SRAM 是 GPU 的组成部分，DRAM 相当于库房，SRAM + compute 相当于工厂
-![gpu](images\gpu_analogy.png)
+![gpu](..\images\gpu_analogy.png)
 2. 并行化（Parallelism）
 多块 GPU 之间的数据传输效率很低，需要遵循“尽量减少数据移动”的原则
-![parallelism](images\parallelism.png)
+![parallelism](..\images\parallelism.png)
 使用集合操作（collective operations），例如：gather（收集）、reduce（归约）、all-reduce（全归约）
 在多块 GPU 之间分片（shard）参数、激活值、梯度和优化器状态
 计算的拆分方式可以是：数据并行（data parallelism）、张量并行（tensor parallelism）、流水线并行（pipeline parallelism）、序列并行（sequence parallelism）
@@ -184,7 +184,7 @@ $$ D^* = 20 N^* $$
 
 ### 3.4 data
 我们期望模型拥有的能力，通常需要使用相关数据来训练。
-![mindmap](images\mindmap-03.png)
+![mindmap](..\images\mindmap-03.png)
 1. 评估
 **困惑度**（**Perplexity**）：语言模型的经典评估指标。**标准化测试**（MMLU、HellaSwag、GSM8K），**指令遵循**（例AlpacaEval、IFEval、WildBench）。增加测试阶段的计算量：链式思维（chain-of-thought）、集成（ensembling）。可以以语言模型作为裁判来评估生成任务。**完整系统**：检索增强生成（RAG）、智能体（agents）。
 
@@ -204,7 +204,7 @@ $$ D^* = 20 N^* $$
 
 ### 3.5 alignment
 到目前为止，基础模型只是具备原始潜力，非常擅长预测下一个词。对齐（alignment）会让模型真正变得有用。
-![mindmap](images\mindmap-04.png)
+![mindmap](..\images\mindmap-04.png)
 对齐的目标：
 - 让语言模型能够遵循指令
 - 调整风格（格式、长度、语气等）
@@ -253,3 +253,65 @@ $$ D^* = 20 N^* $$
 - 实现监督微调
 - 实现直接偏好优化（Direct Preference Optimization，DPO）
 - 实现群体相对偏好优化（Group Relative Preference Optimization，GRPO）
+
+# 二、分词器
+## 1 Tokenization
+![mindmap_tokenization](..\images\mindmap_tokenization.png){width="600px" height="px"}
+### 1.1 什么是Tokenization？
+原始文本通常用 Unicode 字符串表示。语言模型会对一系列**词元**（tokens）（通常用整数索引表示）放置一个概率分布。因此，我们需要一种将字符串**编码**（encode）成词元的过程，同时需要一种将词元**解码**（decode）回字符串的过程。Tokenizer（分词器）就是一个实现了编码和解码方法的类。**词表大小**（vocabulary size）就是可能的词元（整数）总数。为了直观了解分词器是如何工作的，可以试用这个[交互式网站](https://tiktokenizer.vercel.app/?encoder=gpt2)。观察到的现象：
+1. 一个单词与其前面的空格会被视为同一个 token（例如 " world"）。
+2. 处在句首的单词和处在句中间的同一单词会被不同地表示（例如 "hello hello"）。
+3. 数字会被分成每几位一个 token。
+4. 以上的三条是课程里给的，第一条和第二条有点没看懂或者有问题（或者是我翻译的有问题）。
+5. 同一个单词加空格和不加空格对应不同的 token，这个跟第二条说的有不一样的地方。测试的结果是课程中给的"hello hello"的例子中，两个之所以不一样，是因为第二个hello之前有空格，而第一个之前没有，当在第一个 hello 前加上空格后，两个对应的 token 是一样的。
+6. 不同模型对应的 tokens 结果不同（如 gpt2 和 gpt4o）
+7. 同一个单词大小写不同对应的 token 也不同（如 gpt2模型中 Science 为 5800，science 为 3783）
+8. 同一个单词大小写不同的时候可能被划分为多个tokens（university 被划分为了两个部分）
+9.  不同的模型对数字的划分风格不同，gpt4o 貌似只有三个数字划分这一种情况，gpt2 有两个数字划分在一起的情况
+10. 换行符也有对应的 token，测试的 gpt2 和 gpt4o 的 token 都是198
+![tiktoken](..\images\Tiktokenizer.png)
+
+下图是 OpenAI 的 GPT-2 分词器（tiktoken）的实际运行示例。字符串 `Hello, 🌍! 你好!` 的 UTF-8 编码占用 20 字节。tokens 占 12 字节。$ratio_{compression} = 12 / 20 = 1.6666666667$。
+![gpt2tiktoken](..\images\gpt2_tiktoken.png){width="600px" height="px"}
+
+### 1.2 基于字符的分词器
+**Unicode 字符串**是由 **Unicode 字符**组成的**序列**。每个字符可以通过 `ord` 转换成对应的码点（整数）。Unicode 总共有大约 15 万 个字符。
+> **Unicode** 是一个全球统一的字符集，它为几乎所有语言的文字、符号、表情符号等分配了唯一的数字编号（叫码点，code point），这样计算机就能在全球范围内一致地存储和处理文本。**Unicode 字符串**就是一串这样的 Unicode 字符，每个字符在背后对应一个或多个码点。
+> - Unicode 字符串不是直接用字节存的，而是一个字符序列，字符本身用 Unicode 编号来标识；等需要存储或传输时，可以用 UTF-8、UTF-16 等具体编码方式转成字节。
+
+在例子 `Hello, 🌍! 你好!` 中，编码结果如下图所示。在 indices 中最大值为 127757 可以看出这个字符集是非常大的。
+![charactertokenizer](..\images\charactertokenizer.png){width="600px" height="px"}
+问题 1：这个字符集非常大。
+问题 2：许多字符（例如 🌍）非常少见，这会导致词表的使用效率很低。
+
+### 1.3 基于字节的分词器
+Unicode 字符串可以表示为一系列字节，而字节又可以用 0 到 255 之间的整数表示。最常用的 Unicode 编码是 UTF-8。有些 Unicode 字符只需要一个字节表示，有些则需要多个字节。
+![bytetokenizer](..\images\bytetokenizer.png){width="600px" height="px"}
+使用基于字节的分词器优点是词表很小：一个字节最多表示 256 个值。但压缩率（compression ratio）非常差，也就是说分词后的序列会很长。由于 Transformer 的上下文长度有限（注意力计算是平方级增长的），这会导致效率很低。
+
+### 1.4 基于单词的分词器
+另一种方法是把字符串按单词拆分，这种方法更接近传统自然语言处理的做法。
+
+```python
+string = "I'll say supercalifragilisticexpialidocious!"
+segments = regex.findall(r"\w+|.", string) 
+```
+这个正则表达式会把所有字母数字字符连续地当作一个整体保留下来，而不会把它们拆开。就像下面这样：
+![wordtokenizer](..\images\wordtokenization.png){width="600px" height="px"}
+
+要把它变成一个 Tokenizer，需要把这些片段（segments）映射成整数 ID，然后建立一个片段 → 整数的映射表。但是这种方法有几个问题：
+1. 单词的数量非常庞大（就像 Unicode 字符一样）。
+2. 很多单词非常罕见，模型学不到太多关于它们的东西。
+3. 不容易得到固定大小的词表（vocabulary size）。
+$ Size_{vocabulary} = Number_{distinct ~ segments ~ of ~ training ~ data}$
+1. 对于训练中没见过的新单词，要用特殊的 UNK token 来代替，这会让结果变得很糟糕，还可能影响困惑度（perplexity）的计算。
+
+### 1.5 基于BPE的分词器
+**字节对编码**（Byte Pair Encoding，**BPE**）最早由 Philip Gage 于 1994 年提出，用于数据压缩。它后来被改进并应用到自然语言处理（NLP）中的神经机器翻译任务中。 [Sennrich 等，2015] 在此之前，研究论文通常使用基于单词的分词方法。BPE 随后被 GPT-2 采用。 [Radford 等，2019] GPT-2 论文中先用基于单词的分词方法将文本分成初始片段，再对每个片段运行原始的 BPE 算法。
+**基本思想**：在原始文本上训练分词器，让它自动确定词表。常见的字符序列用单个 token 表示，稀有的字符序列则用多个 token 表示。**流程**：先把每个字节当作一个 token，然后不断合并出现频率最高的一对相邻 token。
+1. 把字符串转成 UTF-8 编码的字节序列
+2. 统计所有相邻 token 对的出现次数，找到出现次数最多的一对 token
+3. 创建新 token，把新 token 对应的字节序列放进词表
+4. 重复步骤 2、步骤 3， 共 `num_merges` 次
+
+![bpe_steps](..\images\bpe_steps.jpg)
