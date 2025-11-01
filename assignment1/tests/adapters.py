@@ -8,6 +8,29 @@ from jaxtyping import Float, Int
 import numpy.typing as npt
 import torch
 from torch import Tensor
+from torch import nn
+
+
+class Linear(nn.Module):
+    def __init__(self, in_features, out_features, device=None, dtype=None):
+        
+        # 调用 nn.Module（父类）的构造函数。torch.nn.Module 是 PyTorch 所有模型组件的基类。
+        # 它的构造函数中做了很多重要的初始化操作,如果不调用，很多机制都不会生效
+        super().__init__()
+        
+        # 定义参数权重形状
+        self.weight = nn.Parameter(
+            torch.empty(in_features, out_features, device=device,  dtype=dtype)
+            )
+        
+        # 初始化权重
+        std = 2 / (in_features + out_features)
+        nn.init.trunc_normal_(self.weight, 0, std, a=-3 * std, b=3 * std)
+
+        
+    def forward(self, x:torch.Tensor) -> torch.Tensor:
+        # 计算 y = W * x.T
+        return x @ self.weight.T
 
 
 def run_linear(
@@ -28,7 +51,10 @@ def run_linear(
     Returns:
         Float[Tensor, "... d_out"]: The transformed output of your linear module.
     """
-
+    linear1 = Linear()
+    
+    
+    
     raise NotImplementedError
 
 
@@ -539,31 +565,7 @@ def run_load_checkpoint(
     raise NotImplementedError
 
 
-# def get_tokenizer(
-#     vocab: dict[int, bytes],
-#     merges: list[tuple[bytes, bytes]],
-#     special_tokens: list[str] | None = None,
-# ) -> Any:
-#     """Given a vocabulary, a list of merges, and a list of special tokens,
-#     return a BPE tokenizer that uses the provided vocab, merges, and special tokens.
-
-#     Args:
-#         vocab (dict[int, bytes]): The tokenizer vocabulary, a mapping from int (token ID in the vocabulary)
-#             to bytes (token bytes)
-#         merges (list[tuple[bytes, bytes]]): BPE merges. Each list item is a tuple of bytes (<token1>, <token2>),
-#             representing that <token1> was merged with <token2>.
-#             Merges are ordered by order of creation.
-#         special_tokens (list[str] | None): A list of string special tokens for the tokenizer. These strings will never
-#             be split into multiple tokens, and will always be kept as a single token.
-
-#     Returns:
-#         A BPE tokenizer that uses the provided vocab, merges, and special tokens.
-#     """
-#     raise NotImplementedError
-
 import regex
-import pickle
-import ast
 import json
 from typing import Iterable
 from typing import Iterator
@@ -701,35 +703,6 @@ def get_tokenizer(
     tokenizer = Tokenizer(vocab, merges, special_tokens)
     
     return tokenizer
-
-# def run_train_bpe(
-#     input_path: str | os.PathLike,
-#     vocab_size: int,
-#     special_tokens: list[str],
-#     **kwargs,
-# ) -> tuple[dict[int, bytes], list[tuple[bytes, bytes]]]:
-#     """Given the path to an input corpus, run train a BPE tokenizer and
-#     output its vocabulary and merges.
-
-#     Args:
-#         input_path (str | os.PathLike): Path to BPE tokenizer training data.
-#         vocab_size (int): Total number of items in the tokenizer's vocabulary (including special tokens).
-#         special_tokens (list[str]): A list of string special tokens to be added to the tokenizer vocabulary.
-#             These strings will never be split into multiple tokens, and will always be
-#             kept as a single token. If these special tokens occur in the `input_path`,
-#             they are treated as any other string.
-
-#     Returns:
-#         tuple[dict[int, bytes], list[tuple[bytes, bytes]]]:
-#             vocab:
-#                 The trained tokenizer vocabulary, a mapping from int (token ID in the vocabulary)
-#                 to bytes (token bytes)
-#             merges:
-#                 BPE merges. Each list item is a tuple of bytes (<token1>, <token2>),
-#                 representing that <token1> was merged with <token2>.
-#                 Merges are ordered by order of creation.
-#     """
-#     raise NotImplementedError
 
 
 import os
